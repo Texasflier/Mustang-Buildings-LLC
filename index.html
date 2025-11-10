@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mustang Buildings LLC — Homeowner Construction Consulting (DFW)</title>
+  <meta name="description" content="Independent, unbiased homeowner construction consulting for the DFW Metro Area. 40+ years experience. Advisory-only: review bids, spot red flags, compare options, realistic budgets & timelines, change-order protection.">
+  <style>
+    :root{
+      --bg:#0b0c10; --card:#111217; --muted:#9aa3af; --text:#f5f7fb; --accent:#4f8cff; --ok:#22c55e; --hl:#22c55e;
+      --max:980px; --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      background:linear-gradient(180deg,#0b0c10, #0e1116 40%, #111217);
+      color:var(--text);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--max);margin:auto;padding:28px}
+
+    /* Header / Logo */
+    header{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:18px;text-align:center;margin:8px 0 18px;
+    }
+    .logo-img{
+      height:250px;width:auto;border-radius:12px;display:block;
+      box-shadow:0 10px 40px rgba(0,0,0,.35)
+    }
+    h1{font-size:clamp(26px,3.2vw,36px);margin:0}
+    .tag{color:var(--muted)}
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(180deg,#121622,#0f131c);
+      border:1px solid #1b2333;border-radius:20px;padding:28px;
+      box-shadow:0 10px 40px rgba(0,0,0,.35);margin:10px 0 28px
+    }
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+      background:#0e1423;border:1px solid #1b2333;color:#c7d2fe
+    }
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;
+      border:1px solid #2a3652;background:#12203a;color:#eaf2ff;font-weight:700
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .pill{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:#0f172a;border:1px solid #1f2a44;color:#cbd5e1;margin-left:8px}
+
+    /* Sections / Cards */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{
+      grid-column:span 12;background:var(--card);border:1px solid #1b2333;border-radius:var(--radius);padding:20px
+    }
+    @media (min-width:840px){
+      .card.span6{grid-column:span 6}
+      .card.span4{grid-column:span 4}
+    }
+    h2{font-size:22px;margin:0 0 12px}
+    h3{margin:16px 0 8px}
+    ul{margin:6px 0 0 20px}
+    .fine{font-size:13px;color:#aab2bf}
+    footer{color:var(--muted);margin:28px 0 8px}
+
+    /* Pricing Table */
+    .pricing{display:grid;gap:16px;margin-top:8px}
+    @media (min-width:840px){ .pricing{grid-template-columns:repeat(2,1fr)} }
+    .price-card{
+      background:#0f1422;border:1px solid #1b2333;border-radius:14px;padding:18px;
+      display:flex;flex-direction:column;gap:8px
+    }
+    .price-card.highlight{border-color:#2d7b4f; box-shadow:0 10px 30px rgba(34,197,94,.12)}
+    .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+    .price-amt{font-size:24px;font-weight:800}
+    .price-note{color:#aab2bf;font-size:13px}
+    .check{color:var(--hl);font-weight:700}
+    .muted{color:#9aa3af}
+    blockquote{
+      margin:12px 0;padding:12px 14px;border-left:4px solid #2e3a59;background:#0f1422;border-radius:6px
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <!-- Cache-busting ?v=2 helps if an old image is cached on your phone -->
+      <img class="logo-img" src="./logo.png?v=2" alt="Mustang Buildings LLC logo">
+      <h1>Mustang Buildings LLC</h1>
+      <div class="tag">Homeowner Construction Consulting — DFW Metro Area • 40+ years experience (Former GC — Alaska)</div>
+    </header>
+
+    <!-- About / Bio -->
+    <section class="card span12">
+      <h2>About Jeff</h2>
+      <p>
+        Jeff brings more than <strong>40 years of construction experience across the state of Alaska</strong>,
+        working on everything from private homes and remodels to large-scale commercial and industrial projects.
+        His career took him from major cities to the most remote regions of the state, where logistics, weather,
+        budgets, and scheduling demand a level of planning and adaptability few builders ever face.
+      </p>
+
+      <p>As a former general contractor, Jeff developed deep expertise in:</p>
+      <ul>
+        <li><strong>Estimating &amp; cost control</strong></li>
+        <li><strong>Project management &amp; scheduling</strong></li>
+        <li><strong>Problem solving in difficult field conditions</strong></li>
+      </ul>
+
+      <p>
+        He understands how to balance design, budget, and practicality — and most importantly, how to protect
+        clients from scope gaps, bad assumptions, inflated allowances, and change-order traps that drive costs
+        beyond expectations.
+      </p>
+
+      <p>
+        Now, Jeff focuses solely on <strong>homeowner advocacy and consulting</strong>. His goal is simple:
+      </p>
+
+      <blockquote>
+        <strong>Help homeowners make smart decisions before they sign.</strong>
+      </blockquote>
+
+      <p>
+        He reviews bids, compares proposals, translates contractor language into plain English, and guides clients
+        step-by-step so they feel confident in their choices. With Jeff, there’s no selling, no commissions, and
+        no agenda — just straight, honest guidance backed by real-world experience.
+      </p>
+
+      <p><em>No pressure. No nonsense. Just someone who’s done the work and knows how to keep you protected.</em></p>
+    </section>
+
+    <!-- Hero / Value -->
+    <section class="hero">
+      <h2>Protect yourself <span class="pill">Advisory-Only</span><span class="pill">100% homeowner advocate</span></h2>
+      <p>
+        I help DFW homeowners make confident choices before signing remodeling or construction contracts.
+        I review contractor bids, spot red flags, compare options, sanity-check budgets &amp; timelines,
+        and help you avoid change-order traps. All work is done by <strong>phone, Zoom, or email</strong>.
+        No contractor sales. No commissions.
+      </p>
+
+      <div class="badges">
+        <span class="badge">✔ Independent &amp; Unbiased</span>
+        <span class="badge">✔ Reduce Risk &amp; Save Money</span>
+        <span class="badge">✔ Clear, Plain-English Guidance</span>
+      </div>
+
+      <div class="cta">
+        <a class="btn" href="tel:+19072323244">📞 907-232-3244</a>
+        <a class="btn" href="mailto:mustangbuildings@outlook.com">✉️ mustangbuildings@outlook.com</a>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="card span12">
+      <h2>Services &amp; Pricing</h2>
+
+      <div class="pricing">
+        <div class="price-card">
+          <div class="price-row">
+            <h3>Bid + Contractor Review</h3>
+            <div class="price-amt">$600</div>
+          </div>
+          <ul class="muted">
+            <li><span class="check">✓</span> Fair pricing &amp; scope review</li>
+            <li><span class="check">✓</span> Hidden red-flag detection</li>
+            <li><span class="check">✓</span> Written findings + questions to ask</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-row">
+            <h3>Project Planning &amp; Scope Session</h3>
+            <div class="price-amt">$600</div>
+          </div>
+          <ul class="muted">
+            <li><span class="check">✓</span> Budget reality check &amp; timeline review</li>
+            <li><span class="check">✓</span> Order-of-work planning</li>
+            <li><span class="check">✓</span> Change-order prevention</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-row">
+            <h3>Second-Opinion Call</h3>
+            <div class="price-amt">$450</div>
+          </div>
+          <div class="price-note">60 minutes — phone or Zoom</div>
+        </div>
+
+        <div class="price-card highlight">
+          <div class="price-row">
+            <h3>60-Day Protection Plan</h3>
+            <div class="price-amt">$1,900</div>
+          </div>
+          <ul class="muted">
+            <li><span class="check">✓</span> Bid review + contractor vetting</li>
+            <li><span class="check">✓</span> Bi-weekly check-ins</li>
+            <li><span class="check">✓</span> Negotiation strategy &amp; change-order prevention</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:18px">Homeowner Advisor — Ongoing</h3>
+      <div class="pricing">
+        <div class="price-card">
+          <div class="price-row">
+            <strong>Basic</strong>
+            <div class="price-amt">$450/mo</div>
+          </div>
+          <ul class="muted">
+            <li><span class="check">✓</span> Email support</li>
+            <li><span class="check">✓</span> One 45-min call / month</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-row">
+            <strong>Premium</strong>
+            <div class="price-amt">$750/mo</div>
+          </div>
+          <ul class="muted">
+            <li><span class="check">✓</span> Email support + priority</li>
+            <li><span class="check">✓</span> Two calls / month</li>
+            <li><span class="check">✓</span> Light message support between calls</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="fine" style="margin-top:10px">
+        Pricing reflects advisory services only — <strong>not a contractor</strong>. No sales, no commissions.
+      </p>
+    </section>
+
+    <!-- Why Hire Me -->
+    <section class="card span12">
+      <h2>Why Hire Me?</h2>
+      <ul>
+        <li>40+ years experience; former general contractor in Alaska</li>
+        <li>Estimating, project management, and problem solving across residential and heavy commercial</li>
+        <li>Prevent surprises from scope gaps, inflated allowances, and unrealistic timelines</li>
+        <li>Independent and unbiased — I work for the <em>homeowner</em>, not the contractor</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <div class="grid">
+      <section class="card span6">
+        <h2>FAQ</h2>
+        <h3>Do you work on site?</h3>
+        <p>No — remote advisory only.</p>
+        <h3>Do you work outside DFW?</h3>
+        <p>Yes — phone / Zoom.</p>
+        <h3>Is this legal advice?</h3>
+        <p>No — construction guidance only.</p>
+      </section>
+
+      <section class="card span6">
+        <h2>Contact</h2>
+        <p>
+          <strong>Business:</strong> Mustang Buildings LLC<br>
+          <strong>Phone:</strong> <a href="tel:+19072323244">907-232-3244</a><br>
+          <strong>Email:</strong> <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>
+        </p>
+        <p class="fine">Homeowner Construction Consulting advisory only — <strong>Not a contractor</strong>.</p>
+      </section>
+    </div>
+
+    <footer>
+      © Mustang Buildings LLC — All rights reserved.
+    </footer>
+
+  </div>
+</body>
+</html>
