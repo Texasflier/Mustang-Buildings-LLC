@@ -344,8 +344,9 @@ I provide independent <strong>construction consulting and homeowner advocacy</st
     var t = document.getElementById("thanks");
     if (t) t.style.display = "block";
     // clear the form so fields aren't still filled
-    var f = document.querySelector('<form action="https://formspree.io/f/xwkgyewz" method="POST">);
-    if (f) try { f.reset(); } catch(e){}
+   var f = document.querySelector('form[action^="https://formspree.io"]');
+if (f) try { f.reset(); } catch(e){}
+
   }
 })();
 </script>
