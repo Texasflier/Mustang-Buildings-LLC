@@ -4,203 +4,107 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mustang Buildings LLC & Consulting — Jeff Zweifel</title>
-  <meta name="description" content="Homeowner-focused construction consulting in the DFW Metro Area. 40+ years experience. Bid/estimate reviews, contract red‑flag checks, and pre‑construction advice. Call before you sign a contract." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mustang Buildings LLC & Consulting — Jeff Zweifel" />
-  <meta property="og:description" content="Protect your project before you sign. Bid/estimate reviews • Contract red‑flag checks • Pre‑construction consults." />
-  <meta property="og:type" content="website" />
-
-  <!-- Tailwind via CDN (works on GitHub Pages) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <meta name="description" content="Homeowner-focused construction consulting in the DFW Metro Area. Call before you sign a contract." />
   <style>
-    /* Logo sizing preference */
-    .logo { max-width: 250px; }
-    /* Subtle grid background */
-    .grid-bg {
-      background-image: linear-gradient(to right, rgba(0,0,0,.04) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(0,0,0,.04) 1px, transparent 1px);
-      background-size: 24px 24px;
+    :root {
+      --bg: #ffffff;       /* keep your original simple look */
+      --text: #1f2937;     /* slate-ish text */
+      --muted: #6b7280;    /* muted text */
+      --brand: #0f172a;    /* dark header/buttons */
+      --border: #e5e7eb;   /* light borders */
     }
-    /* Nice focus rings for a11y */
-    a:focus, button:focus { outline: 3px solid rgba(59,130,246,.6); outline-offset: 2px; }
+    html, body { margin:0; padding:0; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.5; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+    header { padding: 28px 0 16px; text-align: center; border-bottom: 1px solid var(--border); }
+    .logo { max-width: 250px; height: auto; display:block; margin: 0 auto 12px; }
+    h1 { font-size: 28px; margin: 8px 0 0; }
+    .tag { margin-top: 6px; color: var(--muted); font-size: 16px; }
+    .cta { margin-top: 16px; display:flex; gap:10px; justify-content:center; flex-wrap: wrap; }
+    .btn { display:inline-block; padding: 10px 14px; border-radius: 8px; text-decoration: none; border:1px solid var(--border); color: var(--text); }
+    .btn.primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+    section { padding: 28px 0; }
+    section + section { border-top: 1px solid var(--border); }
+    h2 { font-size: 22px; margin: 0 0 12px; }
+    ul { padding-left: 18px; }
+    footer { border-top: 1px solid var(--border); padding: 18px 0; color: var(--muted); font-size: 14px; text-align:center; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col bg-slate-50 text-slate-800">
-  <!-- Sticky contact bar -->
-  <div class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 py-2 flex items-center justify-between text-sm">
-      <div class="font-semibold">Mustang Buildings LLC & Consulting</div>
-      <div class="flex items-center gap-3">
-        <a class="px-3 py-1 rounded-full border border-slate-300 hover:bg-slate-100" href="tel:+19072323244">Call 907‑232‑3244</a>
-        <a class="px-3 py-1 rounded-full border border-slate-300 hover:bg-slate-100" href="mailto:mustangbuildings@outlook.com">Email</a>
+<body>
+  <!-- HEADER (re-inserting your logo prominently; replace src with your exact file path) -->
+  <header>
+    <div class="wrap">
+      <img class="logo" src="./images/logo.png" alt="Mustang Buildings LLC logo" />
+      <h1>Mustang Buildings LLC & Consulting — DFW Metro Area</h1>
+      <div class="tag">Homeowner Construction Consulting • 40+ years experience • Call before you sign a contract</div>
+      <div class="cta">
+        <a class="btn primary" href="tel:+19072323244">Call 907‑232‑3244</a>
+        <a class="btn" href="mailto:mustangbuildings@outlook.com">Email</a>
+        <a class="btn" href="#reviews">★ Leave a Review</a>
       </div>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <header class="grid-bg">
-    <div class="max-w-5xl mx-auto px-4 py-16 md:py-24 text-center">
-      <img src="./images/logo.png" alt="Mustang Buildings LLC logo" class="logo mx-auto mb-6" onerror="this.style.display='none'" />
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
-        Homeowner Construction Consulting — DFW Metro Area
-      </h1>
-      <p class="mt-4 text-lg md:text-xl text-slate-600">
-        40+ years experience. Independent advice for homeowners.
-      </p>
-      <p class="mt-2 md:mt-3 text-base md:text-lg font-semibold">
-        <span class="inline-block bg-yellow-200 px-2 py-1 rounded">Call me <em>before</em> you sign a contract.</span>
-      </p>
-      <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-3">
-        <a href="tel:+19072323244" class="inline-flex items-center justify-center rounded-xl px-5 py-3 bg-slate-900 text-white hover:bg-slate-800 shadow">
-          📞 Schedule a Call
-        </a>
-        <a href="mailto:mustangbuildings@outlook.com?subject=Consultation%20Request" class="inline-flex items-center justify-center rounded-xl px-5 py-3 border border-slate-300 hover:bg-white shadow">
-          ✉️ Request by Email
-        </a>
-        <a id="reviewsBtn" href="#reviews" class="inline-flex items-center justify-center rounded-xl px-5 py-3 border border-slate-300 hover:bg-white">
-          ★ Leave a Review
-        </a>
-      </div>
-      <p class="mt-2 text-sm text-slate-500">(Google reviews link will appear here once indexing is complete.)</p>
     </div>
   </header>
 
-  <!-- What I Do -->
-  <section class="bg-white border-y border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 py-12 md:py-16">
-      <h2 class="text-2xl md:text-3xl font-bold">How I Help Homeowners</h2>
-      <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl border border-slate-200 shadow-sm bg-slate-50">
-          <h3 class="font-semibold text-lg">Bid / Estimate Reviews</h3>
-          <p class="mt-2 text-slate-600">Clarity on scope, allowances, exclusions, and pricing so you understand what you’re buying.</p>
-        </div>
-        <div class="p-6 rounded-2xl border border-slate-200 shadow-sm bg-slate-50">
-          <h3 class="font-semibold text-lg">Contract Red‑Flag Check</h3>
-          <p class="mt-2 text-slate-600">Spot risky clauses and missing protections. Plain‑English notes you can discuss with your contractor or attorney.</p>
-        </div>
-        <div class="p-6 rounded-2xl border border-slate-200 shadow-sm bg-slate-50">
-          <h3 class="font-semibold text-lg">Pre‑Construction Consult</h3>
-          <p class="mt-2 text-slate-600">Independent guidance on sequencing, timelines, and realistic expectations before work begins.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section>
-    <div class="max-w-5xl mx-auto px-4 py-12 md:py-16">
-      <h2 class="text-2xl md:text-3xl font-bold">Simple, Straightforward Process</h2>
-      <ol class="mt-6 grid md:grid-cols-3 gap-6 list-decimal list-inside">
-        <li class="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <span class="font-semibold">Reach out.</span> Call or email with your goals and documents.
-        </li>
-        <li class="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <span class="font-semibold">Document review.</span> I assess your bid/contract and summarize findings in clear notes.
-        </li>
-        <li class="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <span class="font-semibold">Discuss options.</span> We walk the notes together and set next steps that fit your project.
-        </li>
-      </ol>
-      <div class="mt-6 text-sm text-slate-500">Remote by phone/Zoom or via email—fast turnaround available.</div>
-    </div>
-  </section>
-
-  <!-- Pricing (adjust anytime) -->
-  <section class="bg-white border-y border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 py-12 md:py-16">
-      <h2 class="text-2xl md:text-3xl font-bold">Transparent Pricing</h2>
-      <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <h3 class="font-semibold">Quick Look</h3>
-          <p class="text-sm text-slate-500">Best for a single estimate or short contract</p>
-          <p class="mt-4 text-3xl font-extrabold">$149</p>
-          <ul class="mt-3 text-sm space-y-1">
-            <li>30‑min call</li>
-            <li>Top 5 risks & notes</li>
-          </ul>
-        </div>
-        <div class="p-6 rounded-2xl border border-slate-200 shadow-sm ring-2 ring-slate-900">
-          <h3 class="font-semibold">Standard Review</h3>
-          <p class="text-sm text-slate-500">Most popular</p>
-          <p class="mt-4 text-3xl font-extrabold">$299</p>
-          <ul class="mt-3 text-sm space-y-1">
-            <li>Up to 2 bids/contracts</li>
-            <li>Written summary (PDF)</li>
-            <li>45‑min walkthrough call</li>
-          </ul>
-        </div>
-        <div class="p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <h3 class="font-semibold">Comprehensive</h3>
-          <p class="text-sm text-slate-500">For larger or complex scopes</p>
-          <p class="mt-4 text-3xl font-extrabold">Custom</p>
-          <ul class="mt-3 text-sm space-y-1">
-            <li>Multiple bids/contracts</li>
-            <li>Line‑by‑line analysis</li>
-            <li>Priority turnaround</li>
-          </ul>
-        </div>
-      </div>
-      <div class="mt-6 text-sm text-slate-500">No negotiating on your behalf. I provide independent homeowner advisory only.</div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section>
-    <div class="max-w-5xl mx-auto px-4 py-12 md:py-16 grid md:grid-cols-3 gap-8 items-start">
-      <div class="md:col-span-2">
-        <h2 class="text-2xl md:text-3xl font-bold">About Jeff Zweifel</h2>
-        <p class="mt-4 text-slate-700">I’ve spent 40+ years as a general contractor, with most of my career in Alaska. My wife and I relocated to Texas in 2022, and I now focus exclusively on helping homeowners in the DFW Metro Area make confident decisions <em>before</em> they sign.</p>
-        <p class="mt-3 text-slate-700">I’m not a lawyer and I don’t negotiate with contractors. I translate construction language into plain English and spotlight what matters for your project.</p>
-      </div>
-      <aside class="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
-        <div class="font-semibold">Contact</div>
-        <div class="mt-2 text-sm">
-          <div>📞 <a class="underline" href="tel:+19072323244">907‑232‑3244</a></div>
-          <div>✉️ <a class="underline" href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a></div>
-          <div>📍 DFW Metro Area, Texas</div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Reviews placeholder / testimonial intake -->
-  <section id="reviews" class="bg-white border-y border-slate-200">
-    <div class="max-w-5xl mx-auto px-4 py-12 md:py-16">
-      <h2 class="text-2xl md:text-3xl font-bold">Reviews</h2>
-      <p class="mt-2 text-slate-600">Once Google finishes indexing, a direct link to leave a public review will appear here. Until then, feel free to send a testimonial by email.</p>
-      <div class="mt-4 flex flex-wrap gap-3">
-        <a href="mailto:mustangbuildings@outlook.com?subject=Testimonial%20for%20Mustang%20Buildings%20LLC" class="inline-flex items-center justify-center rounded-xl px-5 py-3 border border-slate-300 hover:bg-white">✍️ Email a Testimonial</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Disclaimers -->
-  <section>
-    <div class="max-w-5xl mx-auto px-4 py-10">
-      <h2 class="text-xl font-bold">Important Disclaimers</h2>
-      <ul class="mt-3 text-sm text-slate-600 space-y-1 leading-relaxed">
-        <li>Advisory services for homeowners only. I do not negotiate with contractors.</li>
-        <li>Not legal advice. For legal interpretations or contract drafting, consult a licensed attorney.</li>
-        <li>No guarantees or warranties are made regarding contractor performance or project outcomes.</li>
+  <!-- SERVICES (kept simple; no layout overhaul) -->
+  <section id="services">
+    <div class="wrap">
+      <h2>How I Help Homeowners</h2>
+      <ul>
+        <li>Bid / Estimate Reviews — clarity on scope, allowances, exclusions, pricing.</li>
+        <li>Contract Red‑Flag Checks — spot risky clauses and missing protections.</li>
+        <li>Pre‑Construction Consult — independent guidance before work begins.</li>
       </ul>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="mt-auto border-t border-slate-200 bg-white">
-    <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
-      <div>© <span id="year"></span> Mustang Buildings LLC & Consulting. All rights reserved.</div>
-      <div>
-        <a class="underline" href="#">Top</a>
-      </div>
+  <!-- PROCESS (simple list) -->
+  <section id="process">
+    <div class="wrap">
+      <h2>Simple Process</h2>
+      <ol>
+        <li>Reach out with your goals and documents (PDFs, bids, contracts).</li>
+        <li>I review and provide clear notes in plain English.</li>
+        <li>We discuss options and next steps on a short call.</li>
+      </ol>
     </div>
+  </section>
+
+  <!-- ABOUT (keeping your Alaska background & DFW relocation) -->
+  <section id="about">
+    <div class="wrap">
+      <h2>About Jeff Zweifel</h2>
+      <p>I’ve spent 40+ years as a general contractor, most of it in Alaska. My wife and I moved to Texas in 2022. Now I focus on helping DFW homeowners make confident decisions <em>before</em> they sign.</p>
+      <p>I don’t negotiate with contractors and I’m not a lawyer; I translate construction language into plain English and highlight what matters.</p>
+      <p><strong>Contact:</strong> 907‑232‑3244 • mustangbuildings@outlook.com • DFW Metro Area</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS (placeholder only; no external changes) -->
+  <section id="reviews">
+    <div class="wrap">
+      <h2>Reviews</h2>
+      <p>When your Google review link is ready, it will go here. Until then, you can send a testimonial by email.</p>
+      <p><a class="btn" href="mailto:mustangbuildings@outlook.com?subject=Testimonial%20for%20Mustang%20Buildings%20LLC">✍️ Email a Testimonial</a></p>
+    </div>
+  </section>
+
+  <!-- DISCLAIMERS (your requested language) -->
+  <section id="disclaimers">
+    <div class="wrap">
+      <h2>Important Disclaimers</h2>
+      <ul>
+        <li>Advisory services for homeowners only; I do not negotiate with contractors.</li>
+        <li>Not legal advice. For legal interpretations or drafting, consult a licensed attorney.</li>
+        <li>No guarantees or warranties regarding contractor performance or outcomes.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Mustang Buildings LLC & Consulting. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
 
