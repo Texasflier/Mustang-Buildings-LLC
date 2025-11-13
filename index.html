@@ -42,7 +42,6 @@ header{display:flex;flex-direction:column;align-items:center;gap:10px;text-align
 h1{font-size:clamp(28px,3.4vw,40px);margin:0}
 .sub{font-weight:600;margin-top:-6px}
 .tag{color:var(--muted)}
-/* Hero */
 .hero{
   background:var(--accent-2);
   border:1px solid var(--border);
@@ -57,7 +56,6 @@ h1{font-size:clamp(28px,3.4vw,40px);margin:0}
   padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264
 }
 .pill{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264;margin-left:8px}
-/* Cards / grid */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
 .card{
   grid-column:span 12;
@@ -73,7 +71,6 @@ h3{margin:16px 0 8px}
 ul{margin:6px 0 0 20px}
 .muted{color:var(--muted)}
 .fine{font-size:13px;color:#6b7280}
-/* Pricing */
 .pricing{display:grid;gap:16px;margin-top:8px}
 @media (min-width:840px){ .pricing{grid-template-columns:repeat(2,1fr)} }
 .price-card{
@@ -87,14 +84,12 @@ ul{margin:6px 0 0 20px}
 .price-card.highlight{border-color:#cfead9; box-shadow:0 10px 28px rgba(23,138,74,.10)}
 .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
 .price-amt{font-size:24px;font-weight:800;color:#0f2547}
-/* CTA buttons */
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
 .btn{
   display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;
   border:1px solid var(--border);background:#ffffff;color:#0f2547;font-weight:700;box-shadow:var(--shadow)
 }
 .btn:hover{filter:brightness(1.03)}
-/* Zinger callout */
 .callout{
   background:#fff8e6;
   border:1px solid #f5e4b0;
@@ -109,6 +104,7 @@ ul{margin:6px 0 0 20px}
 </head>
 <body>
 <div class="wrap">
+
   <!-- Header with inline SVG logo -->
   <header>
     <svg class="logo" viewBox="0 0 600 220" role="img" aria-label="Mustang Buildings LLC & Consulting logo">
@@ -117,14 +113,11 @@ ul{margin:6px 0 0 20px}
           <stop offset="0" stop-color="#2e8ec9"/><stop offset="1" stop-color="#53b6ff"/>
         </linearGradient>
       </defs>
-      <!-- roof -->
       <polygon points="300,25 75,120 110,120 300,45 490,120 525,120" fill="url(#roofGrad)"/>
-      <!-- truss lines -->
       <polyline points="110,120 300,45 490,120" fill="none" stroke="#8fb9d9" stroke-width="4"/>
       <polyline points="300,45 300,120" fill="none" stroke="#8fb9d9" stroke-width="3"/>
       <polyline points="225,82 300,120 375,82" fill="none" stroke="#8fb9d9" stroke-width="2"/>
       <polyline points="187,98 300,120 413,98" fill="none" stroke="#8fb9d9" stroke-width="2"/>
-      <!-- wordmark -->
       <text x="50%" y="175" text-anchor="middle" font-size="46" fill="#0b1220" font-weight="700" style="font-family: system-ui,-apple-system,Arial,sans-serif;">Mustang Buildings</text>
       <text x="50%" y="206" text-anchor="middle" font-size="24" fill="#475569" style="font-family: system-ui,-apple-system,Arial,sans-serif;letter-spacing:.4px">LLC & Consulting</text>
     </svg>
@@ -228,8 +221,8 @@ ul{margin:6px 0 0 20px}
   <section class="card" style="background:#fff">
     <h2 style="margin-bottom:8px">What homeowners say</h2>
     <blockquote style="margin:10px 0;padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px">
-      “Jeff saved us thousands by catching missing scope in two bids. He explained everything in plain English and helped us push back on a bad allowance.” <br>
-      <span class="muted">— DFW homeowner</span>
+      “Jeff saved us thousands by catching missing scope in two bids. He explained everything in plain English and helped us push back on a bad allowance.”
+      <br><span class="muted">— DFW homeowner</span>
     </blockquote>
   </section>
 
@@ -286,7 +279,7 @@ ul{margin:6px 0 0 20px}
     </section>
   </div>
 
-  <!-- Reviews Section -->
+  <!-- Reviews -->
   <section class="card" style="background:#fff;text-align:center;margin-top:24px;padding:20px;border-radius:12px;border:1px solid #e6ecf3;box-shadow:0 6px 24px rgba(15,30,60,.06);">
     <h2>Share Your Experience</h2>
     <p class="muted" style="max-width:640px;margin:10px auto 18px;">
@@ -303,7 +296,6 @@ ul{margin:6px 0 0 20px}
     <p class="muted" style="max-width:680px;margin:8px auto 18px;">
       Use these quick forms to get started, send details, confirm payment, or share feedback.
     </p>
-
     <div class="cta" style="justify-content:center;">
       <a class="btn" href="https://forms.gle/NEW_CLIENT_INTAKE" target="_blank">📝 New Client Intake</a>
       <a class="btn" href="https://forms.gle/CONSULT_REQUEST" target="_blank">📅 Consultation Request</a>
@@ -312,10 +304,9 @@ ul{margin:6px 0 0 20px}
     </div>
   </section>
 
-  <!-- Request a Consultation (form with button that works) -->
+  <!-- Request a Consultation (form with working button) -->
   <section id="consult-card" class="card" style="background:#fff;margin-top:24px;padding:20px;border-radius:12px;border:1px solid #e6ecf3;box-shadow:0 6px 24px rgba(15,30,60,.06);">
     <h2 style="text-align:center;">Request a Consultation</h2>
-
     <form id="consultation-form">
       <input type="text" name="name" placeholder="Your name" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
       <input type="email" name="email" placeholder="Email" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
@@ -330,7 +321,7 @@ ul{margin:6px 0 0 20px}
     <a href="https://1drv.ms/u/FILE_REQUEST_LINK" target="_blank">📤 Upload Documents</a>
   </p>
 
-  <!-- Thank-you card (shown after form submit) -->
+  <!-- Thank-you card -->
   <section id="thanks" class="card" style="display:none;background:#f6fff9;text-align:center;margin-top:24px;padding:20px;border-radius:12px;border:1px solid #cfead9;box-shadow:0 6px 24px rgba(15,30,60,.06);">
     <h2>✅ Thank you!</h2>
     <p class="muted" style="max-width:600px;margin:10px auto;">
@@ -338,7 +329,7 @@ ul{margin:6px 0 0 20px}
     </p>
   </section>
 
-  <!-- Email alternative CTA -->
+  <!-- Email alternative -->
   <section class="card" style="background:#fff;margin-top:24px;padding:20px;border-radius:12px;border:1px solid #e6ecf3;box-shadow:0 6px 24px rgba(15,30,60,.06);">
     <h2 style="text-align:center;">Request a Consultation by Email</h2>
     <div style="max-width:680px;margin:12px auto 0;display:grid;gap:10px;">
@@ -364,9 +355,9 @@ ul{margin:6px 0 0 20px}
     © Mustang Buildings LLC &amp; Consulting — All rights reserved. Advisory-only services.
     I do not negotiate directly with contractors for clients and do not provide legal advice.
   </footer>
+
 </div>
 
-<!-- Form behavior: make the button actually do something -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('consultation-form');
@@ -375,12 +366,8 @@ ul{margin:6px 0 0 20px}
 
     if (form && consultCard && thanks) {
       form.addEventListener('submit', function (event) {
-        event.preventDefault(); // stop page reload
-
-        // hide the form card
+        event.preventDefault();
         consultCard.style.display = 'none';
-
-        // show the thank-you card
         thanks.style.display = 'block';
         thanks.scrollIntoView({ behavior: 'smooth' });
       });
