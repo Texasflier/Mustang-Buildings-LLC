@@ -209,7 +209,6 @@ h3{margin:16px 0 8px}
     <a class="btn" href="tel:+19072323244">📞 907-232-3244</a>
     <a class="btn" href="mailto:mustangbuildings@outlook.com">✉️ Email Jeff</a>
     <a class="btn" href="consulting-agreement.pdf" target="_blank">📄 View Agreement</a>
-    <!-- FORMS BUTTON NOW SCROLLS TO FORMS SECTION -->
     <a class="btn" href="#forms-section" id="forms-btn">📝 Forms</a>
   </div>
 
@@ -356,8 +355,8 @@ h3{margin:16px 0 8px}
 <section id="forms-section" class="card">
   <h2>Forms</h2>
   <p class="muted" style="margin-top:0;">
-    Use these quick forms to share project details, confirm payment, or leave a testimonial.
-    Submissions go directly to my email.
+    Use these quick forms to share project details or leave a testimonial.  
+    Online payment options (Zelle / PayPal / Venmo) will be added separately.
   </p>
 
   <!-- New Client Intake -->
@@ -384,37 +383,13 @@ h3{margin:16px 0 8px}
     <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Intake Form</button>
   </form>
 
-  <!-- Payment Confirmation -->
-  <h3>💳 Payment Confirmation</h3>
-  <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
-    <input type="hidden" name="_subject" value="Payment Confirmation Form">
-    <input type="hidden" name="Form Type" value="Payment Confirmation">
-
-    <input type="text" name="name" placeholder="Your name" required
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="email" name="email" placeholder="Email" required
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="text" name="invoice_number" placeholder="Invoice or reference number"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="text" name="amount" placeholder="Amount paid"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="date" name="payment_date" placeholder="Payment date"
-           style="padding:10px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="text" name="method" placeholder="Payment method (Zelle, card, etc.)"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <textarea name="notes" rows="3" placeholder="Notes (optional)"
-              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
-
-    <button type="submit" class="btn" style="width:100%;justify-content:center;">✅ Confirm Payment</button>
-  </form>
-
   <!-- Testimonial / Review -->
   <h3>⭐ Testimonial / Review</h3>
   <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
     <input type="hidden" name="_subject" value="Testimonial / Review Form">
     <input type="hidden" name="Form Type" value="Testimonial / Review">
 
-    <input type="text" name="name" placeholder="Your name (how you'd like it shown)" 
+    <input type="text" name="name" placeholder="Your name (how you'd like it shown)"
            style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
     <input type="email" name="email" placeholder="Email (not shown publicly)"
            style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
