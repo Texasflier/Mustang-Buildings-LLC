@@ -69,7 +69,7 @@ header{text-align:center;margin:4px 0 10px}
   .card.span6{grid-column:span 6}
 }
 
-/* Pricing layout (2-wide, like original) */
+/* Pricing layout (2-wide) */
 .pricing{
   display:grid;
   gap:16px;
@@ -112,9 +112,20 @@ header{text-align:center;margin:4px 0 10px}
   cursor:pointer;
 }
 .btn:hover{filter:brightness(1.03)}
+
 .cta{
   display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;
+  align-items:center;
 }
+
+/* Yellow FORMS Button */
+#forms-btn{
+  background:#FDE68A; 
+  border:1px solid #E5C755;
+  color:#5A4500;
+  font-weight:700;
+}
+#forms-btn:hover{filter:brightness(1.05)}
 
 /* Big Services button bar */
 .services-bar{
@@ -138,9 +149,7 @@ header{text-align:center;margin:4px 0 10px}
   width:280px;
   justify-content:center;
 }
-.big-service-btn:hover{
-  filter:brightness(1.1);
-}
+.big-service-btn:hover{filter:brightness(1.1)}
 
 /* Callout */
 .callout{
@@ -166,7 +175,7 @@ h3{margin:16px 0 8px}
 
 <!-- HEADER -->
 <header>
-  <svg class="logo" viewBox="0 0 600 220" role="img" aria-label="Mustang Buildings LLC & Consulting logo">
+  <svg class="logo" viewBox="0 0 600 220">
     <defs>
       <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0" stop-color="#2e8ec9"/><stop offset="1" stop-color="#53b6ff"/>
@@ -200,6 +209,9 @@ h3{margin:16px 0 8px}
     <a class="btn" href="tel:+19072323244">📞 907-232-3244</a>
     <a class="btn" href="mailto:mustangbuildings@outlook.com">✉️ Email Jeff</a>
     <a class="btn" href="consulting-agreement.pdf" target="_blank">📄 View Agreement</a>
+
+    <!-- NEW FORMS BUTTON (Yellow) -->
+    <a class="btn" href="#" id="forms-btn">📝 Forms</a>
   </div>
 
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
@@ -210,7 +222,7 @@ h3{margin:16px 0 8px}
   <p><strong>⚠️ Call me before you sign a construction contract — once you sign, your options are limited.</strong></p>
 </section>
 
-<!-- BIG BUTTON BAR UNDER WARNING -->
+<!-- BIG SERVICES BUTTON -->
 <section class="services-bar">
   <p class="muted" style="margin:0 0 6px 0;">
     When you’re ready for details, open my current services and pricing below.
@@ -220,139 +232,94 @@ h3{margin:16px 0 8px}
   </button>
 </section>
 
-<!-- FULL SERVICES & PRICING (LOWEST → HIGHEST) -->
+<!-- SERVICES & PRICING -->
 <section id="services-section" class="card" style="display:none; margin-top:20px;">
   <h2>Services &amp; Pricing</h2>
 
   <div class="pricing">
-    <!-- 1. Second-Opinion Call — $450 -->
+
+    <!-- 450 -->
     <div class="price-card">
-      <div class="price-row">
-        <h3>Second-Opinion Call</h3>
-        <div class="price-amt">$450</div>
-      </div>
-      <div class="muted">
-        60 minutes — phone or Zoom. Bring your bids, concerns, or “something doesn’t feel right” questions and I’ll walk through them with you.
-      </div>
+      <div class="price-row"><h3>Second-Opinion Call</h3><div class="price-amt">$450</div></div>
+      <div class="muted">60 minutes — phone or Zoom. Bring your bids or concerns.</div>
     </div>
 
-    <!-- 2. Homeowner Advisor — Basic — $450/mo -->
+    <!-- 450/mo -->
     <div class="price-card">
-      <div class="price-row">
-        <strong>Homeowner Advisor — Basic</strong>
-        <div class="price-amt">$450/mo</div>
-      </div>
+      <div class="price-row"><strong>Homeowner Advisor — Basic</strong><div class="price-amt">$450/mo</div></div>
+      <ul class="muted"><li>Email support</li><li>One 60-min call per month</li></ul>
+    </div>
+
+    <!-- 600 -->
+    <div class="price-card">
+      <div class="price-row"><h3>Bid + Contractor Review</h3><div class="price-amt">$600</div></div>
       <ul class="muted">
-        <li>Email support for questions during your project.</li>
-        <li>One 60-minute call per month.</li>
-        <li>Good fit if you want a steady “second set of eyes” as you go.</li>
+        <li>Review contractor bids</li>
+        <li>Spot missing scope</li>
+        <li>Red-flag detection</li>
       </ul>
     </div>
 
-    <!-- 3. Bid + Contractor Review — $600 -->
+    <!-- 600 -->
     <div class="price-card">
-      <div class="price-row">
-        <h3>Bid + Contractor Review</h3>
-        <div class="price-amt">$600</div>
-      </div>
+      <div class="price-row"><h3>Project Planning &amp; Scope Session</h3><div class="price-amt">$600</div></div>
       <ul class="muted">
-        <li>Review contractor bids for fair pricing &amp; complete scope.</li>
-        <li>Identify missing line items, vague allowances, and hidden red flags.</li>
-        <li>Written findings plus a list of questions you can take back to your contractor.</li>
+        <li>Budget & timeline review</li>
+        <li>Order-of-work planning</li>
+        <li>Change-order prevention</li>
       </ul>
     </div>
 
-    <!-- 4. Project Planning & Scope Session — $600 -->
+    <!-- 750/mo -->
     <div class="price-card">
-      <div class="price-row">
-        <h3>Project Planning &amp; Scope Session</h3>
-        <div class="price-amt">$600</div>
-      </div>
-      <ul class="muted">
-        <li>Walk through goals, budget, and timeline.</li>
-        <li>Reality-check schedule and logistics before you sign.</li>
-        <li>Help prevent scope creep and surprise change-orders.</li>
-      </ul>
+      <div class="price-row"><strong>Homeowner Advisor — Premium</strong><div class="price-amt">$750/mo</div></div>
+      <ul class="muted"><li>Email support + priority</li><li>Two 60-min calls / month</li></ul>
     </div>
 
-    <!-- 5. Homeowner Advisor — Premium — $750/mo -->
-    <div class="price-card">
-      <div class="price-row">
-        <strong>Homeowner Advisor — Premium</strong>
-        <div class="price-amt">$750/mo</div>
-      </div>
-      <ul class="muted">
-        <li>Email support with priority response.</li>
-        <li>Two 60-minute calls per month.</li>
-        <li>Light messaging support for quick “gut check” questions.</li>
-      </ul>
-    </div>
-
-    <!-- 6. 60-Day Protection Plan — $1,900 -->
+    <!-- 1900 -->
     <div class="price-card highlight">
-      <div class="price-row">
-        <h3>60-Day Protection Plan</h3>
-        <div class="price-amt">$1,900</div>
-      </div>
+      <div class="price-row"><h3>60-Day Protection Plan</h3><div class="price-amt">$1,900</div></div>
       <ul class="muted">
-        <li>Bid review + contractor vetting at the start of your project.</li>
-        <li>Bi-weekly check-ins during the most critical 60 days.</li>
-        <li>Strategy and guidance when something doesn’t look right.</li>
+        <li>Bid review + contractor vetting</li>
+        <li>Bi-weekly check-ins</li>
+        <li>Strategy guidance & prevention</li>
       </ul>
     </div>
+
   </div>
 
   <p class="fine" style="margin-top:10px;">
-    Advisory services only — <strong>Not a contractor</strong>. No sales, no commissions.
+    Advisory services only — <strong>Not a contractor</strong>.
   </p>
 </section>
 
 <!-- ABOUT JEFF -->
 <section class="card">
   <h2>About Jeff</h2>
-  <p>
-    <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong>, working on everything
-    from private homes and remodels to large-scale commercial and industrial projects — including remote locations where logistics,
-    weather, budgets, and schedules demand serious planning and adaptability.
-  </p>
-  <ul class="muted">
-    <li>Estimating &amp; cost control</li>
-    <li>Project management &amp; scheduling</li>
-    <li>Quality Control</li>
-    <li>Problem solving in difficult field conditions</li>
-  </ul>
-  <p>
-    Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language
-    into plain English, and guiding clients step-by-step so they can make confident decisions before they sign.
-  </p>
+  <p><strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong> across Alaska …</p>
 </section>
 
 <!-- TESTIMONIAL -->
 <section class="card">
   <h2>What homeowners say</h2>
   <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px;margin:10px 0;">
-    “Jeff saved us thousands by catching missing scope in two bids. He explained everything in plain English and helped us push back on a bad allowance.”
-    <br><span class="muted">— DFW homeowner</span>
+    “Jeff saved us thousands …” <br><span class="muted">— DFW homeowner</span>
   </blockquote>
 </section>
 
 <!-- DISCLAIMER -->
 <section class="card">
   <h2>Important Disclaimer</h2>
-  <p class="muted">
-    I provide independent <strong>construction consulting and homeowner advocacy</strong>.
-    I do not negotiate directly with contractors on your behalf, do not act as an agent or representative, and do not provide legal advice.
-    I can help you prepare for negotiations with strategy, questions, and documentation.
-  </p>
+  <p class="muted">I do not negotiate directly with contractors. I do not provide legal advice.</p>
 </section>
 
 <!-- FAQ & CONTACT -->
 <div class="grid">
   <section class="card span6">
     <h2>FAQ</h2>
-    <p><strong>Do you work onsite?</strong> No — remote advisory only.</p>
-    <p><strong>Do you work outside DFW?</strong> Yes — phone / Zoom.</p>
-    <p><strong>Is this legal advice?</strong> No — construction guidance only.</p>
+    <p><strong>Do you work onsite?</strong> No.</p>
+    <p><strong>Do you work outside DFW?</strong> Yes.</p>
+    <p><strong>Is this legal advice?</strong> No.</p>
   </section>
 
   <section class="card span6">
@@ -363,7 +330,6 @@ h3{margin:16px 0 8px}
       <strong>Phone:</strong> <a href="tel:+19072323244">907-232-3244</a><br>
       <strong>Email:</strong> <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>
     </p>
-    <p class="fine">Advisory-only — <strong>Not a contractor</strong>.</p>
   </section>
 </div>
 
@@ -371,7 +337,8 @@ h3{margin:16px 0 8px}
 <section class="card" id="consult-card">
   <h2 style="text-align:center;">Request a Consultation</h2>
   <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
-    <input type="hidden" name="_subject" value="New consultation request from website">
+
+    <input type="hidden" name="_subject" value="New consultation request">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://mustangbuildingsllc.com/#thanks">
 
@@ -384,47 +351,44 @@ h3{margin:16px 0 8px}
   </form>
 </section>
 
-<!-- THANK YOU -->
 <section id="thanks" class="card" style="display:none;">
   <h2>✅ Thank you!</h2>
-  <p class="muted">Your message has been sent. I’ll reply as soon as possible — usually within 24 hours.</p>
+  <p class="muted">Your message has been sent. I’ll reply as soon as possible.</p>
 </section>
 
-<!-- FOOTER -->
 <footer class="fine" style="margin-top:22px;text-align:center;">
-  © Mustang Buildings LLC &amp; Consulting — Advisory-only services.
+  © Mustang Buildings LLC & Consulting — Advisory-only services.
 </footer>
 
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // Toggle Services & Pricing section
+
+  // Toggle Services section
   var btn = document.getElementById('services-toggle');
   var section = document.getElementById('services-section');
   if (btn && section) {
     btn.addEventListener('click', function () {
       var hidden = section.style.display === 'none' || section.style.display === '';
       section.style.display = hidden ? 'block' : 'none';
-      if (hidden) {
-        section.scrollIntoView({ behavior:'smooth' });
-      }
+      if (hidden) section.scrollIntoView({ behavior:'smooth' });
     });
   }
 
-  // Thank-you state for form
+  // Thank you logic
   if (window.location.hash === "#thanks") {
-    var consultCard = document.getElementById("consult-card");
+    var formCard = document.getElementById("consult-card");
     var thanks = document.getElementById("thanks");
-    if (consultCard && thanks) {
-      consultCard.style.display = "none";
+    if (formCard && thanks) {
+      formCard.style.display = "none";
       thanks.style.display = "block";
       thanks.scrollIntoView({ behavior:"smooth" });
     }
   }
+
 });
 </script>
 
 </body>
 </html>
-
