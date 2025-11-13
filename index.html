@@ -4,57 +4,166 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mustang Buildings LLC & Consulting – Homeowner Advisory</title>
+  <meta name="description" content="Homeowner-focused construction consulting. 40+ years of experience helping homeowners review bids and contracts before they sign.">
   <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent: #111827;
+      --accent-soft: #1f2937;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f8fafc;
-      color: #333;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
     }
     header {
-      background: #1e293b;
-      color: white;
-      padding: 20px;
+      background: var(--accent);
+      color: #f9fafb;
+      padding: 18px 20px;
       text-align: center;
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 24px;
+      font-weight: 700;
     }
-    .container {
-      max-width: 850px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    header .sub {
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-top: 4px;
     }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      margin-top: 5px;
+    main {
+      max-width: 960px;
+      margin: 32px auto 40px;
+      padding: 0 16px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 30px rgba(15,23,42,0.06);
+      padding: 24px 22px;
+      margin-bottom: 24px;
+    }
+    .hero-card {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+    .hero-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .hero-title span {
+      color: #2563eb;
+    }
+    .hero-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .hero-highlight {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #e5f0ff;
+      color: #1d4ed8;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      text-align: left;
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0,2fr) minmax(0,1.5fr);
+      gap: 18px;
+    }
+    @media (max-width: 768px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+    .list {
+      padding-left: 18px;
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .list li {
+      margin-bottom: 6px;
+    }
+    .badge-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .badge-list li::before {
+      content: "• ";
+      color: #22c55e;
+      font-weight: 700;
     }
     .btn {
-      padding: 12px 18px;
-      border-radius: 10px;
-      border: 1px solid #e6ecf3;
-      background: #1e293b;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent-soft);
       color: white;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      font-size: 16px;
-      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-right: 8px;
     }
     .btn:hover {
-      background: #334155;
+      background: #374151;
+    }
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    .contact-row {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+    .contact-row a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+    .contact-row a:hover {
+      text-decoration: underline;
     }
     footer {
       text-align: center;
-      font-size: 14px;
-      margin-top: 60px;
-      padding: 20px;
-      color: #555;
+      font-size: 12px;
+      padding: 20px 16px 30px;
+      color: var(--text-muted);
+    }
+    .disclaimer {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 12px;
     }
   </style>
 </head>
@@ -63,28 +172,108 @@
 
 <header>
   Mustang Buildings LLC & Consulting
+  <div class="sub">Homeowner Construction Consulting • 40+ years as a general contractor</div>
 </header>
 
-<div class="container">
-  <h2>Request a Consultation</h2>
+<main>
 
-  <p style="text-align:center; margin-bottom:20px;">
-    Fastest way to reach me: click below and send your project details.
-  </p>
+  <!-- HERO / INTRO -->
+  <section class="card hero-card">
+    <div class="pill">Homeowner Advisory – Not a contractor, not a law firm</div>
+    <h1 class="hero-title">
+      Call me <span>before you sign</span> a contractor’s bid.
+    </h1>
+    <p class="hero-text">
+      I’m <span class="hero-highlight">Jeff Zweifel</span>, a homeowner advocate with
+      <span class="hero-highlight">40+ years</span> as a general contractor. I’ve built in Alaska and now serve
+      homeowners in the DFW area. My job is simple: help you understand bids, contracts, and “what’s missing”
+      <em>before</em> you hand over a deposit.
+    </p>
+    <p class="hero-text">
+      I walk through your project like a builder, not a salesperson – pointing out scope gaps, payment traps,
+      and change-order games that can cost you later.
+    </p>
+    <div style="margin-top:10px;">
+      <a class="btn"
+         href="mailto:mustangbuildings@outlook.com?subject=Consult%20Request%20-%20Mustang%20Buildings&body=Name%3A%0AProject%20Address%3A%0ABudget%3A%0ATimeline%3A%0ADetails%3A%0A">
+        📨 Send Request by Email
+      </a>
+      <a class="btn secondary" href="tel:+19072323244">
+        📞 Call Jeff: (907) 232-3244
+      </a>
+    </div>
+    <div class="contact-row">
+      Prefer email? Send bids or contracts as attachments:
+      <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>
+    </div>
+  </section>
 
-  <div style="text-align:center;">
-    <a href="mailto:mustangbuildings@outlook.com
-?subject=Consult%20Request%20-%20Mustang%20Buildings
-&body=Name%3A%0AProject%20Address%3A%0ABudget%3A%0ATimeline%3A%0ADetails%3A%0A"
-       class="btn">
-      📨 Send Request by Email
-    </a>
-  </div>
-</div>
+  <!-- SERVICES + ABOUT -->
+  <section class="card">
+    <div class="two-column">
+      <div>
+        <h2 class="section-title">How I help homeowners</h2>
+        <ul class="list">
+          <li><strong>Bid / estimate review</strong> – spot missing scope, vague allowances, and games with numbers.</li>
+          <li><strong>Contract “red flag” check</strong> – payment schedules, change orders, lien language, and warranty terms.</li>
+          <li><strong>Compare multiple bids</strong> – apples-to-apples so you can actually see who’s high, who’s low, and why.</li>
+          <li><strong>On-call second set of eyes</strong> – during construction, when surprises pop up.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">About Jeff</h2>
+        <p style="font-size:14px;color:var(--text-muted);">
+          I spent decades as a general contractor in Alaska before relocating to Texas in 2022.
+          I’ve seen good, bad, and everything in between – rushed bids, “free” change orders that weren’t free,
+          and contracts that left homeowners boxed in.
+        </p>
+        <ul class="badge-list">
+          <li>40+ years construction experience</li>
+          <li>Residential focus – additions, kitchens, baths, repairs</li>
+          <li>Now focused on protecting homeowners instead of selling jobs</li>
+        </ul>
+        <p class="disclaimer">
+          I don’t negotiate directly with your contractor and I don’t provide legal advice.
+          I give practical, builder-level feedback so <em>you</em> can decide with more confidence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMPLE PROCESS -->
+  <section class="card">
+    <h2 class="section-title">What working together looks like</h2>
+    <ol class="list" style="list-style:decimal;">
+      <li><strong>You send information.</strong> Email me your bid, contract, or questions about an upcoming project.</li>
+      <li><strong>We talk.</strong> Phone or email – whatever’s easier. I ask the same questions I’d ask if it were my own house.</li>
+      <li><strong>I flag issues.</strong> I point out what’s missing, what’s vague, and what I’d push back on.</li>
+      <li><strong>You decide next steps.</strong> Hire, wait, ask for changes, or get another bid – but with your eyes open.</li>
+    </ol>
+  </section>
+
+  <!-- CONTACT CARD -->
+  <section class="card">
+    <h2 class="section-title" style="text-align:center;">Ready when you are</h2>
+    <p style="font-size:14px;color:var(--text-muted);text-align:center;margin-bottom:14px;">
+      Send a short note with your goals, budget, and any bids or contracts you already have.
+    </p>
+    <div style="text-align:center;">
+      <a class="btn"
+         href="mailto:mustangbuildings@outlook.com?subject=Consult%20Request%20-%20Mustang%20Buildings&body=Name%3A%0AProject%20Address%3A%0ABudget%3A%0ATimeline%3A%0ADetails%3A%0A">
+        📨 Email Jeff about your project
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:10px;font-size:14px;color:var(--text-muted);">
+      Or call / text:
+      <a href="tel:+19072323244" style="color:#1d4ed8;text-decoration:none;">(907) 232-3244</a>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  © Mustang Buildings LLC & Consulting – All rights reserved.  
-  Advisory-only services. I do not negotiate directly with contractors for clients.
+  © Mustang Buildings LLC & Consulting – All rights reserved. Advisory-only services.
+  I do not negotiate directly with contractors for clients and do not provide legal advice.
 </footer>
 
 </body>
