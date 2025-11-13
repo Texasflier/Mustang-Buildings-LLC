@@ -31,12 +31,7 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:var(--max);margin:auto;padding:28px}
 header{text-align:center;margin:4px 0 10px}
-.logo{
-  width:400px;
-  max-width:95vw;
-  margin:12px auto 10px;
-}
-/* hero */
+.logo{width:400px;max-width:95vw;margin:12px auto 10px;}
 .hero{
   background:var(--accent-2);
   border:1px solid var(--border);
@@ -46,357 +41,207 @@ header{text-align:center;margin:4px 0 10px}
   margin:16px 0 18px;
 }
 .badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:10px;
-  justify-content:center;
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;justify-content:center;
 }
 .badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 12px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid var(--border);
-  color:#274264;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264;
 }
 .pill{
-  display:inline-block;
-  font-size:12px;
-  padding:4px 8px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid var(--border);
-  color:#274264;
-  margin-left:8px;
+  display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264;margin-left:8px;
 }
-/* cards & layout */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:18px;
-}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
 .card{
-  grid-column:span 12;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:20px;
-  box-shadow:var(--shadow);
+  grid-column:span 12;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)
 }
-@media(min-width:840px){
-  .card.span6{grid-column:span 6}
+@media(min-width:840px){.card.span6{grid-column:span 6}}
+.price-card{
+  border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;
 }
-h1{font-size:clamp(28px,3.4vw,40px);margin:0}
-h2{margin:0 0 12px;font-size:22px}
-h3{margin:16px 0 8px}
+.price-card.highlight{border-color:#cfead9;box-shadow:0 10px 28px rgba(23,138,74,.10)}
+.price-row{display:flex;justify-content:space-between;align-items:baseline}
+.price-amt{font-size:24px;font-weight:800;color:#0f2547}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:#ffffff;color:#0f2547;font-weight:700;box-shadow:var(--shadow);cursor:pointer;
+}
+.btn:hover{filter:brightness(1.03)}
+.big-service-btn{
+  background:#1d7fe2;color:#ffffff;font-size:20px;padding:16px 26px;border-radius:12px;
+  margin:18px auto 0;display:block;text-align:center;width:260px;justify-content:center;
+}
+.big-service-btn:hover{filter:brightness(1.1)}
+.callout{
+  background:#fff8e6;border-left:6px solid var(--warn);border:1px solid #f5e4b0;border-radius:10px;padding:14px 16px;box-shadow:var(--shadow);
+}
 .muted{color:var(--muted)}
 .fine{font-size:13px;color:#6b7280}
-/* pricing cards */
-.price-card{
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  box-shadow:var(--shadow);
-}
-.price-card.highlight{
-  border-color:#cfead9;
-  box-shadow:0 10px 28px rgba(23,138,74,.10);
-}
-.price-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-}
-.price-amt{
-  font-size:24px;
-  font-weight:800;
-  color:#0f2547;
-}
-/* buttons */
-.cta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:14px;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:12px 16px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:#ffffff;
-  color:#0f2547;
-  font-weight:700;
-  box-shadow:var(--shadow);
-  cursor:pointer;
-}
-.btn:hover{
-  filter:brightness(1.03);
-}
-
-/* Bigger, centered Services & Pricing button */
-.big-service-btn{
-  background:#1d7fe2;       /* strong blue */
-  color:#ffffff;
-  font-size:20px;
-  padding:16px 26px;
-  border-radius:12px;
-  margin:18px auto 0;       /* centers it under the other buttons */
-  display:block;
-  text-align:center;
-  width:260px;
-  justify-content:center;
-}
-.big-service-btn:hover{
-  filter:brightness(1.1);
-}
-
-/* callout */
-.callout{
-  background:#fff8e6;
-  border-left:6px solid var(--warn);
-  border:1px solid #f5e4b0;
-  border-radius:10px;
-  padding:14px 16px;
-  box-shadow:var(--shadow);
-}
 </style>
 </head>
 
 <body>
 <div class="wrap">
 
-<!-- HEADER -->
 <header>
-  <svg class="logo" viewBox="0 0 600 220" role="img" aria-label="Mustang Buildings LLC & Consulting logo">
+  <svg class="logo" viewBox="0 0 600 220">
     <defs>
       <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0" stop-color="#2e8ec9"/><stop offset="1" stop-color="#53b6ff"/>
       </linearGradient>
     </defs>
     <polygon points="300,25 75,120 110,120 300,45 490,120 525,120" fill="url(#roofGrad)"/>
-    <polyline points="110,120 300,45 490,120" fill="none" stroke="#8fb9d9" stroke-width="4"/>
-    <polyline points="300,45 300,120" fill="none" stroke="#8fb9d9" stroke-width="3"/>
     <text x="50%" y="175" text-anchor="middle" font-size="46" font-weight="700">Mustang Buildings</text>
     <text x="50%" y="206" text-anchor="middle" font-size="24" fill="#475569">LLC & Consulting</text>
   </svg>
-  <h1>Mustang Buildings LLC &amp; Consulting</h1>
+  <h1>Mustang Buildings LLC & Consulting</h1>
   <div class="sub">Jeff Zweifel — Owner / Principal Consultant</div>
   <div class="tag" style="color:#5b6472;">Construction Consulting — DFW Metro Area • 40+ years experience</div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <h2>Protect your project <span class="pill">Advisory-Only</span> <span class="pill">100% homeowner advocate</span></h2>
-  <p>
-    I help homeowners make confident decisions <strong>before they sign</strong> construction contracts.
-    I review contractor bids, spot red flags, compare options, sanity-check budgets &amp; timelines, and help you avoid change-order traps.
-  </p>
+  <h2>Protect your project <span class="pill">Advisory-Only</span><span class="pill">100% homeowner advocate</span></h2>
+  <p>I help homeowners make confident decisions <strong>before they sign</strong> construction contracts…</p>
+
   <div class="badges">
-    <span class="badge">✔ Independent &amp; Unbiased</span>
-    <span class="badge">✔ Reduce Risk &amp; Save Money</span>
+    <span class="badge">✔ Independent & Unbiased</span>
+    <span class="badge">✔ Reduce Risk & Save Money</span>
     <span class="badge">✔ Clear, Plain-English Guidance</span>
   </div>
+
   <div class="cta">
     <a class="btn" href="tel:+19072323244">📞 907-232-3244</a>
     <a class="btn" href="mailto:mustangbuildings@outlook.com">✉️ Email Jeff</a>
     <a class="btn" href="consulting-agreement.pdf" target="_blank">📄 View Agreement</a>
   </div>
 
-  <!-- BIG centered Services & Pricing button -->
-  <button type="button" id="services-toggle" class="btn big-service-btn">
-    💼 Services &amp; Pricing
-  </button>
-
-  <p class="fine" style="margin-top:6px;">Please review the consulting agreement before scheduling your consultation.</p>
+  <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
-<!-- ZINGER -->
+<!-- Zinger -->
 <section class="callout">
   <p><strong>⚠️ Call me before you sign a construction contract — once you sign, your options are limited.</strong></p>
 </section>
 
-<!-- TRUST STRIP -->
-<section class="card">
-  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;">
-    <div>✅ <strong>40+ years construction experience</strong></div>
-    <div>✅ Former GC — Alaska</div>
-    <div>✅ Advisory-only • No commissions</div>
+<!-- NEW LOCATION FOR THE BIG BUTTON -->
+<button type="button" id="services-toggle" class="btn big-service-btn">
+  💼 Services &amp; Pricing
+</button>
+
+<!-- Services section stays hidden until you click -->
+<section id="services-section" class="card" style="display:none; margin-top:20px;">
+  <h2>Services &amp; Pricing</h2>
+  <div class="grid">
+
+    <div class="price-card span6">
+      <div class="price-row"><h3>Bid + Contractor Review</h3><div class="price-amt">$600</div></div>
+      <ul class="muted">
+        <li>Fair pricing & scope review</li>
+        <li>Hidden red-flag detection</li>
+        <li>Written findings + questions to ask</li>
+      </ul>
+    </div>
+
+    <div class="price-card span6">
+      <div class="price-row"><h3>Project Planning & Scope Session</h3><div class="price-amt">$600</div></div>
+      <ul class="muted">
+        <li>Budget review & timeline check</li>
+        <li>Order-of-work planning</li>
+        <li>Change-order prevention</li>
+      </ul>
+    </div>
+
+    <div class="price-card span6 highlight">
+      <div class="price-row"><h3>60-Day Protection Plan</h3><div class="price-amt">$1,900</div></div>
+      <ul class="muted">
+        <li>Bid review + contractor vetting</li>
+        <li>Bi-weekly check-ins</li>
+        <li>Negotiation strategy guidance</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
-<!-- ABOUT JEFF -->
+<!-- About Jeff -->
 <section class="card">
   <h2>About Jeff</h2>
-  <p>
-    <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong>, working on everything from private homes and remodels
-    to large-scale commercial and industrial projects — including remote locations where logistics, weather, budgets, and schedules demand serious planning and adaptability.
-  </p>
-  <ul class="muted">
-    <li>Estimating &amp; cost control</li>
-    <li>Project management &amp; scheduling</li>
-    <li>Quality Control</li>
-    <li>Problem solving in difficult field conditions</li>
-  </ul>
-  <p>
-    Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language into plain English,
-    and guiding clients step-by-step so they can make confident decisions before they sign.
-  </p>
+  <p><strong>Jeff Zweifel</strong> brings over 40 years…</p>
 </section>
 
-<!-- SERVICES & PRICING (HIDDEN UNTIL BUTTON CLICK) -->
-<section id="services-section" class="card" style="display:none;">
-  <h2>Services &amp; Pricing</h2>
-
-  <div class="grid">
-    <!-- Bid + Contractor Review -->
-    <div class="price-card span6">
-      <div class="price-row">
-        <h3>Bid + Contractor Review</h3>
-        <div class="price-amt">$600</div>
-      </div>
-      <ul class="muted">
-        <li>Review contractor bids for fair pricing and complete scope.</li>
-        <li>Identify missing line items, vague allowances, and hidden red flags.</li>
-        <li>Provide written notes and a list of questions you can take back to your contractor.</li>
-      </ul>
-    </div>
-
-    <!-- Project Planning & Scope Session -->
-    <div class="price-card span6">
-      <div class="price-row">
-        <h3>Project Planning &amp; Scope Session</h3>
-        <div class="price-amt">$600</div>
-      </div>
-      <ul class="muted">
-        <li>Walk through your project goals, budget, and timeline.</li>
-        <li>Reality-check the schedule and logistics before you commit.</li>
-        <li>Help prevent scope creep and surprise change-orders.</li>
-      </ul>
-    </div>
-
-    <!-- 60-Day Protection Plan -->
-    <div class="price-card span6 highlight">
-      <div class="price-row">
-        <h3>60-Day Protection Plan</h3>
-        <div class="price-amt">$1,900</div>
-      </div>
-      <ul class="muted">
-        <li>Bid review + contractor vetting at the start of your project.</li>
-        <li>Bi-weekly check-in calls during the most critical 60 days.</li>
-        <li>Strategy and guidance to help you push back on unfair changes or pressure.</li>
-      </ul>
-    </div>
-  </div>
-
-  <p class="fine" style="margin-top:10px;">Advisory services only — <strong>Not a contractor</strong>. No sales, no commissions.</p>
-</section>
-
-<!-- TESTIMONIAL -->
+<!-- Testimonial -->
 <section class="card">
   <h2>What homeowners say</h2>
-  <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px;margin:10px 0;">
-    “Jeff saved us thousands by catching missing scope in two bids. He explained everything in plain English and helped us push back on a bad allowance.”
-    <br><span class="muted">— DFW homeowner</span>
+  <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px;">
+    “Jeff saved us thousands…” <span class="muted">— DFW homeowner</span>
   </blockquote>
 </section>
 
-<!-- DISCLAIMER -->
+<!-- Disclaimer -->
 <section class="card">
   <h2>Important Disclaimer</h2>
-  <p class="muted">
-    I provide independent <strong>construction consulting and homeowner advocacy</strong>.
-    I do not negotiate directly with contractors on your behalf, do not act as an agent or representative, and do not provide legal advice.
-    I can help you prepare for negotiations with strategy, questions, and documentation.
-  </p>
+  <p class="muted">I provide independent construction consulting…</p>
 </section>
 
-<!-- FAQ & CONTACT -->
+<!-- FAQ & Contact -->
 <div class="grid">
   <section class="card span6">
     <h2>FAQ</h2>
-    <p><strong>Do you work onsite?</strong> No — remote advisory only.</p>
-    <p><strong>Do you work outside DFW?</strong> Yes — phone / Zoom.</p>
-    <p><strong>Is this legal advice?</strong> No — construction guidance only.</p>
+    <p><strong>Do you work onsite?</strong> No.</p>
+    <p><strong>Do you work outside DFW?</strong> Yes.</p>
   </section>
 
   <section class="card span6">
     <h2>Contact</h2>
     <p>
-      <strong>Business:</strong> Mustang Buildings LLC &amp; Consulting<br>
-      <strong>Principal:</strong> Jeff Zweifel<br>
       <strong>Phone:</strong> <a href="tel:+19072323244">907-232-3244</a><br>
       <strong>Email:</strong> <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>
     </p>
-    <p class="fine">Advisory-only — <strong>Not a contractor</strong>.</p>
   </section>
 </div>
 
-<!-- CONSULTATION FORM -->
+<!-- Consultation Form -->
 <section class="card" id="consult-card">
   <h2 style="text-align:center;">Request a Consultation</h2>
   <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
-    <!-- FormSubmit settings -->
-    <input type="hidden" name="_subject" value="New consultation request from website">
+    <input type="hidden" name="_subject" value="New consultation request">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://mustangbuildingsllc.com/#thanks">
 
     <input type="text" name="name" placeholder="Your name" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
     <input type="email" name="email" placeholder="Email" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="tel" name="phone" placeholder="Phone (optional)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
     <textarea name="message" rows="5" placeholder="Tell me about your project…" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
 
     <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Request</button>
   </form>
 </section>
 
-<!-- THANK-YOU MESSAGE -->
 <section id="thanks" class="card" style="display:none;">
   <h2>✅ Thank you!</h2>
-  <p class="muted">Your message has been sent. I’ll reply as soon as possible — usually within 24 hours.</p>
+  <p class="muted">Your message has been sent. I'll reply soon.</p>
 </section>
 
-<!-- FOOTER -->
 <footer class="fine" style="margin-top:22px;text-align:center;">
-  © Mustang Buildings LLC &amp; Consulting — Advisory-only services.
+  © Mustang Buildings LLC & Consulting — Advisory-only services.
 </footer>
 
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Show thank-you state when redirected back with #thanks
-    if (window.location.hash === "#thanks") {
-      var consultCard = document.getElementById("consult-card");
-      var thanks = document.getElementById("thanks");
-      if (consultCard && thanks) {
-        consultCard.style.display = "none";
-        thanks.style.display = "block";
-        thanks.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-
-    // Toggle Services & Pricing section
-    var toggleBtn = document.getElementById('services-toggle');
-    var servicesSection = document.getElementById('services-section');
-    if (toggleBtn && servicesSection) {
-      toggleBtn.addEventListener('click', function () {
-        var hidden = servicesSection.style.display === 'none' || servicesSection.style.display === '';
-        servicesSection.style.display = hidden ? 'block' : 'none';
-        if (hidden) {
-          servicesSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    }
+document.addEventListener('DOMContentLoaded', function () {
+  // Toggle Services section
+  var btn = document.getElementById('services-toggle');
+  var section = document.getElementById('services-section');
+  btn.addEventListener('click', function(){
+    var hidden = section.style.display === 'none' || section.style.display === '';
+    section.style.display = hidden ? 'block' : 'none';
+    if(hidden){ section.scrollIntoView({behavior:'smooth'}); }
   });
+
+  // Thank-you logic
+  if(window.location.hash === "#thanks"){
+    document.getElementById("consult-card").style.display="none";
+    document.getElementById("thanks").style.display="block";
+  }
+});
 </script>
 
 </body>
