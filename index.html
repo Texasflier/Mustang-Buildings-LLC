@@ -167,6 +167,34 @@ header{text-align:center;margin:4px 0 10px}
 h1{font-size:clamp(28px,3.4vw,40px);margin:0}
 h2{margin:0 0 12px;font-size:22px}
 h3{margin:16px 0 8px}
+
+/* Forms toggle */
+.form-toggle-bar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0 4px;
+}
+.form-toggle-btn{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#ffffff;
+  cursor:pointer;
+  font-size:14px;
+}
+.form-toggle-btn.active{
+  background:#1d7fe2;
+  color:#ffffff;
+  border-color:#1d7fe2;
+}
+.form-panel{
+  display:none;
+  margin-top:8px;
+}
+.form-panel.active{
+  display:block;
+}
 </style>
 </head>
 
@@ -359,55 +387,65 @@ h3{margin:16px 0 8px}
     Online payment options (Zelle / PayPal / Venmo) will be added separately.
   </p>
 
+  <!-- Toggle buttons -->
+  <div class="form-toggle-bar">
+    <button type="button" class="form-toggle-btn active" data-target="intake-form-panel">📝 New Client Intake</button>
+    <button type="button" class="form-toggle-btn" data-target="testimonial-form-panel">⭐ Testimonial / Review</button>
+  </div>
+
   <!-- New Client Intake -->
-  <h3>📝 New Client Intake</h3>
-  <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
-    <input type="hidden" name="_subject" value="New Client Intake Form">
-    <input type="hidden" name="Form Type" value="New Client Intake">
+  <div id="intake-form-panel" class="form-panel active">
+    <h3>📝 New Client Intake</h3>
+    <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
+      <input type="hidden" name="_subject" value="New Client Intake Form">
+      <input type="hidden" name="Form Type" value="New Client Intake">
 
-    <input type="text" name="name" placeholder="Your name" required
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="email" name="email" placeholder="Email" required
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="tel" name="phone" placeholder="Phone"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="text" name="project_address" placeholder="Project address (city / area okay)"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="text" name="budget" placeholder="Approx. budget"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3%;">
-    <input type="text" name="timeline" placeholder="Timeline (when do you want to start/finish?)"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <textarea name="project_details" rows="4" placeholder="Tell me about your project…"
-              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+      <input type="text" name="name" placeholder="Your name" required
+             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="email" name="email" placeholder="Email" required
+             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="tel" name="phone" placeholder="Phone"
+             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="project_address" placeholder="Project address (city / area okay)"
+             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="budget" placeholder="Approx. budget"
+             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="timeline" placeholder="Timeline (when do you want to start/finish?)"
+             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <textarea name="project_details" rows="4" placeholder="Tell me about your project…"
+                style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
 
-    <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Intake Form</button>
-  </form>
+      <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Intake Form</button>
+    </form>
+  </div>
 
   <!-- Testimonial / Review -->
-  <h3>⭐ Testimonial / Review</h3>
-  <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
-    <input type="hidden" name="_subject" value="Testimonial / Review Form">
-    <input type="hidden" name="Form Type" value="Testimonial / Review">
+  <div id="testimonial-form-panel" class="form-panel">
+    <h3>⭐ Testimonial / Review</h3>
+    <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
+      <input type="hidden" name="_subject" value="Testimonial / Review Form">
+      <input type="hidden" name="Form Type" value="Testimonial / Review">
 
-    <input type="text" name="name" placeholder="Your name (how you'd like it shown)"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="email" name="email" placeholder="Email (not shown publicly)"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <select name="rating" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <option value="">Rating (optional)</option>
-      <option>⭐️⭐️⭐️⭐️⭐️</option>
-      <option>⭐️⭐️⭐️⭐️</option>
-      <option>⭐️⭐️⭐️</option>
-    </select>
-    <textarea name="testimonial" rows="4" placeholder="Your testimonial…"
-              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
-    <label style="font-size:13px;display:flex;align-items:center;gap:6px;margin-bottom:8px;">
-      <input type="checkbox" name="permission_to_use" value="Yes">
-      You may use my testimonial (and first name / city) on your website.
-    </label>
+      <input type="text" name="name" placeholder="Your name (how you'd like it shown)"
+             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="email" name="email" placeholder="Email (not shown publicly)"
+             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <select name="rating" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+        <option value="">Rating (optional)</option>
+        <option>⭐️⭐️⭐️⭐️⭐️</option>
+        <option>⭐️⭐️⭐️⭐️</option>
+        <option>⭐️⭐️⭐️</option>
+      </select>
+      <textarea name="testimonial" rows="4" placeholder="Your testimonial…"
+                style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+      <label style="font-size:13px;display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+        <input type="checkbox" name="permission_to_use" value="Yes">
+        You may use my testimonial (and first name / city) on your website.
+      </label>
 
-    <button type="submit" class="btn" style="width:100%;justify-content:center;">⭐ Submit Testimonial</button>
-  </form>
+      <button type="submit" class="btn" style="width:100%;justify-content:center;">⭐ Submit Testimonial</button>
+    </form>
+  </div>
 </section>
 
 <!-- CONSULT FORM -->
@@ -456,6 +494,28 @@ document.addEventListener('DOMContentLoaded', function () {
       if (hidden) section.scrollIntoView({ behavior:'smooth' });
     });
   }
+
+  // Forms toggle logic
+  var formButtons = document.querySelectorAll('.form-toggle-btn');
+  var formPanels = document.querySelectorAll('.form-panel');
+
+  formButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var targetId = button.getAttribute('data-target');
+      var targetPanel = document.getElementById(targetId);
+
+      if (!targetPanel) return;
+
+      // reset buttons
+      formButtons.forEach(function(b) { b.classList.remove('active'); });
+      // reset panels
+      formPanels.forEach(function(p) { p.classList.remove('active'); });
+
+      // activate current
+      button.classList.add('active');
+      targetPanel.classList.add('active');
+    });
+  });
 
   // Thank you logic (for consultation form only)
   if (window.location.hash === "#thanks") {
