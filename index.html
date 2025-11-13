@@ -18,7 +18,7 @@
   --warn:#e5b400;
   --max:980px;
   --radius:14px;
-  --shadow:0 6px 24px rgba(23,138,74,.06);
+  --shadow:0 6px 24px rgba(15,30,60,.06);
 }
 *{box-sizing:border-box}
 body{
@@ -69,7 +69,7 @@ header{text-align:center;margin:4px 0 10px}
   .card.span6{grid-column:span 6}
 }
 
-/* Pricing layout like original */
+/* Pricing layout (2-wide, like original) */
 .pricing{
   display:grid;
   gap:16px;
@@ -220,83 +220,84 @@ h3{margin:16px 0 8px}
   </button>
 </section>
 
-<!-- FULL ORIGINAL SERVICES & PRICING (HIDDEN UNTIL CLICK) -->
+<!-- FULL SERVICES & PRICING (LOWEST → HIGHEST) -->
 <section id="services-section" class="card" style="display:none; margin-top:20px;">
   <h2>Services &amp; Pricing</h2>
 
-  <!-- Main services (4 cards) -->
   <div class="pricing">
-    <div class="price-card">
-      <div class="price-row">
-        <h3>Bid + Contractor Review</h3>
-        <div class="price-amt">$600</div>
-      </div>
-      <ul class="muted">
-        <li>Fair pricing &amp; scope review</li>
-        <li>Hidden red-flag detection</li>
-        <li>Written findings + questions to ask</li>
-      </ul>
-    </div>
-
-    <div class="price-card">
-      <div class="price-row">
-        <h3>Project Planning &amp; Scope Session</h3>
-        <div class="price-amt">$600</div>
-      </div>
-       <div class="price-card highlight">
-      <div class="price-row">
-        <h3>60-Day Protection Plan</h3>
-        <div class="price-amt">$1,900</div>
-      </div>
-      <ul class="muted">
-        <li>Bid review + contractor vetting</li>
-        <li>Bi-weekly check-ins</li>
-        <li>Negotiation strategy &amp; change-order prevention</li>
-      </ul>
-    </div>
-      <ul class="muted">
-        <li>Budget reality check &amp; timeline review</li>
-        <li>Order-of-work planning</li>
-        <li>Change-order prevention</li>
-      </ul>
-    </div>
-
+    <!-- 1. Second-Opinion Call — $450 -->
     <div class="price-card">
       <div class="price-row">
         <h3>Second-Opinion Call</h3>
         <div class="price-amt">$450</div>
       </div>
       <div class="muted">
-        60 minutes — phone or Zoom. Bring your bids, concerns, or “something doesn’t feel right” questions.
+        60 minutes — phone or Zoom. Bring your bids, concerns, or “something doesn’t feel right” questions and I’ll walk through them with you.
       </div>
     </div>
 
-   
-  </div>
-
-  <!-- Ongoing advisor plans -->
-  <h3 style="margin-top:18px;">Homeowner Advisor — Ongoing</h3>
-  <div class="pricing">
+    <!-- 2. Homeowner Advisor — Basic — $450/mo -->
     <div class="price-card">
       <div class="price-row">
-        <strong>Basic</strong>
+        <strong>Homeowner Advisor — Basic</strong>
         <div class="price-amt">$450/mo</div>
       </div>
       <ul class="muted">
-        <li>Email support</li>
-        <li>One 60-minute call per month</li>
+        <li>Email support for questions during your project.</li>
+        <li>One 60-minute call per month.</li>
+        <li>Good fit if you want a steady “second set of eyes” as you go.</li>
       </ul>
     </div>
 
+    <!-- 3. Bid + Contractor Review — $600 -->
     <div class="price-card">
       <div class="price-row">
-        <strong>Premium</strong>
+        <h3>Bid + Contractor Review</h3>
+        <div class="price-amt">$600</div>
+      </div>
+      <ul class="muted">
+        <li>Review contractor bids for fair pricing &amp; complete scope.</li>
+        <li>Identify missing line items, vague allowances, and hidden red flags.</li>
+        <li>Written findings plus a list of questions you can take back to your contractor.</li>
+      </ul>
+    </div>
+
+    <!-- 4. Project Planning & Scope Session — $600 -->
+    <div class="price-card">
+      <div class="price-row">
+        <h3>Project Planning &amp; Scope Session</h3>
+        <div class="price-amt">$600</div>
+      </div>
+      <ul class="muted">
+        <li>Walk through goals, budget, and timeline.</li>
+        <li>Reality-check schedule and logistics before you sign.</li>
+        <li>Help prevent scope creep and surprise change-orders.</li>
+      </ul>
+    </div>
+
+    <!-- 5. Homeowner Advisor — Premium — $750/mo -->
+    <div class="price-card">
+      <div class="price-row">
+        <strong>Homeowner Advisor — Premium</strong>
         <div class="price-amt">$750/mo</div>
       </div>
       <ul class="muted">
-        <li>Email support with priority response</li>
-        <li>Two 60-minute calls per month</li>
-        <li>Light messaging support for quick questions</li>
+        <li>Email support with priority response.</li>
+        <li>Two 60-minute calls per month.</li>
+        <li>Light messaging support for quick “gut check” questions.</li>
+      </ul>
+    </div>
+
+    <!-- 6. 60-Day Protection Plan — $1,900 -->
+    <div class="price-card highlight">
+      <div class="price-row">
+        <h3>60-Day Protection Plan</h3>
+        <div class="price-amt">$1,900</div>
+      </div>
+      <ul class="muted">
+        <li>Bid review + contractor vetting at the start of your project.</li>
+        <li>Bi-weekly check-ins during the most critical 60 days.</li>
+        <li>Strategy and guidance when something doesn’t look right.</li>
       </ul>
     </div>
   </div>
@@ -426,3 +427,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
+
