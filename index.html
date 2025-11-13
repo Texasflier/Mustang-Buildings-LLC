@@ -120,7 +120,7 @@ header{text-align:center;margin:4px 0 10px}
 
 /* Yellow FORMS Button */
 #forms-btn{
-  background:#FDE68A; 
+  background:#FDE68A;
   border:1px solid #E5C755;
   color:#5A4500;
   font-weight:700;
@@ -175,7 +175,7 @@ h3{margin:16px 0 8px}
 
 <!-- HEADER -->
 <header>
-  <svg class="logo" viewBox="0 0 600 220">
+  <svg class="logo" viewBox="0 0 600 220" role="img" aria-label="Mustang Buildings LLC & Consulting logo">
     <defs>
       <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0" stop-color="#2e8ec9"/><stop offset="1" stop-color="#53b6ff"/>
@@ -209,9 +209,8 @@ h3{margin:16px 0 8px}
     <a class="btn" href="tel:+19072323244">📞 907-232-3244</a>
     <a class="btn" href="mailto:mustangbuildings@outlook.com">✉️ Email Jeff</a>
     <a class="btn" href="consulting-agreement.pdf" target="_blank">📄 View Agreement</a>
-
-    <!-- NEW FORMS BUTTON (Yellow) -->
-    <a class="btn" href="#" id="forms-btn">📝 Forms</a>
+    <!-- FORMS BUTTON NOW SCROLLS TO FORMS SECTION -->
+    <a class="btn" href="#forms-section" id="forms-btn">📝 Forms</a>
   </div>
 
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
@@ -296,30 +295,49 @@ h3{margin:16px 0 8px}
 <!-- ABOUT JEFF -->
 <section class="card">
   <h2>About Jeff</h2>
-  <p><strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong> across Alaska …</p>
+  <p>
+    <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong>, working on everything
+    from private homes and remodels to large-scale commercial and industrial projects — including remote locations where logistics,
+    weather, budgets, and schedules demand serious planning and adaptability.
+  </p>
+  <ul class="muted">
+    <li>Estimating &amp; cost control</li>
+    <li>Project management &amp; scheduling</li>
+    <li>Quality Control</li>
+    <li>Problem solving in difficult field conditions</li>
+  </ul>
+  <p>
+    Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language
+    into plain English, and guiding clients step-by-step so they can make confident decisions before they sign.
+  </p>
 </section>
 
 <!-- TESTIMONIAL -->
 <section class="card">
   <h2>What homeowners say</h2>
   <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px;margin:10px 0;">
-    “Jeff saved us thousands …” <br><span class="muted">— DFW homeowner</span>
+    “Jeff saved us thousands by catching missing scope in two bids. He explained everything in plain English and helped us push back on a bad allowance.”
+    <br><span class="muted">— DFW homeowner</span>
   </blockquote>
 </section>
 
 <!-- DISCLAIMER -->
 <section class="card">
   <h2>Important Disclaimer</h2>
-  <p class="muted">I do not negotiate directly with contractors. I do not provide legal advice.</p>
+  <p class="muted">
+    I provide independent <strong>construction consulting and homeowner advocacy</strong>.
+    I do not negotiate directly with contractors on your behalf, do not act as an agent or representative, and do not provide legal advice.
+    I can help you prepare for negotiations with strategy, questions, and documentation.
+  </p>
 </section>
 
 <!-- FAQ & CONTACT -->
 <div class="grid">
   <section class="card span6">
     <h2>FAQ</h2>
-    <p><strong>Do you work onsite?</strong> No.</p>
-    <p><strong>Do you work outside DFW?</strong> Yes.</p>
-    <p><strong>Is this legal advice?</strong> No.</p>
+    <p><strong>Do you work onsite?</strong> No — remote advisory only.</p>
+    <p><strong>Do you work outside DFW?</strong> Yes — phone / Zoom.</p>
+    <p><strong>Is this legal advice?</strong> No — construction guidance only.</p>
   </section>
 
   <section class="card span6">
@@ -330,8 +348,92 @@ h3{margin:16px 0 8px}
       <strong>Phone:</strong> <a href="tel:+19072323244">907-232-3244</a><br>
       <strong>Email:</strong> <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>
     </p>
+    <p class="fine">Advisory-only — <strong>Not a contractor</strong>.</p>
   </section>
 </div>
+
+<!-- FORMS SECTION -->
+<section id="forms-section" class="card">
+  <h2>Forms</h2>
+  <p class="muted" style="margin-top:0;">
+    Use these quick forms to share project details, confirm payment, or leave a testimonial.
+    Submissions go directly to my email.
+  </p>
+
+  <!-- New Client Intake -->
+  <h3>📝 New Client Intake</h3>
+  <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
+    <input type="hidden" name="_subject" value="New Client Intake Form">
+    <input type="hidden" name="Form Type" value="New Client Intake">
+
+    <input type="text" name="name" placeholder="Your name" required
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="email" name="email" placeholder="Email" required
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="tel" name="phone" placeholder="Phone"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="text" name="project_address" placeholder="Project address (city / area okay)"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="text" name="budget" placeholder="Approx. budget"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="text" name="timeline" placeholder="Timeline (when do you want to start/finish?)"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <textarea name="project_details" rows="4" placeholder="Tell me about your project…"
+              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+
+    <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Intake Form</button>
+  </form>
+
+  <!-- Payment Confirmation -->
+  <h3>💳 Payment Confirmation</h3>
+  <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
+    <input type="hidden" name="_subject" value="Payment Confirmation Form">
+    <input type="hidden" name="Form Type" value="Payment Confirmation">
+
+    <input type="text" name="name" placeholder="Your name" required
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="email" name="email" placeholder="Email" required
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="text" name="invoice_number" placeholder="Invoice or reference number"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="text" name="amount" placeholder="Amount paid"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="date" name="payment_date" placeholder="Payment date"
+           style="padding:10px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="text" name="method" placeholder="Payment method (Zelle, card, etc.)"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <textarea name="notes" rows="3" placeholder="Notes (optional)"
+              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+
+    <button type="submit" class="btn" style="width:100%;justify-content:center;">✅ Confirm Payment</button>
+  </form>
+
+  <!-- Testimonial / Review -->
+  <h3>⭐ Testimonial / Review</h3>
+  <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
+    <input type="hidden" name="_subject" value="Testimonial / Review Form">
+    <input type="hidden" name="Form Type" value="Testimonial / Review">
+
+    <input type="text" name="name" placeholder="Your name (how you'd like it shown)" 
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="email" name="email" placeholder="Email (not shown publicly)"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <select name="rating" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <option value="">Rating (optional)</option>
+      <option>⭐️⭐️⭐️⭐️⭐️</option>
+      <option>⭐️⭐️⭐️⭐️</option>
+      <option>⭐️⭐️⭐️</option>
+    </select>
+    <textarea name="testimonial" rows="4" placeholder="Your testimonial…"
+              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+    <label style="font-size:13px;display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+      <input type="checkbox" name="permission_to_use" value="Yes">
+      You may use my testimonial (and first name / city) on your website.
+    </label>
+
+    <button type="submit" class="btn" style="width:100%;justify-content:center;">⭐ Submit Testimonial</button>
+  </form>
+</section>
 
 <!-- CONSULT FORM -->
 <section class="card" id="consult-card">
@@ -342,10 +444,14 @@ h3{margin:16px 0 8px}
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://mustangbuildingsllc.com/#thanks">
 
-    <input type="text" name="name" placeholder="Your name" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="email" name="email" placeholder="Email" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="tel" name="phone" placeholder="Phone (optional)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <textarea name="message" rows="5" placeholder="Tell me about your project…" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+    <input type="text" name="name" placeholder="Your name" required
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="email" name="email" placeholder="Email" required
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="tel" name="phone" placeholder="Phone (optional)"
+           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <textarea name="message" rows="5" placeholder="Tell me about your project…"
+              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
 
     <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Request</button>
   </form>
@@ -357,7 +463,7 @@ h3{margin:16px 0 8px}
 </section>
 
 <footer class="fine" style="margin-top:22px;text-align:center;">
-  © Mustang Buildings LLC & Consulting — Advisory-only services.
+  © Mustang Buildings LLC &amp; Consulting — Advisory-only services.
 </footer>
 
 </div>
@@ -376,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Thank you logic
+  // Thank you logic (for consultation form only)
   if (window.location.hash === "#thanks") {
     var formCard = document.getElementById("consult-card");
     var thanks = document.getElementById("thanks");
