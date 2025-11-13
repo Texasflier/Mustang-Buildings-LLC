@@ -45,53 +45,128 @@ header{text-align:center;margin:4px 0 10px}
   box-shadow:var(--shadow);
   margin:16px 0 18px;
 }
-.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;justify-content:center}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:10px;
+  justify-content:center;
+}
 .badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--border);
+  color:#274264;
 }
 .pill{
-  display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;
-  background:#fff;border:1px solid var(--border);color:#274264;margin-left:8px
+  display:inline-block;
+  font-size:12px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--border);
+  color:#274264;
+  margin-left:8px;
 }
-/* cards */
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+/* cards & layout */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:18px;
+}
 .card{
   grid-column:span 12;
   background:#fff;
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:20px;
-  box-shadow:var(--shadow)
+  box-shadow:var(--shadow);
 }
 @media(min-width:840px){
   .card.span6{grid-column:span 6}
 }
+h1{font-size:clamp(28px,3.4vw,40px);margin:0}
 h2{margin:0 0 12px;font-size:22px}
 h3{margin:16px 0 8px}
 .muted{color:var(--muted)}
 .fine{font-size:13px;color:#6b7280}
+/* pricing cards */
 .price-card{
   border:1px solid var(--border);
   border-radius:14px;
   padding:18px;
-  display:flex;flex-direction:column;gap:8px;
-  box-shadow:var(--shadow)
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  box-shadow:var(--shadow);
 }
-.price-card.highlight{border-color:#cfead9;box-shadow:0 10px 28px rgba(23,138,74,.10)}
-.price-row{display:flex;justify-content:space-between;align-items:baseline}
-.price-amt{font-size:24px;font-weight:800;color:#0f2547}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.price-card.highlight{
+  border-color:#cfead9;
+  box-shadow:0 10px 28px rgba(23,138,74,.10);
+}
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+.price-amt{
+  font-size:24px;
+  font-weight:800;
+  color:#0f2547;
+}
+/* buttons */
+.cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:14px;
+}
 .btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:12px 16px;border-radius:10px;border:1px solid var(--border);
-  background:#ffffff;color:#0f2547;font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 16px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#ffffff;
+  color:#0f2547;
+  font-weight:700;
   box-shadow:var(--shadow);
   cursor:pointer;
 }
+.btn:hover{
+  filter:brightness(1.03);
+}
+
+/* Bigger, centered Services & Pricing button */
+.big-service-btn{
+  background:#1d7fe2;       /* strong blue */
+  color:#ffffff;
+  font-size:20px;
+  padding:16px 26px;
+  border-radius:12px;
+  margin:18px auto 0;       /* centers it under the other buttons */
+  display:block;
+  text-align:center;
+  width:260px;
+  justify-content:center;
+}
+.big-service-btn:hover{
+  filter:brightness(1.1);
+}
+
+/* callout */
 .callout{
-  background:#fff8e6;border-left:6px solid var(--warn);
-  border:1px solid #f5e4b0;border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)
+  background:#fff8e6;
+  border-left:6px solid var(--warn);
+  border:1px solid #f5e4b0;
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:var(--shadow);
 }
 </style>
 </head>
@@ -99,12 +174,14 @@ h3{margin:16px 0 8px}
 <body>
 <div class="wrap">
 
+<!-- HEADER -->
 <header>
   <svg class="logo" viewBox="0 0 600 220" role="img" aria-label="Mustang Buildings LLC & Consulting logo">
-    <defs><linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#2e8ec9"/><stop offset="1" stop-color="#53b6ff"/>
-    </linearGradient></defs>
-
+    <defs>
+      <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#2e8ec9"/><stop offset="1" stop-color="#53b6ff"/>
+      </linearGradient>
+    </defs>
     <polygon points="300,25 75,120 110,120 300,45 490,120 525,120" fill="url(#roofGrad)"/>
     <polyline points="110,120 300,45 490,120" fill="none" stroke="#8fb9d9" stroke-width="4"/>
     <polyline points="300,45 300,120" fill="none" stroke="#8fb9d9" stroke-width="3"/>
@@ -116,9 +193,13 @@ h3{margin:16px 0 8px}
   <div class="tag" style="color:#5b6472;">Construction Consulting — DFW Metro Area • 40+ years experience</div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h2>Protect your project <span class="pill">Advisory-Only</span> <span class="pill">100% homeowner advocate</span></h2>
-  <p>I help homeowners make confident decisions <strong>before they sign</strong> construction contracts. I review contractor bids, spot red flags, compare options, sanity-check budgets &amp; timelines, and help you avoid change-order traps.</p>
+  <p>
+    I help homeowners make confident decisions <strong>before they sign</strong> construction contracts.
+    I review contractor bids, spot red flags, compare options, sanity-check budgets &amp; timelines, and help you avoid change-order traps.
+  </p>
   <div class="badges">
     <span class="badge">✔ Independent &amp; Unbiased</span>
     <span class="badge">✔ Reduce Risk &amp; Save Money</span>
@@ -128,16 +209,22 @@ h3{margin:16px 0 8px}
     <a class="btn" href="tel:+19072323244">📞 907-232-3244</a>
     <a class="btn" href="mailto:mustangbuildings@outlook.com">✉️ Email Jeff</a>
     <a class="btn" href="consulting-agreement.pdf" target="_blank">📄 View Agreement</a>
-    <!-- NEW: Services & Pricing button -->
-    <button type="button" id="services-toggle" class="btn">💼 Services &amp; Pricing</button>
   </div>
+
+  <!-- BIG centered Services & Pricing button -->
+  <button type="button" id="services-toggle" class="btn big-service-btn">
+    💼 Services &amp; Pricing
+  </button>
+
   <p class="fine" style="margin-top:6px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
+<!-- ZINGER -->
 <section class="callout">
   <p><strong>⚠️ Call me before you sign a construction contract — once you sign, your options are limited.</strong></p>
 </section>
 
+<!-- TRUST STRIP -->
 <section class="card">
   <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;">
     <div>✅ <strong>40+ years construction experience</strong></div>
@@ -146,61 +233,74 @@ h3{margin:16px 0 8px}
   </div>
 </section>
 
+<!-- ABOUT JEFF -->
 <section class="card">
   <h2>About Jeff</h2>
-  <p><strong>Jeff Zweifel</strong> brings 40+ years of construction experience across Alaska, working on everything from private homes and remodels to large-scale commercial and industrial projects — including remote locations where logistics, weather, budgets, and schedules demand serious planning and adaptability.</p>
+  <p>
+    <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong>, working on everything from private homes and remodels
+    to large-scale commercial and industrial projects — including remote locations where logistics, weather, budgets, and schedules demand serious planning and adaptability.
+  </p>
   <ul class="muted">
     <li>Estimating &amp; cost control</li>
     <li>Project management &amp; scheduling</li>
     <li>Quality Control</li>
     <li>Problem solving in difficult field conditions</li>
   </ul>
-  <p>Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language into plain English, and guiding clients step-by-step so they can make confident decisions before they sign.</p>
+  <p>
+    Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language into plain English,
+    and guiding clients step-by-step so they can make confident decisions before they sign.
+  </p>
 </section>
 
-<!-- SERVICES & PRICING: HIDDEN BY DEFAULT, SHOWN WHEN BUTTON IS CLICKED -->
+<!-- SERVICES & PRICING (HIDDEN UNTIL BUTTON CLICK) -->
 <section id="services-section" class="card" style="display:none;">
   <h2>Services &amp; Pricing</h2>
+
   <div class="grid">
+    <!-- Bid + Contractor Review -->
     <div class="price-card span6">
       <div class="price-row">
         <h3>Bid + Contractor Review</h3>
         <div class="price-amt">$600</div>
       </div>
       <ul class="muted">
-        <li>Review contractor bids for fair pricing &amp; scope.</li>
-        <li>Spot missing items, vague allowances, and red flags.</li>
-        <li>Provide written notes and questions you can take back to your contractor.</li>
+        <li>Review contractor bids for fair pricing and complete scope.</li>
+        <li>Identify missing line items, vague allowances, and hidden red flags.</li>
+        <li>Provide written notes and a list of questions you can take back to your contractor.</li>
       </ul>
     </div>
 
+    <!-- Project Planning & Scope Session -->
     <div class="price-card span6">
       <div class="price-row">
         <h3>Project Planning &amp; Scope Session</h3>
         <div class="price-amt">$600</div>
       </div>
       <ul class="muted">
-        <li>Walk through your project goals, budget, and timing.</li>
-        <li>Reality-check schedule and logistics before you commit.</li>
+        <li>Walk through your project goals, budget, and timeline.</li>
+        <li>Reality-check the schedule and logistics before you commit.</li>
         <li>Help prevent scope creep and surprise change-orders.</li>
       </ul>
     </div>
 
+    <!-- 60-Day Protection Plan -->
     <div class="price-card span6 highlight">
       <div class="price-row">
         <h3>60-Day Protection Plan</h3>
         <div class="price-amt">$1,900</div>
       </div>
       <ul class="muted">
-        <li>Bid review + contractor vetting at the beginning.</li>
-        <li>Bi-weekly check-in calls during the critical startup period.</li>
-        <li>Strategy and guidance to push back on unfair changes or pressure.</li>
+        <li>Bid review + contractor vetting at the start of your project.</li>
+        <li>Bi-weekly check-in calls during the most critical 60 days.</li>
+        <li>Strategy and guidance to help you push back on unfair changes or pressure.</li>
       </ul>
     </div>
   </div>
+
   <p class="fine" style="margin-top:10px;">Advisory services only — <strong>Not a contractor</strong>. No sales, no commissions.</p>
 </section>
 
+<!-- TESTIMONIAL -->
 <section class="card">
   <h2>What homeowners say</h2>
   <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px;margin:10px 0;">
@@ -209,11 +309,17 @@ h3{margin:16px 0 8px}
   </blockquote>
 </section>
 
+<!-- DISCLAIMER -->
 <section class="card">
   <h2>Important Disclaimer</h2>
-  <p class="muted">I provide independent <strong>construction consulting and homeowner advocacy</strong>. I do not negotiate directly with contractors on your behalf, do not act as an agent or representative, and do not provide legal advice. I can help you prepare for negotiations with strategy, questions, and documentation.</p>
+  <p class="muted">
+    I provide independent <strong>construction consulting and homeowner advocacy</strong>.
+    I do not negotiate directly with contractors on your behalf, do not act as an agent or representative, and do not provide legal advice.
+    I can help you prepare for negotiations with strategy, questions, and documentation.
+  </p>
 </section>
 
+<!-- FAQ & CONTACT -->
 <div class="grid">
   <section class="card span6">
     <h2>FAQ</h2>
@@ -234,9 +340,11 @@ h3{margin:16px 0 8px}
   </section>
 </div>
 
+<!-- CONSULTATION FORM -->
 <section class="card" id="consult-card">
   <h2 style="text-align:center;">Request a Consultation</h2>
   <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
+    <!-- FormSubmit settings -->
     <input type="hidden" name="_subject" value="New consultation request from website">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://mustangbuildingsllc.com/#thanks">
@@ -250,11 +358,13 @@ h3{margin:16px 0 8px}
   </form>
 </section>
 
+<!-- THANK-YOU MESSAGE -->
 <section id="thanks" class="card" style="display:none;">
   <h2>✅ Thank you!</h2>
-  <p class="muted">Your message has been sent. I’ll reply as soon as possible.</p>
+  <p class="muted">Your message has been sent. I’ll reply as soon as possible — usually within 24 hours.</p>
 </section>
 
+<!-- FOOTER -->
 <footer class="fine" style="margin-top:22px;text-align:center;">
   © Mustang Buildings LLC &amp; Consulting — Advisory-only services.
 </footer>
@@ -263,7 +373,7 @@ h3{margin:16px 0 8px}
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Thank-you behavior
+    // Show thank-you state when redirected back with #thanks
     if (window.location.hash === "#thanks") {
       var consultCard = document.getElementById("consult-card");
       var thanks = document.getElementById("thanks");
@@ -274,14 +384,14 @@ h3{margin:16px 0 8px}
       }
     }
 
-    // Services & Pricing toggle
+    // Toggle Services & Pricing section
     var toggleBtn = document.getElementById('services-toggle');
     var servicesSection = document.getElementById('services-section');
     if (toggleBtn && servicesSection) {
       toggleBtn.addEventListener('click', function () {
-        var currentlyHidden = servicesSection.style.display === 'none' || servicesSection.style.display === '';
-        servicesSection.style.display = currentlyHidden ? 'block' : 'none';
-        if (currentlyHidden) {
+        var hidden = servicesSection.style.display === 'none' || servicesSection.style.display === '';
+        servicesSection.style.display = hidden ? 'block' : 'none';
+        if (hidden) {
           servicesSection.scrollIntoView({ behavior: 'smooth' });
         }
       });
