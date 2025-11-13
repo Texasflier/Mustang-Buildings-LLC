@@ -147,7 +147,6 @@ header{text-align:center;margin:4px 0 10px}
   display:block;
   text-align:center;
   width:280px;
-  justify-content:center;
 }
 .big-service-btn:hover{filter:brightness(1.1)}
 
@@ -248,7 +247,7 @@ h3{margin:16px 0 8px}
   <p><strong>⚠️ Call me before you sign a construction contract — once you sign, your options are limited.</strong></p>
 </section>
 
-<!-- BIG SERVICES BUTTON -->
+<!-- SERVICES BUTTON -->
 <section class="services-bar">
   <p class="muted" style="margin:0 0 6px 0;">
     When you’re ready for details, open my current services and pricing below.
@@ -264,19 +263,16 @@ h3{margin:16px 0 8px}
 
   <div class="pricing">
 
-    <!-- 450 -->
     <div class="price-card">
       <div class="price-row"><h3>Second-Opinion Call</h3><div class="price-amt">$450</div></div>
       <div class="muted">60 minutes — phone or Zoom. Bring your bids or concerns.</div>
     </div>
 
-    <!-- 450/mo -->
     <div class="price-card">
       <div class="price-row"><strong>Homeowner Advisor — Basic</strong><div class="price-amt">$450/mo</div></div>
       <ul class="muted"><li>Email support</li><li>One 60-min call per month</li></ul>
     </div>
 
-    <!-- 600 -->
     <div class="price-card">
       <div class="price-row"><h3>Bid + Contractor Review</h3><div class="price-amt">$600</div></div>
       <ul class="muted">
@@ -286,7 +282,6 @@ h3{margin:16px 0 8px}
       </ul>
     </div>
 
-    <!-- 600 -->
     <div class="price-card">
       <div class="price-row"><h3>Project Planning &amp; Scope Session</h3><div class="price-amt">$600</div></div>
       <ul class="muted">
@@ -296,13 +291,11 @@ h3{margin:16px 0 8px}
       </ul>
     </div>
 
-    <!-- 750/mo -->
     <div class="price-card">
       <div class="price-row"><strong>Homeowner Advisor — Premium</strong><div class="price-amt">$750/mo</div></div>
       <ul class="muted"><li>Email support + priority</li><li>Two 60-min calls / month</li></ul>
     </div>
 
-    <!-- 1900 -->
     <div class="price-card highlight">
       <div class="price-row"><h3>60-Day Protection Plan</h3><div class="price-amt">$1,900</div></div>
       <ul class="muted">
@@ -380,10 +373,10 @@ h3{margin:16px 0 8px}
 </div>
 
 <!-- FORMS SECTION -->
-<section id="forms-section" class="card">
+<section id="forms-section" class="card" style="display:none;">
   <h2>Forms</h2>
   <p class="muted" style="margin-top:0;">
-    Use these quick forms to share project details or leave a testimonial.  
+    Use these quick forms to share project details or leave a testimonial.
     Online payment options (Zelle / PayPal / Venmo) will be added separately.
   </p>
 
@@ -393,7 +386,7 @@ h3{margin:16px 0 8px}
     <button type="button" class="form-toggle-btn" data-target="testimonial-form-panel">⭐ Testimonial / Review</button>
   </div>
 
-  <!-- New Client Intake -->
+  <!-- Intake Form -->
   <div id="intake-form-panel" class="form-panel active">
     <h3>📝 New Client Intake</h3>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
@@ -419,7 +412,7 @@ h3{margin:16px 0 8px}
     </form>
   </div>
 
-  <!-- Testimonial / Review -->
+  <!-- Testimonial Form -->
   <div id="testimonial-form-panel" class="form-panel">
     <h3>⭐ Testimonial / Review</h3>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
@@ -438,6 +431,7 @@ h3{margin:16px 0 8px}
       </select>
       <textarea name="testimonial" rows="4" placeholder="Your testimonial…"
                 style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+
       <label style="font-size:13px;display:flex;align-items:center;gap:6px;margin-bottom:8px;">
         <input type="checkbox" name="permission_to_use" value="Yes">
         You may use my testimonial (and first name / city) on your website.
@@ -446,9 +440,10 @@ h3{margin:16px 0 8px}
       <button type="submit" class="btn" style="width:100%;justify-content:center;">⭐ Submit Testimonial</button>
     </form>
   </div>
+
 </section>
 
-<!-- CONSULT FORM -->
+<!-- CONSULTATION FORM -->
 <section class="card" id="consult-card">
   <h2 style="text-align:center;">Request a Consultation</h2>
   <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
@@ -495,7 +490,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Forms toggle logic
+  // FORMS button toggle
+  var formsBtn = document.getElementById('forms-btn');
+  var formsSection = document.getElementById('forms-section');
+
+  if (formsBtn && formsSection) {
+    formsBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var hidden = formsSection.style.display === 'none' || formsSection.style.display === '';
+      if (hidden) {
+        formsSection.style.display = 'block';
+        formsSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        formsSection.style.display = 'none';
+      }
+    });
+  }
+
+  // Forms toggle logic (Tabs)
   var formButtons = document.querySelectorAll('.form-toggle-btn');
   var formPanels = document.querySelectorAll('.form-panel');
 
@@ -504,20 +516,15 @@ document.addEventListener('DOMContentLoaded', function () {
       var targetId = button.getAttribute('data-target');
       var targetPanel = document.getElementById(targetId);
 
-      if (!targetPanel) return;
+      formButtons.forEach(b => b.classList.remove('active'));
+      formPanels.forEach(p => p.classList.remove('active'));
 
-      // reset buttons
-      formButtons.forEach(function(b) { b.classList.remove('active'); });
-      // reset panels
-      formPanels.forEach(function(p) { p.classList.remove('active'); });
-
-      // activate current
       button.classList.add('active');
       targetPanel.classList.add('active');
     });
   });
 
-  // Thank you logic (for consultation form only)
+  // Thank you page logic
   if (window.location.hash === "#thanks") {
     var formCard = document.getElementById("consult-card");
     var thanks = document.getElementById("thanks");
