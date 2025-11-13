@@ -3,58 +3,232 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Site Under Construction — Mustang Buildings LLC & Consulting</title>
+<title>Mustang Buildings LLC & Consulting — Construction Consulting (DFW)</title>
+<meta name="description" content="Mustang Buildings LLC & Consulting — homeowner-focused construction consulting in the DFW Metro Area. 40+ years experience (Former GC — Alaska). Independent, advisory-only: bid reviews, scope checks, budgets & timelines, change-order prevention.">
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    background: #f2f2f2;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-    color: #1a1a1a;
-  }
-
-  .box {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 40px 30px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
-    border: 1px solid #e0e0e0;
-  }
-
-  h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 18px;
-    margin-top: 0;
-    color: #555;
-  }
-
-  .emoji {
-    font-size: 50px;
-    margin-bottom: 10px;
-  }
+:root{
+  --bg:#f6f9fc;
+  --panel:#ffffff;
+  --muted:#5b6472;
+  --text:#0b1220;
+  --accent:#2e7bd9;
+  --accent-2:#eaf3ff;
+  --border:#e6ecf3;
+  --warn:#e5b400;
+  --max:980px;
+  --radius:14px;
+  --shadow:0 6px 24px rgba(15,30,60,.06);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:auto;padding:28px}
+header{text-align:center;margin:4px 0 10px}
+.logo{
+  width:400px;
+  max-width:95vw;
+  margin:12px auto 10px;
+}
+/* hero */
+.hero{
+  background:var(--accent-2);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:var(--shadow);
+  margin:16px 0 18px;
+}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;justify-content:center}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264
+}
+.pill{
+  display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;
+  background:#fff;border:1px solid var(--border);color:#274264;margin-left:8px
+}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.card{
+  grid-column:span 12;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow)
+}
+@media(min-width:840px){
+  .card.span6{grid-column:span 6}
+}
+h2{margin:0 0 12px;font-size:22px}
+h3{margin:16px 0 8px}
+.muted{color:var(--muted)}
+.fine{font-size:13px;color:#6b7280}
+.price-card{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  display:flex;flex-direction:column;gap:8px;
+  box-shadow:var(--shadow)
+}
+.price-card.highlight{border-color:#cfead9;box-shadow:0 10px 28px rgba(23,138,74,.10)}
+.price-row{display:flex;justify-content:space-between;align-items:baseline}
+.price-amt{font-size:24px;font-weight:800;color:#0f2547}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 16px;border-radius:10px;border:1px solid var(--border);
+  background:#ffffff;color:#0f2547;font-weight:700;
+  box-shadow:var(--shadow)
+}
+.callout{
+  background:#fff8e6;border-left:6px solid var(--warn);
+  border:1px solid #f5e4b0;border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)
+}
 </style>
-
 </head>
-<body>
 
-<div class="box">
-  <div class="emoji">🚧</div>
-  <h1>Site Under Construction</h1>
-  <p>Please check back soon.</p>
-  <p style="margin-top:20px; font-size:14px; color:#777;">© Mustang Buildings LLC & Consulting</p>
+<body>
+<div class="wrap">
+
+<header>
+  <svg class="logo" viewBox="0 0 600 220">
+    <defs><linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2e8ec9"/><stop offset="1" stop-color="#53b6ff"/>
+    </linearGradient></defs>
+
+    <polygon points="300,25 75,120 110,120 300,45 490,120 525,120" fill="url(#roofGrad)"/>
+    <polyline points="110,120 300,45 490,120" fill="none" stroke="#8fb9d9" stroke-width="4"/>
+    <polyline points="300,45 300,120" fill="none" stroke="#8fb9d9" stroke-width="3"/>
+    <text x="50%" y="175" text-anchor="middle" font-size="46" font-weight="700">Mustang Buildings</text>
+    <text x="50%" y="206" text-anchor="middle" font-size="24" fill="#475569">LLC & Consulting</text>
+  </svg>
+  <h1>Mustang Buildings LLC &amp; Consulting</h1>
+  <div class="sub">Jeff Zweifel — Owner / Principal Consultant</div>
+  <div class="tag" style="color:#5b6472;">Construction Consulting — DFW Metro Area • 40+ years experience</div>
+</header>
+
+<section class="hero">
+  <h2>Protect your project <span class="pill">Advisory-Only</span> <span class="pill">100% homeowner advocate</span></h2>
+  <p>I help homeowners make confident decisions <strong>before they sign</strong> construction contracts…</p>
+  <div class="badges">
+    <span class="badge">✔ Independent & Unbiased</span>
+    <span class="badge">✔ Reduce Risk & Save Money</span>
+    <span class="badge">✔ Clear, Plain-English Guidance</span>
+  </div>
+  <div class="cta">
+    <a class="btn" href="tel:+19072323244">907-232-3244</a>
+    <a class="btn" href="mailto:mustangbuildings@outlook.com">✉️ Email Jeff</a>
+    <a class="btn" href="consulting-agreement.pdf" target="_blank">📄 View Agreement</a>
+  </div>
+</section>
+
+<section class="callout">
+  <p><strong>⚠️ Call me before you sign a construction contract — once you sign, your options are limited.</strong></p>
+</section>
+
+<section class="card">
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;">
+    <div>✅ <strong>40+ years construction experience</strong></div>
+    <div>✅ Former GC — Alaska</div>
+    <div>✅ Advisory-only • No commissions</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>About Jeff</h2>
+  <p><strong>Jeff Zweifel</strong> brings 40+ years…</p>
+  <ul class="muted">
+    <li>Estimating & cost control</li>
+    <li>Project management & scheduling</li>
+    <li>Quality Control</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Services & Pricing</h2>
+  <div class="grid">
+    <div class="price-card span6">
+      <div class="price-row"><h3>Bid Review</h3><div class="price-amt">$600</div></div>
+      <ul class="muted"><li>Red flag detection</li><li>Fair pricing review</li></ul>
+    </div>
+    <div class="price-card span6">
+      <div class="price-row"><h3>Planning Session</h3><div class="price-amt">$600</div></div>
+      <ul class="muted"><li>Budget review</li><li>Timeline verification</li></ul>
+    </div>
+    <div class="price-card span6 highlight">
+      <div class="price-row"><h3>60-Day Protection Plan</h3><div class="price-amt">$1,900</div></div>
+      <ul class="muted"><li>Bi-weekly calls</li><li>Negotiation strategy</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>What homeowners say</h2>
+  <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px">
+    “Jeff saved us thousands…” <br>
+    <span class="muted">— DFW homeowner</span>
+  </blockquote>
+</section>
+
+<section class="card">
+  <h2>Important Disclaimer</h2>
+  <p class="muted">I provide independent construction consulting…</p>
+</section>
+
+<div class="grid">
+  <section class="card span6">
+    <h2>FAQ</h2>
+    <p><strong>Do you work onsite?</strong> No.</p>
+    <p><strong>Do you work outside DFW?</strong> Yes.</p>
+  </section>
+  <section class="card span6">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> <a href="tel:+19072323244">907-232-3244</a><br>
+    <strong>Email:</strong> <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a></p>
+  </section>
 </div>
+
+<section class="card" id="consult-card">
+  <h2 style="text-align:center;">Request a Consultation</h2>
+  <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
+    <input type="hidden" name="_subject" value="New consultation request">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://mustangbuildingsllc.com/#thanks">
+
+    <input type="text" name="name" placeholder="Your name" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="email" name="email" placeholder="Email" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="tel" name="phone" placeholder="Phone (optional)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <textarea name="message" rows="5" placeholder="Tell me about your project…" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+
+    <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Request</button>
+  </form>
+</section>
+
+<section id="thanks" class="card" style="display:none;">
+  <h2>✅ Thank you!</h2>
+  <p class="muted">Your message has been sent. I’ll reply as soon as possible.</p>
+</section>
+
+<footer class="fine" style="margin-top:22px;text-align:center;">
+  © Mustang Buildings LLC & Consulting — Advisory-only services.
+</footer>
+
+</div>
+
+<script>
+  if (window.location.hash === "#thanks") {
+    document.getElementById("consult-card").style.display = "none";
+    document.getElementById("thanks").style.display = "block";
+  }
+</script>
 
 </body>
 </html>
