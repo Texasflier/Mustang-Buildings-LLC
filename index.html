@@ -242,6 +242,18 @@ h3{margin:16px 0 8px}
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="card">
+  <h2>How It Works</h2>
+  <ol class="muted" style="padding-left:20px;margin:8px 0 0 0;">
+    <li><strong>Review the agreement.</strong> Get clear on what I do (and don’t do) so you’re comfortable and protected.</li>
+    <li><strong>Send a form.</strong> Use the New Client Intake form to share your project details before we talk.</li>
+    <li><strong>Schedule your consultation.</strong> We’ll meet by phone or Zoom — whatever works best for you.</li>
+    <li><strong>Get expert guidance.</strong> I review your bids, spot missing scope and red flags, and help you plan next steps.</li>
+    <li><strong>Make payment after scheduling.</strong> Online payment options (Zelle / PayPal / Venmo) will be available.</li>
+  </ol>
+</section>
+
 <!-- ZINGER -->
 <section class="callout">
   <p><strong>⚠️ Call me before you sign a construction contract — once you sign, your options are limited.</strong></p>
@@ -318,7 +330,8 @@ h3{margin:16px 0 8px}
   <p>
     <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong>, working on everything
     from private homes and remodels to large-scale commercial and industrial projects — including remote locations where logistics,
-    weather, budgets, and schedules demand serious planning and adaptability.
+    weather, budgets, and schedules demand serious planning and adaptability. Jeff is also a <strong>former licensed Home Inspector in Alaska</strong>,
+    giving him deeper expertise in identifying structural issues, hidden risks, code concerns, and common problem areas that homeowners often overlook.
   </p>
   <ul class="muted">
     <li>Estimating &amp; cost control</li>
@@ -326,7 +339,6 @@ h3{margin:16px 0 8px}
     <li>Quality Control</li>
     <li>Problem solving in difficult field conditions</li>
     <li>Former Licensed Home Inspector — Alaska</li>
-
   </ul>
   <p>
     Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language
@@ -468,8 +480,18 @@ h3{margin:16px 0 8px}
 </section>
 
 <section id="thanks" class="card" style="display:none;">
-  <h2>✅ Thank you!</h2>
-  <p class="muted">Your message has been sent. I’ll reply as soon as possible.</p>
+  <h2>✅ Thank you — I’ve received your message.</h2>
+  <p class="muted">
+    I’ll review your information and follow up as soon as possible (usually within one business day).
+  </p>
+  <ul class="muted" style="padding-left:20px;margin-top:8px;">
+    <li>Watch your email for a reply from <strong>mustangbuildings@outlook.com</strong>.</li>
+    <li>If you sent project details, gather any bids, drawings, or photos you’d like me to review.</li>
+    <li>We’ll confirm a time for your consultation by email or phone.</li>
+  </ul>
+  <p class="fine" style="margin-top:10px;">
+    If you need to reach me sooner, call <a href="tel:+19072323244">907-232-3244</a>.
+  </p>
 </section>
 
 <footer class="fine" style="margin-top:22px;text-align:center;">
@@ -509,7 +531,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Forms toggle logic (Tabs)
+  // Forms toggle logic (tabs)
   var formButtons = document.querySelectorAll('.form-toggle-btn');
   var formPanels = document.querySelectorAll('.form-panel');
 
@@ -517,9 +539,10 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', function() {
       var targetId = button.getAttribute('data-target');
       var targetPanel = document.getElementById(targetId);
+      if (!targetPanel) return;
 
-      formButtons.forEach(b => b.classList.remove('active'));
-      formPanels.forEach(p => p.classList.remove('active'));
+      formButtons.forEach(function(b) { b.classList.remove('active'); });
+      formPanels.forEach(function(p) { p.classList.remove('active'); });
 
       button.classList.add('active');
       targetPanel.classList.add('active');
