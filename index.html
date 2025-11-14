@@ -33,11 +33,13 @@ a:hover{text-decoration:underline}
 
 /* Header */
 header{text-align:center;margin:4px 0 10px}
-.logo{width:400px;max-width:95vw;margin:12px auto 10px;}
-.sub{font-weight:600;margin-top:4px;}
-.tag{font-size:14px;margin-top:2px;color:var(--muted);}
+.logo{
+  width:400px;
+  max-width:95vw;
+  margin:12px auto 10px;
+}
 
-/* Top navigation */
+/* MAKE NAV TABS BOLDER */
 nav.site-nav{
   margin-top:10px;
   display:flex;
@@ -50,7 +52,7 @@ nav.site-nav a{
   padding:4px 10px;
   border-radius:999px;
   color:#374151;
-  font-weight:600; /* BOLD TABS */
+  font-weight:700; /* ← Bolder */
 }
 nav.site-nav a:hover{
   background:#e5efff;
@@ -91,7 +93,7 @@ nav.site-nav a:hover{
   .card.span6{grid-column:span 6}
 }
 
-/* Pricing layout (2-wide) */
+/* Pricing layout */
 .pricing{
   display:grid;
   gap:16px;
@@ -253,46 +255,17 @@ h3{margin:16px 0 8px}
 }
 
 /* Thank-you animation */
-.thanks-card {
-  position: relative;
-  overflow: hidden;
-  animation: thanksFadeUp 0.6s ease-out;
+.thanks-card{position:relative;overflow:hidden;animation:thanksFadeUp .6s ease-out}
+.thanks-icon{
+  width:70px;height:70px;border-radius:50%;border:3px solid #16a34a;
+  display:flex;align-items:center;justify-content:center;font-size:34px;
+  margin:0 auto 10px auto;background:#ecfdf3;animation:thanksPop .45s ease-out;
 }
-.thanks-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 3px solid #16a34a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 34px;
-  margin: 0 auto 10px auto;
-  background: #ecfdf3;
-  animation: thanksPop 0.45s ease-out;
-}
-@keyframes thanksFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes thanksPop {
-  0% {
-    transform: scale(0.4);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
+@keyframes thanksFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes thanksPop{
+  0%{transform:scale(.4);opacity:0}
+  60%{transform:scale(1.1);opacity:1}
+  100%{transform:scale(1)}
 }
 </style>
 </head>
@@ -302,7 +275,9 @@ h3{margin:16px 0 8px}
 
 <!-- HEADER -->
 <header id="top">
-  <svg class="logo" viewBox="0 0 600 240" role="img" aria-label="Mustang Buildings & Consulting LLC logo">
+
+  <!-- ✔ FIXED LOGO (taller viewBox + raised text) -->
+  <svg class="logo" viewBox="0 0 600 260" role="img" aria-label="Mustang Buildings & Consulting LLC logo">
     <defs>
       <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0" stop-color="#2e8ec9"/>
@@ -310,10 +285,9 @@ h3{margin:16px 0 8px}
       </linearGradient>
     </defs>
 
-    <polygon points="300,25 75,120 110,120 300,45 490,120 525,120" fill="url(#roofGrad)"/>
+    <polygon points="300,25 75,130 110,130 300,50 490,130 525,130" fill="url(#roofGrad)"/>
 
-    <!-- One-line business name (raised slightly so it doesn't cut off) -->
-    <text x="50%" y="180" text-anchor="middle" font-size="40" font-weight="700">
+    <text x="50%" y="200" text-anchor="middle" font-size="40" font-weight="700">
       Mustang Buildings &amp; Consulting LLC
     </text>
   </svg>
@@ -359,14 +333,14 @@ h3{margin:16px 0 8px}
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
-<!-- CAUTION CALLOUT (moved just under hero) -->
+<!-- CAUTION CALLOUT -->
 <section class="callout">
   <p>
     <strong>⚠️ Call me before you sign a construction contract — once you sign, your options are limited.</strong>
   </p>
 </section>
 
-<!-- COMBINED ABOUT JEFF / WHY HOMEOWNERS TRUST JEFF -->
+<!-- ABOUT / TRUST SECTION -->
 <section class="card" id="trust">
   <h2>About Jeff &amp; Why Homeowners Trust Him</h2>
 
@@ -559,7 +533,6 @@ h3{margin:16px 0 8px}
       <input type="text" name="project_address" placeholder="Project address (city / area okay)"
              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
 
-      <!-- Project type dropdown -->
       <select name="project_type" required
               style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
         <option value="">Project type</option>
@@ -610,7 +583,7 @@ h3{margin:16px 0 8px}
 
 </section>
 
-<!-- CONSULTATION FORM -->
+<!-- CONSULTATION REQUEST -->
 <section class="card" id="consult-card">
   <h2 style="text-align:center;">Request a Consultation</h2>
   <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
@@ -632,7 +605,7 @@ h3{margin:16px 0 8px}
   </form>
 </section>
 
-<!-- ANIMATED THANK-YOU SECTION -->
+<!-- THANK YOU ANIMATION -->
 <section id="thanks" class="card thanks-card" style="display:none;">
   <div class="thanks-icon">✔</div>
   <h2 style="text-align:center;margin-top:0;">
@@ -651,7 +624,7 @@ h3{margin:16px 0 8px}
   </p>
 </section>
 
-<!-- TESTIMONIALS (LAST) -->
+<!-- TESTIMONIALS -->
 <section class="card" id="testimonials">
   <h2>What homeowners say</h2>
   <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px;margin:10px 0;">
@@ -664,7 +637,7 @@ h3{margin:16px 0 8px}
   © Mustang Buildings &amp; Consulting LLC — Advisory-only services.
 </footer>
 
-<!-- Sticky Schedule CTA -->
+<!-- Sticky CTA -->
 <div class="sticky-cta">
   <a href="#schedule">📅 Schedule Consultation</a>
 </div>
@@ -685,7 +658,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Make nav "Services & Pricing" link open the section and scroll to it
   var servicesNav = document.querySelector('a.nav-services');
   if (servicesNav && section) {
     servicesNav.addEventListener('click', function(e) {
@@ -697,7 +669,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // FORMS button toggle
   var formsBtn = document.getElementById('forms-btn');
   var formsSection = document.getElementById('forms-section');
 
@@ -714,7 +685,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Forms toggle logic (tabs)
   var formButtons = document.querySelectorAll('.form-toggle-btn');
   var formPanels = document.querySelectorAll('.form-panel');
 
@@ -732,7 +702,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Thank you page logic (for #thanks anchor)
   if (window.location.hash === "#thanks") {
     var formCard = document.getElementById("consult-card");
     var thanks = document.getElementById("thanks");
