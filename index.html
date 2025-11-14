@@ -282,7 +282,7 @@ h3{margin:16px 0 8px}
     <a href="#top">Home</a>
     <a href="#trust">Why Homeowners Trust Jeff</a>
     <a href="#how-it-works">How It Works</a>
-    <a href="#services-section">Services &amp; Pricing</a>
+    <a href="#services-section" class="nav-services">Services &amp; Pricing</a>
     <a href="#schedule">Schedule</a>
     <a href="#forms-section">Forms</a>
     <a href="#contact">Contact</a>
@@ -315,12 +315,18 @@ h3{margin:16px 0 8px}
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
-<!-- WHY HOMEOWNERS TRUST JEFF -->
+<!-- COMBINED ABOUT JEFF / WHY HOMEOWNERS TRUST JEFF -->
 <section class="card" id="trust">
-  <h2>Why Homeowners Trust Jeff</h2>
-  <p class="muted" style="margin-top:0;">
-    When you’re about to sign a construction contract, you don’t just need another opinion — you need someone who’s been on the other side of the table and understands how projects really succeed or fail.
+  <h2>About Jeff &amp; Why Homeowners Trust Him</h2>
+
+  <p>
+    <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong>, working on everything
+    from private homes and remodels to large-scale commercial and industrial projects — including remote locations where logistics,
+    weather, budgets, and schedules demand serious planning and adaptability. Jeff is also a <strong>former licensed Home Inspector in Alaska</strong>,
+    giving him deeper expertise in identifying structural issues, hidden risks, code concerns, and common problem areas that homeowners often overlook.
   </p>
+
+  <h3>Why Homeowners Trust Jeff</h3>
   <ul class="muted" style="padding-left:20px;margin-top:6px;">
     <li><strong>40+ years of construction experience</strong> — residential, commercial, industrial, and remote projects.</li>
     <li><strong>Former General Contractor in Alaska</strong> — harsh conditions, tight logistics, and complex builds.</li>
@@ -329,6 +335,20 @@ h3{margin:16px 0 8px}
     <li><strong>Independent advisor</strong> — I don’t bid on your work and I’m not competing with your contractors.</li>
     <li><strong>Plain-English communication</strong> — no jargon, just clear guidance and concrete next steps.</li>
   </ul>
+
+  <h3>Core Skills</h3>
+  <ul class="muted">
+    <li>Estimating &amp; cost control</li>
+    <li>Project management &amp; scheduling</li>
+    <li>Quality Control</li>
+    <li>Problem solving in difficult field conditions</li>
+    <li>Former Licensed Home Inspector — Alaska</li>
+  </ul>
+
+  <p>
+    Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language
+    into plain English, and guiding clients step-by-step so they can make confident decisions before they sign.
+  </p>
 </section>
 
 <!-- HOW IT WORKS -->
@@ -417,38 +437,16 @@ h3{margin:16px 0 8px}
   <div class="schedule-btn-wrapper">
     <a
       class="schedule-btn"
-      href="https://calendly.com/mustangbuildingsllc/60min"
+      href="https://calendly.com/mustangbuildingsllc"
       target="_blank"
       rel="noopener"
-    >📅 Schedule a 60-Minute Consultation</a>
+    >📅 Schedule a Consultation</a>
   </div>
 </section>
 
 <!-- ZINGER -->
 <section class="callout">
   <p><strong>⚠️ Call me before you sign a construction contract — once you sign, your options are limited.</strong></p>
-</section>
-
-<!-- ABOUT JEFF -->
-<section class="card">
-  <h2>About Jeff</h2>
-  <p>
-    <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong>, working on everything
-    from private homes and remodels to large-scale commercial and industrial projects — including remote locations where logistics,
-    weather, budgets, and schedules demand serious planning and adaptability. Jeff is also a <strong>former licensed Home Inspector in Alaska</strong>,
-    giving him deeper expertise in identifying structural issues, hidden risks, code concerns, and common problem areas that homeowners often overlook.
-  </p>
-  <ul class="muted">
-    <li>Estimating &amp; cost control</li>
-    <li>Project management &amp; scheduling</li>
-    <li>Quality Control</li>
-    <li>Problem solving in difficult field conditions</li>
-    <li>Former Licensed Home Inspector — Alaska</li>
-  </ul>
-  <p>
-    Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language
-    into plain English, and guiding clients step-by-step so they can make confident decisions before they sign.
-  </p>
 </section>
 
 <!-- DISCLAIMER -->
@@ -631,6 +629,18 @@ document.addEventListener('DOMContentLoaded', function () {
       var hidden = section.style.display === 'none' || section.style.display === '';
       section.style.display = hidden ? 'block' : 'none';
       if (hidden) section.scrollIntoView({ behavior:'smooth' });
+    });
+  }
+
+  // Make nav "Services & Pricing" link open the section and scroll to it
+  var servicesNav = document.querySelector('a.nav-services');
+  if (servicesNav && section) {
+    servicesNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (section.style.display === 'none' || section.style.display === '') {
+        section.style.display = 'block';
+      }
+      section.scrollIntoView({ behavior:'smooth' });
     });
   }
 
