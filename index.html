@@ -501,15 +501,16 @@ h3{margin:16px 0 8px}
     <a class="schedule-btn" href="https://calendly.com/mustangbuildingsllc/30min" target="_blank" rel="noopener">📅 Schedule a Consultation</a>
   </div>
 </section>
- <!-- PAY ONLINE (standalone card) -->
+<!-- PAY ONLINE (standalone card) -->
 <section class="card" id="pay-online">
   <h2>Pay Online</h2>
   <p class="muted">
     You can pay securely through PayPal after we confirm the service and amount together.
+    Use the button below — on the PayPal screen, enter the amount we discussed.
   </p>
 
   <div style="text-align:center;margin:12px 0;">
-    <a id="paypal-main-button" href="https://paypal.me/Texasflier" target="_blank" rel="noopener">
+    <a href="https://paypal.me/Texasflier" target="_blank" rel="noopener">
       <img
         src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"
         alt="Pay with PayPal"
@@ -517,10 +518,20 @@ h3{margin:16px 0 8px}
     </a>
   </div>
 
-  <!-- This box starts hidden and only shows AFTER they click the yellow button -->
-  <div id="pay-details" style="display:none; margin-top:8px;">
+  <div style="text-align:center;margin-bottom:6px;">
+    <button
+      type="button"
+      id="toggle-pay-details"
+      class="btn"
+      style="font-size:14px;padding:8px 14px;box-shadow:none;"
+    >
+      ❔ See typical payment amounts
+    </button>
+  </div>
+
+  <!-- Hidden details; toggled by the button above -->
+  <div id="pay-details" style="display:none; margin-top:4px;">
     <p class="fine">
-      On the PayPal screen, enter the amount we discussed.
       Typical amounts:
     </p>
     <p class="fine">
@@ -537,6 +548,7 @@ h3{margin:16px 0 8px}
     </p>
   </div>
 </section>
+
 
 
 
@@ -719,20 +731,17 @@ document.querySelectorAll('.form-toggle-btn').forEach(btn=>{
       t.scrollIntoView({ behavior: "smooth" });
     }
 
-    // Pay Online: reveal details after clicking PayPal button
-    var paypalMainButton = document.getElementById("paypal-main-button");
-    var payDetails = document.getElementById("pay-details");
+   // Pay Online: toggle "Typical amounts" box
+var togglePayDetails = document.getElementById("toggle-pay-details");
+var payDetails = document.getElementById("pay-details");
 
-    if (paypalMainButton && payDetails) {
-      paypalMainButton.addEventListener("click", function () {
-        if (payDetails.style.display === "none" || payDetails.style.display === "") {
-          payDetails.style.display = "block";
-        }
-      });
-    }
+if (togglePayDetails && payDetails) {
+  togglePayDetails.addEventListener("click", function () {
+    var hidden = payDetails.style.display === "none" || payDetails.style.display === "";
+    payDetails.style.display = hidden ? "block" : "none";
+  });
+}
 
-});
-</script>
 
 
 </body>
