@@ -501,36 +501,43 @@ h3{margin:16px 0 8px}
     <a class="schedule-btn" href="https://calendly.com/mustangbuildingsllc/30min" target="_blank" rel="noopener">📅 Schedule a Consultation</a>
   </div>
 </section>
-  <!-- PAY ONLINE (standalone card) -->
+ <!-- PAY ONLINE (standalone card) -->
 <section class="card" id="pay-online">
   <h2>Pay Online</h2>
   <p class="muted">
     You can pay securely through PayPal after we confirm the service and amount together.
-    On the next screen, enter the amount we discussed (for example, $450, $600, $750, or $1,900).
   </p>
 
   <div style="text-align:center;margin:12px 0;">
-    <a href="https://paypal.me/Texasflier" target="_blank" rel="noopener">
+    <a id="paypal-main-button" href="https://paypal.me/Texasflier" target="_blank" rel="noopener">
       <img
-        src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"
         alt="Pay with PayPal"
       >
     </a>
   </div>
 
-  <p class="fine">
-    Typical amounts:<br>
-    • $450 — Second-Opinion Call or Homeowner Advisor (Basic, first month)<br>
-    • $600 — Bid + Contractor Review or Project Planning &amp; Scope Session<br>
-    • $750 — Homeowner Advisor (Premium, first month)<br>
-    • $1,900 — 60-Day Protection Plan
-  </p>
-
-  <p class="fine">
-    If you have any questions before paying, call <a href="tel:+19072323244">907-232-3244</a>
-    or email <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>.
-  </p>
+  <!-- This box starts hidden and only shows AFTER they click the yellow button -->
+  <div id="pay-details" style="display:none; margin-top:8px;">
+    <p class="fine">
+      On the PayPal screen, enter the amount we discussed.
+      Typical amounts:
+    </p>
+    <p class="fine">
+      • $450 — Second-Opinion Call or Homeowner Advisor (Basic, first month)<br>
+      • $600 — Bid + Contractor Review or Project Planning &amp; Scope Session<br>
+      • $750 — Homeowner Advisor (Premium, first month)<br>
+      • $1,900 — 60-Day Protection Plan
+    </p>
+    <p class="fine">
+      If you have any questions before paying, call
+      <a href="tel:+19072323244">907-232-3244</a>
+      or email
+      <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>.
+    </p>
+  </div>
 </section>
+
 
 
 <!-- DISCLAIMER -->
@@ -702,20 +709,31 @@ document.querySelectorAll('.form-toggle-btn').forEach(btn=>{
     document.querySelectorAll('.form-toggle-btn').forEach(b=>b.classList.remove('active'));
     document.querySelectorAll('.form-panel').forEach(p=>p.classList.remove('active'));
     btn.classList.add('active');
-    document.getElementById(target).classList.add('active');
-  });
+      });
+
+    // Thank-you page logic
+    if (window.location.hash === "#thanks") {
+      document.getElementById("consult-card").style.display = "none";
+      const t = document.getElementById("thanks");
+      t.style.display = "block";
+      t.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Pay Online: reveal details after clicking PayPal button
+    var paypalMainButton = document.getElementById("paypal-main-button");
+    var payDetails = document.getElementById("pay-details");
+
+    if (paypalMainButton && payDetails) {
+      paypalMainButton.addEventListener("click", function () {
+        if (payDetails.style.display === "none" || payDetails.style.display === "") {
+          payDetails.style.display = "block";
+        }
+      });
+    }
+
 });
-
-// Thank-you page logic
-if (window.location.hash === "#thanks") {
-  document.getElementById("consult-card").style.display = "none";
-  const t = document.getElementById("thanks");
-  t.style.display = "block";
-  t.scrollIntoView({ behavior:"smooth" });
-}
-
-
 </script>
+
 
 </body>
 </html>
