@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mustang Buildings & Consulting LLC — Construction Consulting (DFW)</title>
-<meta name="description" content="Mustang Buildings & Consulting LLC — homeowner-focused construction consulting in the DFW Metro Area. 40+ years experience (Former GC — Alaska). Independent, advisory-only: bid reviews, scope checks, budgets & timelines, change-order prevention.">
+<meta name="description" content="Mustang Buildings & Consulting LLC — homeowner-focused construction consulting in the DFW Metro Area. Industry expert with over 40 years of construction experience.">
 
 <style>
 :root{
@@ -94,7 +94,7 @@ nav.site-nav a:hover{
   display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264;margin-left:8px;
 }
 
-/* Grid & cards */
+/* Cards */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
 .card{
   grid-column:span 12;
@@ -104,107 +104,8 @@ nav.site-nav a:hover{
   padding:20px;
   box-shadow:var(--shadow);
 }
-@media(min-width:840px){
-  .card.span6{grid-column:span 6}
-}
 
-/* Pricing layout */
-.pricing{
-  display:grid;
-  gap:16px;
-  margin-top:8px;
-}
-@media(min-width:840px){
-  .pricing{grid-template-columns:repeat(2,1fr);}
-}
-.price-card{
-  background:#ffffff;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  box-shadow:var(--shadow);
-}
-.price-card.highlight{
-  border-color:#cfead9;
-  box-shadow:0 10px 28px rgba(23,138,74,.10);
-}
-.price-row{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:12px;
-}
-.price-amt{
-  font-size:24px;
-  font-weight:800;
-  color:#0f2547;
-}
-
-/* Buttons */
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:12px 16px;border-radius:10px;border:1px solid var(--border);
-  background:#ffffff;color:#0f2547;font-weight:700;box-shadow:var(--shadow);
-  cursor:pointer;
-}
-.btn:hover{filter:brightness(1.03)}
-
-/* Sticky CTA */
-.sticky-cta{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  z-index:50;
-}
-.sticky-cta a{
-  background:#1d7fe2;
-  color:#ffffff;
-  padding:10px 16px;
-  border-radius:999px;
-  font-size:14px;
-  box-shadow:var(--shadow);
-}
-.sticky-cta a:hover{
-  filter:brightness(1.08);
-  text-decoration:none;
-}
-
-/* Yellow FORMS Button */
-#forms-btn{
-  background:#FDE68A;
-  border:1px solid #E5C755;
-  color:#5A4500;
-  font-weight:700;
-}
-#forms-btn:hover{filter:brightness(1.05)}
-
-/* Big Services button bar */
-.services-bar{
-  margin-top:18px;
-  background:#ffffff;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:16px;
-  box-shadow:var(--shadow);
-  text-align:center;
-}
-.big-service-btn{
-  background:#1d7fe2;
-  color:#ffffff;
-  font-size:20px;
-  padding:16px 26px;
-  border-radius:12px;
-  margin:6px auto 0;
-  display:block;
-  text-align:center;
-  width:280px;
-}
-.big-service-btn:hover{filter:brightness(1.1)}
-
-/* Caution callout — now with equal spacing above & below */
+/* Caution callout */
 .callout{
   background:#fff8e6;
   border-left:6px solid var(--warn);
@@ -214,95 +115,11 @@ nav.site-nav a:hover{
   box-shadow:var(--shadow);
   text-align:center;
   font-size:17px;
-  margin:18px 0;      /* ★ equal spacing above & below */
+  margin:18px 0;
 }
 .callout span{
   font-size:22px;
   margin:0 6px;
-}
-
-/* Schedule button */
-.schedule-btn-wrapper{
-  text-align:center;
-  margin-top:8px;
-}
-.schedule-btn{
-  background:#1d7fe2;
-  color:#ffffff;
-  font-size:18px;
-  padding:14px 22px;
-  border-radius:12px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:100%;
-  max-width:320px;
-  border:1px solid #1d7fe2;
-}
-.schedule-btn:hover{filter:brightness(1.08);text-decoration:none}
-
-/* Text helpers */
-.muted{color:var(--muted)}
-.fine{font-size:13px;color:#6b7280}
-h1{font-size:clamp(28px,3.4vw,40px);margin:0}
-h2{margin:0 0 12px;font-size:22px}
-h3{margin:16px 0 8px}
-
-/* Forms toggle */
-.form-toggle-bar{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin:12px 0 4px;
-}
-.form-toggle-btn{
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:#ffffff;
-  cursor:pointer;
-  font-size:14px;
-}
-.form-toggle-btn.active{
-  background:#1d7fe2;
-  color:#ffffff;
-  border-color:#1d7fe2;
-}
-.form-panel{
-  display:none;
-  margin-top:8px;
-}
-.form-panel.active{
-  display:block;
-}
-
-/* Thank-you animation */
-.thanks-card {
-  position: relative;
-  overflow: hidden;
-  animation: thanksFadeUp 0.6s ease-out;
-}
-.thanks-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 3px solid #16a34a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 34px;
-  margin: 0 auto 10px auto;
-  background: #ecfdf3;
-  animation: thanksPop 0.45s ease-out;
-}
-@keyframes thanksFadeUp {
-  from {opacity: 0;transform: translateY(16px);}
-  to   {opacity: 1;transform: translateY(0);}
-}
-@keyframes thanksPop {
-  0% {transform: scale(0.4);opacity: 0;}
-  60%{transform: scale(1.1);opacity: 1;}
-  100%{transform: scale(1);}
 }
 </style>
 </head>
@@ -326,7 +143,9 @@ h3{margin:16px 0 8px}
 
   <h1>Mustang Buildings &amp; Consulting LLC</h1>
   <div class="sub">Jeff Zweifel — Owner / Principal Consultant</div>
-  <div class="tag">Construction Consulting — DFW Metro Area • 40+ years experience</div>
+
+  <!-- UPDATED HEADER TAGLINE -->
+  <div class="tag">Construction Consulting — DFW Metro Area • More Than 40 Years of Industry Experience</div>
 
   <nav class="site-nav">
     <a href="#top">Home</a>
@@ -365,7 +184,7 @@ h3{margin:16px 0 8px}
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
-<!-- CENTERED CAUTION -->
+<!-- CAUTION BAND -->
 <section class="callout">
   <span>⚠️</span>
   Call me before you sign a construction contract — once you sign, your options are limited.
@@ -377,36 +196,20 @@ h3{margin:16px 0 8px}
   <h2>About Jeff &amp; Why Homeowners Trust Him</h2>
 
   <p>
-    <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong>, working on everything
-    from private homes and remodels to large-scale commercial and industrial projects — including remote locations where logistics,
-    weather, budgets, and schedules demand serious planning and adaptability. Jeff is also a <strong>former licensed Home Inspector in Alaska</strong>,
-    giving him deeper expertise in identifying structural issues, hidden risks, code concerns, and common problem areas that homeowners often overlook.
+    Jeff built his entire career in Alaska, spending more than four decades working on
+    <strong>homes, remodels, commercial projects, industrial jobs, and Department of Defense (DOD) projects</strong> —
+    as well as the kind of remote construction that requires creativity, problem-solving, and careful planning.
+    Working in Alaska taught him how to manage logistics, weather, schedules, and materials in environments where mistakes
+    are costly and conditions change fast. Those years gave him a trained eye for spotting risk early, preventing problems,
+    and planning work the right way from the start.
   </p>
-
-  <h3>Why Homeowners Trust Jeff</h3>
-  <ul class="muted" style="padding-left:20px;margin-top:6px;">
-    <li><strong>40+ years of construction experience</strong> — residential, commercial, industrial, and remote projects.</li>
-    <li><strong>Former General Contractor in Alaska</strong> — harsh conditions, tight logistics, and complex builds.</li>
-    <li><strong>Former Licensed Home Inspector (Alaska)</strong> — trained eye for risk, defects, and hidden issues.</li>
-    <li><strong>Experienced estimator and planner</strong> — budgets, schedules, and scope control.</li>
-    <li><strong>Independent advisor</strong> — I don’t bid on your work and I’m not competing with your contractors.</li>
-    <li><strong>Plain-English communication</strong> — no jargon, just clear guidance and concrete next steps.</li>
-  </ul>
-
-  <h3>Core Skills</h3>
-  <ul class="muted">
-    <li>Estimating &amp; cost control</li>
-    <li>Project management &amp; scheduling</li>
-    <li>Quality Control</li>
-    <li>Problem solving in difficult field conditions</li>
-    <li>Former Licensed Home Inspector — Alaska</li>
-  </ul>
 
   <p>
-    Now Jeff focuses solely on <strong>homeowner advocacy and consulting</strong> — reviewing bids, translating contractor language
-    into plain English, and guiding clients step-by-step so they can make confident decisions before they sign.
+    In 2022, Jeff and his wife moved from Alaska to Texas to be closer to family. Today, he brings those 40+ years of
+    hands-on experience to DFW homeowners — offering independent, advisory-only guidance so families can make confident
+    decisions before signing a construction contract.
   </p>
-</section>
+  </section>
 
 <!-- HOW IT WORKS -->
 <section class="card" id="how-it-works">
@@ -430,7 +233,7 @@ h3{margin:16px 0 8px}
   </button>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES & PRICING -->
 <section id="services-section" class="card" style="display:none; margin-top:20px;">
   <h2>Services &amp; Pricing</h2>
 
@@ -488,7 +291,7 @@ h3{margin:16px 0 8px}
   </p>
 </section>
 
-<!-- SCHEDULE -->
+<!-- SCHEDULE A CONSULTATION -->
 <section class="card" id="schedule">
   <h2>Schedule a Consultation</h2>
   <p class="muted" style="margin-top:0;">
@@ -513,7 +316,6 @@ h3{margin:16px 0 8px}
     I can help you prepare for negotiations with strategy, questions, and documentation.
   </p>
 </section>
-
 <!-- FAQ & CONTACT -->
 <div class="grid">
   <section class="card span6">
@@ -543,11 +345,13 @@ h3{margin:16px 0 8px}
     Online payment options (Zelle / PayPal / Venmo) will be added separately.
   </p>
 
+  <!-- Toggle buttons -->
   <div class="form-toggle-bar">
     <button type="button" class="form-toggle-btn active" data-target="intake-form-panel">📝 New Client Intake</button>
     <button type="button" class="form-toggle-btn" data-target="testimonial-form-panel">⭐ Testimonial / Review</button>
   </div>
 
+  <!-- Intake Form -->
   <div id="intake-form-panel" class="form-panel active">
     <h3>📝 New Client Intake</h3>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
@@ -563,6 +367,7 @@ h3{margin:16px 0 8px}
       <input type="text" name="project_address" placeholder="Project address (city / area okay)"
              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
 
+      <!-- Project type dropdown -->
       <select name="project_type" required
               style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
         <option value="">Project type</option>
@@ -582,6 +387,7 @@ h3{margin:16px 0 8px}
     </form>
   </div>
 
+  <!-- Testimonial Form -->
   <div id="testimonial-form-panel" class="form-panel">
     <h3>⭐ Testimonial / Review</h3>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
@@ -634,7 +440,7 @@ h3{margin:16px 0 8px}
   </form>
 </section>
 
-<!-- THANK YOU -->
+<!-- THANK YOU ANIMATION -->
 <section id="thanks" class="card thanks-card" style="display:none;">
   <div class="thanks-icon">✔</div>
   <h2 style="text-align:center;margin-top:0;">
@@ -648,7 +454,7 @@ h3{margin:16px 0 8px}
     <li>Gather any bids, drawings, or photos you’d like me to review.</li>
     <li>If you booked a time in Calendly, you can reschedule or cancel using the link in your confirmation email.</li>
   </ul>
-  <p class="fine" style="margin-top:10px;text-align:center;">
+  <p class="fine" style="text-align:center;margin-top:10px;">
     Questions before we talk? Call <a href="tel:+19072323244">907-232-3244</a>.
   </p>
 </section>
@@ -673,10 +479,11 @@ h3{margin:16px 0 8px}
 
 </div>
 
+<!-- JAVASCRIPT -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Toggle Services section
+  // Toggle Services
   var btn = document.getElementById('services-toggle');
   var section = document.getElementById('services-section');
   if (btn && section) {
@@ -734,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Thank you logic
+  // Thank you section logic
   if (window.location.hash === "#thanks") {
     var formCard = document.getElementById("consult-card");
     var thanks = document.getElementById("thanks");
@@ -750,3 +557,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
+
