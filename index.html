@@ -33,26 +33,26 @@ a:hover{text-decoration:underline}
 
 /* Header */
 header{text-align:center;margin:4px 0 10px}
-.logo{
-  width:420px;
-  max-width:95vw;
-  margin:12px auto 6px;
-  animation:logoDropIn 0.7s ease-out;
-}
-.sub{font-weight:600;margin-top:4px;}
-.tag{font-size:14px;margin-top:2px;color:var(--muted);}
 
-/* Logo animation */
-@keyframes logoDropIn {
-  from {
-    opacity:0;
-    transform:translateY(-12px);
-  }
-  to {
+/* BIGGER roof-only logo with animation */
+.logo{
+  width:630px;              /* ~50% bigger */
+  max-width:95vw;
+  margin:12px auto 18px;
+  opacity:0;
+  transform:translateY(-18px);
+  animation:logoDropIn .7s ease-out forwards;
+}
+
+@keyframes logoDropIn{
+  to{
     opacity:1;
     transform:translateY(0);
   }
 }
+
+.sub{font-weight:600;margin-top:4px;}
+.tag{font-size:14px;margin-top:2px;color:var(--muted);}
 
 /* Top navigation */
 nav.site-nav{
@@ -108,7 +108,7 @@ nav.site-nav a:hover{
   .card.span6{grid-column:span 6}
 }
 
-/* Pricing layout (2-wide) */
+/* Pricing layout */
 .pricing{
   display:grid;
   gap:16px;
@@ -204,7 +204,7 @@ nav.site-nav a:hover{
 }
 .big-service-btn:hover{filter:brightness(1.1)}
 
-/* Callout */
+/* Caution callout — centered + big icons */
 .callout{
   background:#fff8e6;
   border-left:6px solid var(--warn);
@@ -212,15 +212,12 @@ nav.site-nav a:hover{
   border-radius:10px;
   padding:14px 16px;
   box-shadow:var(--shadow);
-}
-.callout-text{
   text-align:center;
-  margin:0;
+  font-size:17px;
 }
-.caution-icon{
-  font-size:1.5em;
+.callout span{
+  font-size:22px;
   margin:0 6px;
-  vertical-align:middle;
 }
 
 /* Schedule button */
@@ -298,27 +295,13 @@ h3{margin:16px 0 8px}
   animation: thanksPop 0.45s ease-out;
 }
 @keyframes thanksFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from {opacity: 0;transform: translateY(16px);}
+  to   {opacity: 1;transform: translateY(0);}
 }
 @keyframes thanksPop {
-  0% {
-    transform: scale(0.4);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% {transform: scale(0.4);opacity: 0;}
+  60%{transform: scale(1.1);opacity: 1;}
+  100%{transform: scale(1);}
 }
 </style>
 </head>
@@ -328,15 +311,15 @@ h3{margin:16px 0 8px}
 
 <!-- HEADER -->
 <header id="top">
-  <!-- SVG logo: roof only, no text -->
-  <svg class="logo" viewBox="0 0 600 160" role="img" aria-label="Mustang Buildings & Consulting LLC logo">
+
+  <!-- LARGE roof-only SVG (no text) -->
+  <svg class="logo" viewBox="0 0 600 160" role="img" aria-label="Roof logo">
     <defs>
       <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0" stop-color="#2e8ec9"/>
         <stop offset="1" stop-color="#53b6ff"/>
       </linearGradient>
     </defs>
-
     <polygon points="300,25 75,120 110,120 300,45 490,120 525,120" fill="url(#roofGrad)"/>
   </svg>
 
@@ -381,18 +364,14 @@ h3{margin:16px 0 8px}
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
-<!-- CAUTION CALLOUT (centered text, larger icons) -->
+<!-- CENTERED CAUTION -->
 <section class="callout">
-  <p class="callout-text">
-    <strong>
-      <span class="caution-icon">⚠️</span>
-      Call me before you sign a construction contract — once you sign, your options are limited.
-      <span class="caution-icon">⚠️</span>
-    </strong>
-  </p>
+  <span>⚠️</span>
+  Call me before you sign a construction contract — once you sign, your options are limited.
+  <span>⚠️</span>
 </section>
 
-<!-- COMBINED ABOUT JEFF / WHY HOMEOWNERS TRUST JEFF -->
+<!-- ABOUT JEFF -->
 <section class="card" id="trust">
   <h2>About Jeff &amp; Why Homeowners Trust Him</h2>
 
@@ -508,7 +487,7 @@ h3{margin:16px 0 8px}
   </p>
 </section>
 
-<!-- SCHEDULE A CONSULTATION -->
+<!-- SCHEDULE -->
 <section class="card" id="schedule">
   <h2>Schedule a Consultation</h2>
   <p class="muted" style="margin-top:0;">
@@ -563,13 +542,11 @@ h3{margin:16px 0 8px}
     Online payment options (Zelle / PayPal / Venmo) will be added separately.
   </p>
 
-  <!-- Toggle buttons -->
   <div class="form-toggle-bar">
     <button type="button" class="form-toggle-btn active" data-target="intake-form-panel">📝 New Client Intake</button>
     <button type="button" class="form-toggle-btn" data-target="testimonial-form-panel">⭐ Testimonial / Review</button>
   </div>
 
-  <!-- Intake Form -->
   <div id="intake-form-panel" class="form-panel active">
     <h3>📝 New Client Intake</h3>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
@@ -585,7 +562,6 @@ h3{margin:16px 0 8px}
       <input type="text" name="project_address" placeholder="Project address (city / area okay)"
              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
 
-      <!-- Project type dropdown -->
       <select name="project_type" required
               style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
         <option value="">Project type</option>
@@ -605,7 +581,6 @@ h3{margin:16px 0 8px}
     </form>
   </div>
 
-  <!-- Testimonial Form -->
   <div id="testimonial-form-panel" class="form-panel">
     <h3>⭐ Testimonial / Review</h3>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
@@ -636,7 +611,7 @@ h3{margin:16px 0 8px}
 
 </section>
 
-<!-- CONSULTATION FORM -->
+<!-- CONSULT REQUEST -->
 <section class="card" id="consult-card">
   <h2 style="text-align:center;">Request a Consultation</h2>
   <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
@@ -658,7 +633,7 @@ h3{margin:16px 0 8px}
   </form>
 </section>
 
-<!-- ANIMATED THANK-YOU SECTION -->
+<!-- THANK YOU -->
 <section id="thanks" class="card thanks-card" style="display:none;">
   <div class="thanks-icon">✔</div>
   <h2 style="text-align:center;margin-top:0;">
@@ -677,7 +652,7 @@ h3{margin:16px 0 8px}
   </p>
 </section>
 
-<!-- TESTIMONIALS (LAST) -->
+<!-- TESTIMONIALS -->
 <section class="card" id="testimonials">
   <h2>What homeowners say</h2>
   <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px;margin:10px 0;">
@@ -711,7 +686,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Make nav "Services & Pricing" link open the section and scroll to it
+  // Nav Services link
   var servicesNav = document.querySelector('a.nav-services');
   if (servicesNav && section) {
     servicesNav.addEventListener('click', function(e) {
@@ -723,7 +698,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // FORMS button toggle
+  // Forms toggle
   var formsBtn = document.getElementById('forms-btn');
   var formsSection = document.getElementById('forms-section');
 
@@ -740,7 +715,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Forms toggle logic (tabs)
+  // Form tab logic
   var formButtons = document.querySelectorAll('.form-toggle-btn');
   var formPanels = document.querySelectorAll('.form-panel');
 
@@ -758,7 +733,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Thank you page logic (for #thanks anchor)
+  // Thank you logic
   if (window.location.hash === "#thanks") {
     var formCard = document.getElementById("consult-card");
     var thanks = document.getElementById("thanks");
