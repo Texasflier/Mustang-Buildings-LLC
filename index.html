@@ -34,6 +34,27 @@ a:hover{text-decoration:underline}
 /* Header */
 header{text-align:center;margin:4px 0 10px}
 .logo{width:400px;max-width:95vw;margin:12px auto 10px;}
+.sub{font-weight:600;margin-top:4px;}
+.tag{font-size:14px;margin-top:2px;color:var(--muted);}
+
+/* Top navigation */
+nav.site-nav{
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  font-size:14px;
+}
+nav.site-nav a{
+  padding:4px 10px;
+  border-radius:999px;
+  color:#374151;
+}
+nav.site-nav a:hover{
+  background:#e5efff;
+  text-decoration:none;
+}
 
 /* Hero */
 .hero{
@@ -113,9 +134,24 @@ header{text-align:center;margin:4px 0 10px}
 }
 .btn:hover{filter:brightness(1.03)}
 
-.cta{
-  display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;
-  align-items:center;
+/* Sticky CTA */
+.sticky-cta{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:50;
+}
+.sticky-cta a{
+  background:#1d7fe2;
+  color:#ffffff;
+  padding:10px 16px;
+  border-radius:999px;
+  font-size:14px;
+  box-shadow:var(--shadow);
+}
+.sticky-cta a:hover{
+  filter:brightness(1.08);
+  text-decoration:none;
 }
 
 /* Yellow FORMS Button */
@@ -221,7 +257,7 @@ h3{margin:16px 0 8px}
 <div class="wrap">
 
 <!-- HEADER -->
-<header>
+<header id="top">
   <svg class="logo" viewBox="0 0 600 220" role="img" aria-label="Mustang Buildings & Consulting LLC logo">
     <defs>
       <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
@@ -240,7 +276,18 @@ h3{margin:16px 0 8px}
 
   <h1>Mustang Buildings &amp; Consulting LLC</h1>
   <div class="sub">Jeff Zweifel — Owner / Principal Consultant</div>
-  <div class="tag" style="color:#5b6472;">Construction Consulting — DFW Metro Area • 40+ years experience</div>
+  <div class="tag">Construction Consulting — DFW Metro Area • 40+ years experience</div>
+
+  <nav class="site-nav">
+    <a href="#top">Home</a>
+    <a href="#trust">Why Homeowners Trust Jeff</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#services-section">Services &amp; Pricing</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#forms-section">Forms</a>
+    <a href="#contact">Contact</a>
+    <a href="#testimonials">Testimonials</a>
+  </nav>
 </header>
 
 <!-- HERO -->
@@ -269,7 +316,7 @@ h3{margin:16px 0 8px}
 </section>
 
 <!-- WHY HOMEOWNERS TRUST JEFF -->
-<section class="card">
+<section class="card" id="trust">
   <h2>Why Homeowners Trust Jeff</h2>
   <p class="muted" style="margin-top:0;">
     When you’re about to sign a construction contract, you don’t just need another opinion — you need someone who’s been on the other side of the table and understands how projects really succeed or fail.
@@ -285,7 +332,7 @@ h3{margin:16px 0 8px}
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="card">
+<section class="card" id="how-it-works">
   <h2>How It Works</h2>
   <ol class="muted" style="padding-left:20px;margin:8px 0 0 0;">
     <li><strong>Review the agreement.</strong> Get clear on what I do (and don’t do) so you’re comfortable and protected.</li>
@@ -362,7 +409,7 @@ h3{margin:16px 0 8px}
 </section>
 
 <!-- SCHEDULE A CONSULTATION -->
-<section class="card">
+<section class="card" id="schedule">
   <h2>Schedule a Consultation</h2>
   <p class="muted" style="margin-top:0;">
     View my live availability and choose a time that works for you. Your confirmation email will include a Zoom link for our call.
@@ -370,10 +417,10 @@ h3{margin:16px 0 8px}
   <div class="schedule-btn-wrapper">
     <a
       class="schedule-btn"
-      href="https://calendly.com/mustangbuildingsllc/30min"
+      href="https://calendly.com/mustangbuildingsllc/60min"
       target="_blank"
       rel="noopener"
-    >📅 Schedule a Consultation</a>
+    >📅 Schedule a 60-Minute Consultation</a>
   </div>
 </section>
 
@@ -423,7 +470,7 @@ h3{margin:16px 0 8px}
     <p><strong>Is this legal advice?</strong> No — construction guidance only.</p>
   </section>
 
-  <section class="card span6">
+  <section class="card span6" id="contact">
     <h2>Contact</h2>
     <p>
       <strong>Business:</strong> Mustang Buildings &amp; Consulting LLC<br>
@@ -554,7 +601,7 @@ h3{margin:16px 0 8px}
 </section>
 
 <!-- TESTIMONIALS (LAST) -->
-<section class="card">
+<section class="card" id="testimonials">
   <h2>What homeowners say</h2>
   <blockquote style="padding:14px;border-left:4px solid #cfead9;background:#f6fff9;border-radius:6px;margin:10px 0;">
     “Jeff saved us thousands by catching missing scope in two bids. He explained everything in plain English and helped us push back on a bad allowance.”
@@ -565,6 +612,11 @@ h3{margin:16px 0 8px}
 <footer class="fine" style="margin-top:22px;text-align:center;">
   © Mustang Buildings &amp; Consulting LLC — Advisory-only services.
 </footer>
+
+<!-- Sticky Schedule CTA -->
+<div class="sticky-cta">
+  <a href="#schedule">📅 Schedule Consultation</a>
+</div>
 
 </div>
 
