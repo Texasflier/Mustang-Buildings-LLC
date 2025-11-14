@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mustang Buildings & Consulting LLC — Construction Consulting (DFW)</title>
-<meta name="description" content="Mustang Buildings & Consulting LLC — homeowner-focused construction consulting in the DFW Metro Area. Industry expert with over 40 years of construction experience.">
+<meta name="description" content="Mustang Buildings & Consulting LLC — homeowner-focused construction consulting in the DFW Metro Area. 40+ years of industry experience across residential, commercial, industrial, and DoD projects. Independent, advisory-only guidance for homeowners.">
 
 <style>
 :root{
@@ -33,41 +33,35 @@ a:hover{text-decoration:underline}
 
 /* Header */
 header{text-align:center;margin:4px 0 10px}
-
-/* BIGGER roof-only logo with animation */
 .logo{
-  width:630px;
+  width:460px;           /* larger truss */
   max-width:95vw;
-  margin:12px auto 18px;
-  opacity:0;
-  transform:translateY(-18px);
-  animation:logoDropIn .7s ease-out forwards;
+  margin:12px auto 14px;
+  animation: trussPop 0.6s ease-out;
 }
-
-@keyframes logoDropIn{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+@keyframes trussPop {
+  0% {transform:scale(.6);opacity:0;}
+  70% {transform:scale(1.08);opacity:1;}
+  100% {transform:scale(1);}
 }
 
 .sub{font-weight:600;margin-top:4px;}
-.tag{font-size:14px;margin-top:2px;color:var(--muted);}
+.tag{font-size:15px;margin-top:6px;color:var(--muted);line-height:1.4;}
 
-/* Top navigation */
+/* Navigation */
 nav.site-nav{
-  margin-top:10px;
+  margin-top:12px;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:10px;
-  font-size:14px;
+  gap:12px;
+  font-size:15px;
 }
 nav.site-nav a{
-  padding:4px 10px;
+  padding:6px 14px;
   border-radius:999px;
   color:#374151;
-  font-weight:700;
+  font-weight:700; /* BOLDER TABS */
 }
 nav.site-nav a:hover{
   background:#e5efff;
@@ -81,7 +75,7 @@ nav.site-nav a:hover{
   border-radius:20px;
   padding:24px;
   box-shadow:var(--shadow);
-  margin:16px 0 18px;
+  margin:20px 0 20px;
 }
 .badges{
   display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;justify-content:center;
@@ -94,6 +88,41 @@ nav.site-nav a:hover{
   display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264;margin-left:8px;
 }
 
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 16px;border-radius:10px;border:1px solid var(--border);
+  background:#ffffff;color:#0f2547;font-weight:700;box-shadow:var(--shadow);
+  cursor:pointer;
+}
+.btn:hover{filter:brightness(1.03)}
+
+.cta{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:14px;
+}
+
+#forms-btn{
+  background:#FDE68A;
+  border:1px solid #E5C755;
+  color:#5A4500;
+  font-weight:700;
+}
+#forms-btn:hover{filter:brightness(1.05)}
+
+/* Callout */
+.callout{
+  background:#fff8e6;
+  border-left:6px solid var(--warn);
+  border:1px solid #f5e4b0;
+  border-radius:10px;
+  padding:14px 16px;
+  box-shadow:var(--shadow);
+  margin:20px 0 20px; /* EVEN GAP ABOVE & BELOW */
+  text-align:center;
+  font-size:17px;
+  font-weight:600;
+}
+
 /* Cards */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
 .card{
@@ -104,23 +133,68 @@ nav.site-nav a:hover{
   padding:20px;
   box-shadow:var(--shadow);
 }
+@media(min-width:840px){
+  .card.span6{grid-column:span 6}
+}
 
-/* Caution callout */
-.callout{
-  background:#fff8e6;
-  border-left:6px solid var(--warn);
-  border:1px solid #f5e4b0;
-  border-radius:10px;
-  padding:14px 16px;
-  box-shadow:var(--shadow);
-  text-align:center;
-  font-size:17px;
-  margin:18px 0;
+/* Pricing */
+.pricing{display:grid;gap:16px;margin-top:8px;}
+@media(min-width:840px){.pricing{grid-template-columns:repeat(2,1fr);}}
+.price-card{
+  background:#ffffff;border:1px solid var(--border);border-radius:14px;
+  padding:18px;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);
 }
-.callout span{
-  font-size:22px;
-  margin:0 6px;
+.price-card.highlight{
+  border-color:#cfead9;
+  box-shadow:0 10px 28px rgba(23,138,74,.10);
 }
+.price-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;}
+.price-amt{font-size:24px;font-weight:800;color:#0f2547}
+
+/* Services Button */
+.services-bar{
+  margin-top:18px;background:#ffffff;border:1px solid var(--border);border-radius:14px;
+  padding:16px;box-shadow:var(--shadow);text-align:center;
+}
+.big-service-btn{
+  background:#1d7fe2;color:#ffffff;font-size:20px;padding:16px 26px;border-radius:12px;
+  margin:6px auto 0;display:block;text-align:center;width:280px;
+}
+.big-service-btn:hover{filter:brightness(1.1)}
+
+.schedule-btn-wrapper{text-align:center;margin-top:8px;}
+.schedule-btn{
+  background:#1d7fe2;color:#ffffff;font-size:18px;padding:14px 22px;border-radius:12px;
+  display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:320px;
+}
+.schedule-btn:hover{filter:brightness(1.08)}
+
+/* Text helpers */
+.muted{color:var(--muted)}
+.fine{font-size:13px;color:#6b7280}
+h1{font-size:clamp(28px,3.4vw,40px);margin:0}
+h2{margin:0 0 12px;font-size:22px}
+h3{margin:16px 0 8px}
+
+/* Forms */
+.form-toggle-bar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px;}
+.form-toggle-btn{
+  padding:8px 12px;border-radius:999px;border:1px solid var(--border);
+  background:#ffffff;cursor:pointer;font-size:14px;
+}
+.form-toggle-btn.active{background:#1d7fe2;color:#ffffff;border-color:#1d7fe2;}
+.form-panel{display:none;margin-top:8px;}
+.form-panel.active{display:block}
+
+/* Thank-you animation */
+.thanks-card {position: relative;overflow: hidden;animation: thanksFadeUp 0.6s ease-out;}
+.thanks-icon {
+  width: 70px;height: 70px;border-radius: 50%;border: 3px solid #16a34a;
+  display: flex;align-items: center;justify-content: center;font-size: 34px;
+  margin: 0 auto 10px auto;background: #ecfdf3;animation: thanksPop 0.45s ease-out;
+}
+@keyframes thanksFadeUp {from {opacity: 0;transform: translateY(16px);}to {opacity: 1;transform: translateY(0);}}
+@keyframes thanksPop {0% {transform: scale(0.4);opacity: 0;}60% {transform: scale(1.1);opacity: 1;}100% {transform: scale(1);}}
 </style>
 </head>
 
@@ -130,22 +204,24 @@ nav.site-nav a:hover{
 <!-- HEADER -->
 <header id="top">
 
-  <!-- LARGE roof-only SVG (no text) -->
-  <svg class="logo" viewBox="0 0 600 160" role="img" aria-label="Roof logo">
+  <!-- BIGGER ROOF TRUSS LOGO (NO TEXT INSIDE SVG) -->
+  <svg class="logo" viewBox="0 0 600 240" aria-label="Roof truss logo">
     <defs>
       <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0" stop-color="#2e8ec9"/>
         <stop offset="1" stop-color="#53b6ff"/>
       </linearGradient>
     </defs>
-    <polygon points="300,25 75,120 110,120 300,45 490,120 525,120" fill="url(#roofGrad)"/>
+    <polygon points="300,25 75,140 110,140 300,60 490,140 525,140" fill="url(#roofGrad)"/>
   </svg>
 
   <h1>Mustang Buildings &amp; Consulting LLC</h1>
-  <div class="sub">Jeff Zweifel — Owner / Principal Consultant</div>
 
-  <!-- UPDATED HEADER TAGLINE -->
-  <div class="tag">Construction Consulting — DFW Metro Area • More Than 40 Years of Industry Experience</div>
+  <!-- APPROVED TAGLINE -->
+  <div class="tag">
+    Construction Consulting — DFW Metro Area<br>
+    More Than 40 Years of Industry Experience
+  </div>
 
   <nav class="site-nav">
     <a href="#top">Home</a>
@@ -160,7 +236,7 @@ nav.site-nav a:hover{
 </header>
 
 <!-- HERO -->
- <section class="hero">
+<section class="hero">
   <h2>Protect your project <span class="pill">Advisory-Only</span><span class="pill">100% homeowner advocate</span></h2>
   <p>
     I help homeowners make confident decisions <strong>before they sign</strong> construction contracts.
@@ -184,42 +260,57 @@ nav.site-nav a:hover{
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
-<!-- CAUTION BAND -->
+<!-- CAUTION BANNER -->
 <section class="callout">
-  <span>⚠️</span>
-  Call me before you sign a construction contract — once you sign, your options are limited.
-  <span>⚠️</span>
+  ⚠️ &nbsp; <strong>Call me before you sign a construction contract — once you sign, your options are limited.</strong> &nbsp; ⚠️
 </section>
 
-<!-- ABOUT JEFF -->
+<!-- ABOUT / WHY TRUST JEFF -->
 <section class="card" id="trust">
   <h2>About Jeff &amp; Why Homeowners Trust Him</h2>
 
   <p>
-    Jeff built his entire career in Alaska, spending more than four decades working on
-    <strong>homes, remodels, commercial projects, industrial jobs, and Department of Defense (DOD) projects</strong> —
-    as well as the kind of remote construction that requires creativity, problem-solving, and careful planning.
-    Working in Alaska taught him how to manage logistics, weather, schedules, and materials in environments where mistakes
-    are costly and conditions change fast. Those years gave him a trained eye for spotting risk early, preventing problems,
-    and planning work the right way from the start.
+    <strong>Jeff Zweifel</strong> brings more than <strong>40 years of construction experience</strong> across homes,
+    remodels, commercial and industrial projects, and Department of Defense work.
+    Jeff spent his entire career in Alaska until he and his wife relocated to Texas in 2022.
+    Working in remote areas with harsh weather and complex logistics built the foundation of his
+    planning, problem-solving, and risk-mitigation skills.
   </p>
 
+  <h3>Why Homeowners Trust Jeff</h3>
+  <ul class="muted">
+    <li>40+ years of construction experience — residential, commercial, industrial, and DoD projects</li>
+    <li>Former General Contractor in Alaska — complex builds in extreme conditions</li>
+    <li>Former Licensed Home Inspector (Alaska) — trained eye for risk and hidden issues</li>
+    <li>Estimator and planner — budgets, schedules, scope control</li>
+    <li>Independent advisor — not bidding on your work</li>
+    <li>Clear, plain-English communication</li>
+  </ul>
+
+  <h3>Core Skills</h3>
+  <ul class="muted">
+    <li>Estimating &amp; cost control</li>
+    <li>Project management &amp; scheduling</li>
+    <li>Quality Control</li>
+    <li>Problem solving in difficult field conditions</li>
+    <li>Risk identification &amp; mitigation</li>
+  </ul>
+
   <p>
-    In 2022, Jeff and his wife moved from Alaska to Texas to be closer to family. Today, he brings those 40+ years of
-    hands-on experience to DFW homeowners — offering independent, advisory-only guidance so families can make confident
-    decisions before signing a construction contract.
+    Today Jeff focuses exclusively on <strong>homeowner advocacy and consulting</strong> — reviewing bids,
+    translating contractor language into plain English, and guiding clients step-by-step so they can make confident decisions before they sign.
   </p>
-  </section>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="card" id="how-it-works">
   <h2>How It Works</h2>
-  <ol class="muted" style="padding-left:20px;margin:8px 0 0 0;">
-    <li><strong>Review the agreement.</strong> Get clear on what I do (and don’t do) so you’re comfortable and protected.</li>
-    <li><strong>Send a form.</strong> Use the New Client Intake form to share your project details before we talk.</li>
-    <li><strong>Review services & pricing.</strong> Pick the level of support that fits your project and budget.</li>
-    <li><strong>Schedule your consultation.</strong> We’ll meet by phone or Zoom — whatever works best for you.</li>
-    <li><strong>Get expert guidance.</strong> I review your bids, spot missing scope and red flags, and help you plan next steps.</li>
+  <ol class="muted" style="padding-left:20px;">
+    <li><strong>Review the agreement.</strong> Understand what I do (and don’t do).</li>
+    <li><strong>Send a form.</strong> Use the intake form to share your project details.</li>
+    <li><strong>Review services & pricing.</strong> Choose your level of support.</li>
+    <li><strong>Schedule your consultation.</strong> Phone or Zoom.</li>
+    <li><strong>Get expert guidance.</strong> Bid review, red-flag checks, planning, clarity.</li>
   </ol>
 </section>
 
@@ -294,8 +385,8 @@ nav.site-nav a:hover{
 <!-- SCHEDULE A CONSULTATION -->
 <section class="card" id="schedule">
   <h2>Schedule a Consultation</h2>
-  <p class="muted" style="margin-top:0;">
-    View my live availability and choose a time that works for you. Your confirmation email will include a Zoom link for our call.
+  <p class="muted">
+    View my live availability and choose a time that works for you.
   </p>
   <div class="schedule-btn-wrapper">
     <a
@@ -312,10 +403,11 @@ nav.site-nav a:hover{
   <h2>Important Disclaimer</h2>
   <p class="muted">
     I provide independent <strong>construction consulting and homeowner advocacy</strong>.
-    I do not negotiate directly with contractors on your behalf, do not act as an agent or representative, and do not provide legal advice.
-    I can help you prepare for negotiations with strategy, questions, and documentation.
+    I do not negotiate directly with contractors, act as an agent, or provide legal advice.
+    I help you prepare for negotiations with strategy, questions, and documentation.
   </p>
 </section>
+
 <!-- FAQ & CONTACT -->
 <div class="grid">
   <section class="card span6">
@@ -340,76 +432,61 @@ nav.site-nav a:hover{
 <!-- FORMS SECTION -->
 <section id="forms-section" class="card" style="display:none;">
   <h2>Forms</h2>
-  <p class="muted" style="margin-top:0;">
-    Use these quick forms to share project details or leave a testimonial.
-    Online payment options (Zelle / PayPal / Venmo) will be added separately.
-  </p>
+  <p class="muted">Use these forms to share project details or leave a testimonial.</p>
 
-  <!-- Toggle buttons -->
   <div class="form-toggle-bar">
     <button type="button" class="form-toggle-btn active" data-target="intake-form-panel">📝 New Client Intake</button>
     <button type="button" class="form-toggle-btn" data-target="testimonial-form-panel">⭐ Testimonial / Review</button>
   </div>
 
-  <!-- Intake Form -->
+  <!-- INTAKE FORM -->
   <div id="intake-form-panel" class="form-panel active">
     <h3>📝 New Client Intake</h3>
-    <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST" style="margin-bottom:18px;">
+    <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
       <input type="hidden" name="_subject" value="New Client Intake Form">
       <input type="hidden" name="Form Type" value="New Client Intake">
 
-      <input type="text" name="name" placeholder="Your name" required
-             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="email" name="email" placeholder="Email" required
-             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="tel" name="phone" placeholder="Phone"
-             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="text" name="project_address" placeholder="Project address (city / area okay)"
-             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="name" placeholder="Your name" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="email" name="email" placeholder="Email" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="tel" name="phone" placeholder="Phone" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="project_address" placeholder="Project address (city ok)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
 
-      <!-- Project type dropdown -->
-      <select name="project_type" required
-              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <select name="project_type" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
         <option value="">Project type</option>
         <option>Remodel</option>
         <option>New Construction</option>
         <option>Not Sure Yet</option>
       </select>
 
-      <input type="text" name="budget" placeholder="Approx. budget"
-             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="text" name="timeline" placeholder="Timeline (when do you want to start/finish?)"
-             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <textarea name="project_details" rows="4" placeholder="Tell me about your project…"
-                style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+      <input type="text" name="budget" placeholder="Approx. budget" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="timeline" placeholder="Timeline" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <textarea name="project_details" rows="4" placeholder="Tell me about your project…" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
 
       <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Intake Form</button>
     </form>
   </div>
 
-  <!-- Testimonial Form -->
+  <!-- TESTIMONIAL FORM -->
   <div id="testimonial-form-panel" class="form-panel">
     <h3>⭐ Testimonial / Review</h3>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
       <input type="hidden" name="_subject" value="Testimonial / Review Form">
       <input type="hidden" name="Form Type" value="Testimonial / Review">
 
-      <input type="text" name="name" placeholder="Your name (how you'd like it shown)"
-             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="email" name="email" placeholder="Email (not shown publicly)"
-             style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="name" placeholder="Your name (as shown)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="email" name="email" placeholder="Email (not public)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
       <select name="rating" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
         <option value="">Rating (optional)</option>
         <option>⭐️⭐️⭐️⭐️⭐️</option>
         <option>⭐️⭐️⭐️⭐️</option>
         <option>⭐️⭐️⭐️</option>
       </select>
-      <textarea name="testimonial" rows="4" placeholder="Your testimonial…"
-                style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+
+      <textarea name="testimonial" rows="4" placeholder="Your testimonial…" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
 
       <label style="font-size:13px;display:flex;align-items:center;gap:6px;margin-bottom:8px;">
         <input type="checkbox" name="permission_to_use" value="Yes">
-        You may use my testimonial (and first name / city) on your website.
+        You may use my testimonial (first name/city) on your website.
       </label>
 
       <button type="submit" class="btn" style="width:100%;justify-content:center;">⭐ Submit Testimonial</button>
@@ -427,14 +504,10 @@ nav.site-nav a:hover{
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://mustangbuildingsllc.com/#thanks">
 
-    <input type="text" name="name" placeholder="Your name" required
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="email" name="email" placeholder="Email" required
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <input type="tel" name="phone" placeholder="Phone (optional)"
-           style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-    <textarea name="message" rows="5" placeholder="Tell me about your project…"
-              style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+    <input type="text" name="name" placeholder="Your name" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="email" name="email" placeholder="Email" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <input type="tel" name="phone" placeholder="Phone (optional)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+    <textarea name="message" rows="5" placeholder="Tell me about your project…" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
 
     <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Request</button>
   </form>
@@ -447,15 +520,15 @@ nav.site-nav a:hover{
     Thank you — your consultation request was sent.
   </h2>
   <p class="muted" style="text-align:center;">
-    Please check your email for a confirmation. If you don’t see it, look in your spam or junk folder.
+    Please check your email for a confirmation.
   </p>
   <ul class="muted" style="padding-left:20px;margin-top:8px;">
     <li>Watch for a reply from <strong>mustangbuildings@outlook.com</strong>.</li>
-    <li>Gather any bids, drawings, or photos you’d like me to review.</li>
-    <li>If you booked a time in Calendly, you can reschedule or cancel using the link in your confirmation email.</li>
+    <li>Gather any bids, drawings, or photos you'd like me to review.</li>
+    <li>If you booked a time in Calendly, you can reschedule from your confirmation email.</li>
   </ul>
   <p class="fine" style="text-align:center;margin-top:10px;">
-    Questions before we talk? Call <a href="tel:+19072323244">907-232-3244</a>.
+    Questions? Call <a href="tel:+19072323244">907-232-3244</a>.
   </p>
 </section>
 
@@ -472,7 +545,7 @@ nav.site-nav a:hover{
   © Mustang Buildings &amp; Consulting LLC — Advisory-only services.
 </footer>
 
-<!-- Sticky Schedule CTA -->
+<!-- Sticky CTA -->
 <div class="sticky-cta">
   <a href="#schedule">📅 Schedule Consultation</a>
 </div>
@@ -481,80 +554,52 @@ nav.site-nav a:hover{
 
 <!-- JAVASCRIPT -->
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  // Toggle Services
-  var btn = document.getElementById('services-toggle');
-  var section = document.getElementById('services-section');
-  if (btn && section) {
-    btn.addEventListener('click', function () {
-      var hidden = section.style.display === 'none' || section.style.display === '';
-      section.style.display = hidden ? 'block' : 'none';
-      if (hidden) section.scrollIntoView({ behavior:'smooth' });
-    });
-  }
-
-  // Nav Services link
-  var servicesNav = document.querySelector('a.nav-services');
-  if (servicesNav && section) {
-    servicesNav.addEventListener('click', function(e) {
-      e.preventDefault();
-      if (section.style.display === 'none' || section.style.display === '') {
-        section.style.display = 'block';
-      }
-      section.scrollIntoView({ behavior:'smooth' });
-    });
-  }
-
-  // Forms toggle
-  var formsBtn = document.getElementById('forms-btn');
-  var formsSection = document.getElementById('forms-section');
-
-  if (formsBtn && formsSection) {
-    formsBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      var hidden = formsSection.style.display === 'none' || formsSection.style.display === '';
-      if (hidden) {
-        formsSection.style.display = 'block';
-        formsSection.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        formsSection.style.display = 'none';
-      }
-    });
-  }
-
-  // Form tab logic
-  var formButtons = document.querySelectorAll('.form-toggle-btn');
-  var formPanels = document.querySelectorAll('.form-panel');
-
-  formButtons.forEach(function(button) {
-    button.addEventListener('click', function() {
-      var targetId = button.getAttribute('data-target');
-      var targetPanel = document.getElementById(targetId);
-      if (!targetPanel) return;
-
-      formButtons.forEach(function(b) { b.classList.remove('active'); });
-      formPanels.forEach(function(p) { p.classList.remove('active'); });
-
-      button.classList.add('active');
-      targetPanel.classList.add('active');
-    });
-  });
-
-  // Thank you section logic
-  if (window.location.hash === "#thanks") {
-    var formCard = document.getElementById("consult-card");
-    var thanks = document.getElementById("thanks");
-    if (formCard && thanks) {
-      formCard.style.display = "none";
-      thanks.style.display = "block";
-      thanks.scrollIntoView({ behavior:"smooth" });
-    }
-  }
-
+// Services toggle
+document.getElementById('services-toggle').addEventListener('click', function () {
+  const section = document.getElementById('services-section');
+  const hidden = section.style.display === 'none' || section.style.display === '';
+  section.style.display = hidden ? 'block' : 'none';
+  if (hidden) section.scrollIntoView({ behavior:'smooth' });
 });
+
+// Nav -> open Services
+document.querySelector('a.nav-services').addEventListener('click', function(e) {
+  e.preventDefault();
+  const section = document.getElementById('services-section');
+  if (section.style.display === 'none' || section.style.display === '') {
+    section.style.display = 'block';
+  }
+  section.scrollIntoView({ behavior:'smooth' });
+});
+
+// Forms button toggle
+document.getElementById('forms-btn').addEventListener('click', function(e){
+  e.preventDefault();
+  const fs = document.getElementById('forms-section');
+  const hidden = fs.style.display === 'none' || fs.style.display === '';
+  fs.style.display = hidden ? 'block' : 'none';
+  if (hidden) fs.scrollIntoView({behavior:'smooth'});
+});
+
+// Form tab switching
+document.querySelectorAll('.form-toggle-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const target = btn.getAttribute('data-target');
+    document.querySelectorAll('.form-toggle-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.form-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+  });
+});
+
+// Thank you screen
+if (window.location.hash === "#thanks") {
+  document.getElementById("consult-card").style.display = "none";
+  const t = document.getElementById("thanks");
+  t.style.display = "block";
+  t.scrollIntoView({ behavior:"smooth" });
+}
 </script>
 
 </body>
 </html>
-
