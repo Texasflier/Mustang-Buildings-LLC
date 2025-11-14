@@ -501,6 +501,37 @@ h3{margin:16px 0 8px}
     <a class="schedule-btn" href="https://calendly.com/mustangbuildingsllc/30min" target="_blank" rel="noopener">📅 Schedule a Consultation</a>
   </div>
 </section>
+  <!-- PAY ONLINE (standalone card) -->
+<section class="card" id="pay-online">
+  <h2>Pay Online</h2>
+  <p class="muted">
+    You can pay securely through PayPal after we confirm the service and amount together.
+    On the next screen, enter the amount we discussed (for example, $450, $600, $750, or $1,900).
+  </p>
+
+  <div style="text-align:center;margin:12px 0;">
+    <a href="https://paypal.me/Texasflier" target="_blank" rel="noopener">
+      <img
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif"
+        alt="Pay with PayPal"
+      >
+    </a>
+  </div>
+
+  <p class="fine">
+    Typical amounts:<br>
+    • $450 — Second-Opinion Call or Homeowner Advisor (Basic, first month)<br>
+    • $600 — Bid + Contractor Review or Project Planning &amp; Scope Session<br>
+    • $750 — Homeowner Advisor (Premium, first month)<br>
+    • $1,900 — 60-Day Protection Plan
+  </p>
+
+  <p class="fine">
+    If you have any questions before paying, call <a href="tel:+19072323244">907-232-3244</a>
+    or email <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>.
+  </p>
+</section>
+
 
 <!-- DISCLAIMER -->
 <section class="card">
@@ -683,19 +714,7 @@ if (window.location.hash === "#thanks") {
   t.scrollIntoView({ behavior:"smooth" });
 }
 
-// ============================
-// NEW: Payment Panel Toggle
-// ============================
-document.getElementById('open-pay-panel').addEventListener('click', function () {
-  const panel = document.getElementById('payment-panel');
-  const isHidden = panel.style.display === 'none' || panel.style.display === '';
 
-  panel.style.display = isHidden ? 'block' : 'none';
-
-  if (isHidden) {
-    panel.scrollIntoView({ behavior: 'smooth' });
-  }
-});
 </script>
 
 </body>
