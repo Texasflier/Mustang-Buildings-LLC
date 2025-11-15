@@ -33,7 +33,13 @@ a:hover{text-decoration:underline}
 
 /* Header */
 header{text-align:center;margin:4px 0 10px}
-.logo{width:400px;max-width:95vw;margin:12px auto 10px;}
+.logo{
+  width:400px;
+  max-width:95vw;
+  margin:12px auto 10px;
+  animation: roofDropIn 1s ease-out;
+}
+
 .sub{font-weight:600;margin-top:4px;}
 .tag{
   font-weight:600;
@@ -319,6 +325,18 @@ h3{margin:16px 0 8px}
   padding: 10px;
   border-radius: 10px;
 }
+ /* Roof truss animation */
+@keyframes roofDropIn {
+  from {
+    opacity:0;
+    transform: translateY(-18px) scale(0.95);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0) scale(1);
+  }
+}
+ 
 </style>
 
 </head>
@@ -435,6 +453,7 @@ h3{margin:16px 0 8px}
     💼 View Services &amp; Pricing Details
   </button>
 </section>
+
 
 <!-- SERVICES & PRICING -->
 <section id="services-section" class="card" style="display:none; margin-top:20px;">
@@ -686,63 +705,94 @@ h3{margin:16px 0 8px}
 <!-- ====================== -->
 <!-- JAVASCRIPT SECTION     -->
 <!-- ====================== -->
+<!-- ====================== -->
+<!-- JAVASCRIPT SECTION     -->
+<!-- ====================== -->
 <script>
-// Services toggle
-document.getElementById('services-toggle').addEventListener('click', function () {
-  const section = document.getElementById('services-section');
-  const hidden = section.style.display === 'none' || section.style.display === '';
-  section.style.display = hidden ? 'block' : 'none';
-  if (hidden) section.scrollIntoView({ behavior:'smooth' });
-});
+document.addEventListener('DOMContentLoaded', function () {
 
-// Nav -> Services
-document.querySelector('a.nav-services').addEventListener('click', function(e) {
-  e.preventDefault();
-  const section = document.getElementById('services-section');
-  if (section.style.display === 'none' || section.style.display === '') {
-    section.style.display = 'block';
+  // Services toggle (blue "View Services & Pricing Details" button)
+  var servicesToggle = document.getElementById('services-toggle');
+  var servicesSection = document.getElementById('services-section');
+
+  if (servicesToggle && servicesSection) {
+    servicesToggle.addEventListener('click', function () {
+      var hidden = servicesSection.style.display === 'none' || servicesSection.style.display === '';
+      servicesSection.style.display = hidden ? 'block' : 'none';
+      if (hidden) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
-  section.scrollIntoView({ behavior:'smooth' });
-});
 
-// Forms toggle
-document.getElementById('forms-btn').addEventListener('click', function(e){
-  e.preventDefault();
-  const fs = document.getElementById('forms-section');
-  const hidden = fs.style.display === 'none' || fs.style.display === '';
-  fs.style.display = hidden ? 'block' : 'none';
-  if (hidden) fs.scrollIntoView({behavior:'smooth'});
-});
+  // Nav -> Services (top navigation link)
+  var navServices = document.querySelector('a.nav-services');
+  if (navServices && servicesSection) {
+    navServices.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (servicesSection.style.display === 'none' || servicesSection.style.display === '') {
+        servicesSection.style.display = 'block';
+      }
+      servicesSection.scrollIntoView({ behavior:'smooth' });
+    });
+  }
 
-// Form tabs
-document.querySelectorAll('.form-toggle-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const target = btn.getAttribute('data-target');
-    document.querySelectorAll('.form-toggle-btn').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.form-panel').forEach(p=>p.classList.remove('active'));
-    btn.classList.add('active');
-      });
+  // Forms toggle (yellow Forms button in hero)
+  var formsBtn = document.getElementById('forms-btn');
+  var formsSection = document.getElementById('forms-section');
 
-    // Thank-you page logic
-    if (window.location.hash === "#thanks") {
-      document.getElementById("consult-card").style.display = "none";
-      const t = document.getElementById("thanks");
-      t.style.display = "block";
-      t.scrollIntoView({ behavior: "smooth" });
-    }
+  if (formsBtn && formsSection) {
+    formsBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      var hidden = formsSection.style.display === 'none' || formsSection.style.display === '';
+      formsSection.style.display = hidden ? 'block' : 'none';
+      if (hidden) {
+        formsSection.scrollIntoView({behavior:'smooth'});
+      }
+    });
+  }
 
-   // Pay Online: toggle "Typical amounts" box
-var togglePayDetails = document.getElementById("toggle-pay-details");
-var payDetails = document.getElementById("pay-details");
+  // Form tabs (Intake vs Testimonial)
+  var formButtons = document.querySelectorAll('.form-toggle-btn');
+  var formPanels = document.querySelectorAll('.form-panel');
 
-if (togglePayDetails && payDetails) {
-  togglePayDetails.addEventListener("click", function () {
-    var hidden = payDetails.style.display === "none" || payDetails.style.display === "";
-    payDetails.style.display = hidden ? "block" : "none";
+  formButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('data-target');
+
+      formButtons.forEach(function(b){ b.classList.remove('active'); });
+      formPanels.forEach(function(p){ p.classList.remove('active'); });
+
+      btn.classList.add('active');
+      var panel = document.getElementById(target);
+      if (panel) panel.classList.add('active');
+    });
   });
-}
 
+  // Thank-you page logic
+  if (window.location.hash === "#thanks") {
+    var consultCard = document.getElementById("consult-card");
+    var thanks = document.getElementById("thanks");
+    if (consultCard && thanks) {
+      consultCard.style.display = "none";
+      thanks.style.display = "block";
+      thanks.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
+  // Pay Online: toggle "Typical amounts" box
+  var togglePayDetails = document.getElementById("toggle-pay-details");
+  var payDetails = document.getElementById("pay-details");
+
+  if (togglePayDetails && payDetails) {
+    togglePayDetails.addEventListener("click", function () {
+      var hidden = payDetails.style.display === "none" || payDetails.style.display === "";
+      payDetails.style.display = hidden ? "block" : "none";
+    });
+  }
+
+});
+</script>
 
 </body>
 </html>
