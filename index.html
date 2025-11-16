@@ -356,6 +356,8 @@ h3{margin:16px 0 8px}
 .pay-btn .pay-label{
   margin-bottom:6px;
 }
+
+/* Icon styles */
 .pay-logo{
   display:inline-flex;
   align-items:center;
@@ -363,12 +365,8 @@ h3{margin:16px 0 8px}
   width:34px;
   height:34px;
   border-radius:999px;
-  font-size:14px;
+  font-size:16px;
   font-weight:800;
-}
-.pay-logo-paypal{
-  background:#003087;
-  color:#ffffff;
 }
 .pay-logo-venmo{
   background:#3d95ce;
@@ -382,6 +380,7 @@ h3{margin:16px 0 8px}
   object-fit:contain;
   margin:0 auto;
 }
+
 @media(max-width:520px){
   .pay-buttons-row{
     flex-direction:column;
@@ -621,11 +620,7 @@ h3{margin:16px 0 8px}
       class="pay-btn"
     >
       <span class="pay-label">Pay with Venmo</span>
-      <img
-        class="pay-logo-img"
-        src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Venmo_Logo.png"
-        alt="Pay with Venmo"
-      >
+      <span class="pay-logo pay-logo-venmo">V</span>
     </a>
   </div>
 
