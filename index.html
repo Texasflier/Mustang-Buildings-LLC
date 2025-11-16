@@ -40,9 +40,6 @@ header{text-align:center;margin:4px 0 10px}
   animation: roofDropIn 1s ease-out;
 }
 
-
-
-
 .sub{font-weight:600;margin-top:4px;}
 .tag{
   font-weight:600;
@@ -328,8 +325,61 @@ h3{margin:16px 0 8px}
   padding: 10px;
   border-radius: 10px;
 }
- /* Roof truss animation */
-/* Roof truss animation */
+
+/* Pay Online buttons row */
+.pay-buttons-row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  margin:12px 0;
+}
+.pay-btn{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#ffffff;
+  box-shadow:var(--shadow);
+  min-width:170px;
+  text-decoration:none;
+  font-weight:700;
+  color:#0f2547;
+}
+.pay-btn span{
+  display:block;
+}
+.pay-btn .pay-label{
+  margin-bottom:6px;
+}
+.pay-logo{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:800;
+}
+.pay-logo-paypal{
+  background:#003087;
+  color:#ffffff;
+}
+.pay-logo-venmo{
+  background:#3d95ce;
+  color:#ffffff;
+}
+@media(max-width:520px){
+  .pay-buttons-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+}
+
 /* Roof truss animation */
 @keyframes roofDropIn {
   0% {
@@ -350,9 +400,6 @@ h3{margin:16px 0 8px}
     transform: translateY(0) scale(1);
   }
 }
-
-
- 
 </style>
 
 </head>
@@ -418,7 +465,7 @@ h3{margin:16px 0 8px}
   ⚠️ &nbsp; <strong>Call me before you sign a construction contract — once you sign, your options are limited.</strong> &nbsp; ⚠️
 </section>
 
-<!-- ABOUT (unchanged content, updated wording already applied) -->
+<!-- ABOUT -->
 <section class="card" id="trust">
   <h2>About Jeff &amp; Why Homeowners Trust Him</h2>
 
@@ -450,7 +497,7 @@ h3{margin:16px 0 8px}
   </p>
 </section>
 
-<!-- HOW IT WORKS (unchanged) -->
+<!-- HOW IT WORKS -->
 <section class="card" id="how-it-works">
   <h2>How It Works</h2>
   <ol class="muted" style="padding-left:20px;">
@@ -469,7 +516,6 @@ h3{margin:16px 0 8px}
     💼 View Services &amp; Pricing Details
   </button>
 </section>
-
 
 <!-- SERVICES & PRICING -->
 <section id="services-section" class="card" style="display:none; margin-top:20px;">
@@ -527,7 +573,6 @@ h3{margin:16px 0 8px}
   <p class="fine">Advisory-only — <strong>Not a contractor</strong>.</p>
 </section>
 
-
 <!-- SCHEDULE SECTION -->
 <section class="card" id="schedule">
   <h2>Schedule a Consultation</h2>
@@ -536,20 +581,34 @@ h3{margin:16px 0 8px}
     <a class="schedule-btn" href="https://calendly.com/mustangbuildingsllc/30min" target="_blank" rel="noopener">📅 Schedule a Consultation</a>
   </div>
 </section>
+
 <!-- PAY ONLINE (standalone card) -->
 <section class="card" id="pay-online">
   <h2>Pay Online</h2>
   <p class="muted">
-    You can pay securely through PayPal after we confirm the service and amount together.
-    Use the button below — on the PayPal screen, enter the amount we discussed.
+    You can pay securely after we confirm the service and amount together.
+    Use one of the options below — on the payment screen, enter the amount we discussed.
   </p>
 
-  <div style="text-align:center;margin:12px 0;">
-    <a href="https://paypal.me/Texasflier" target="_blank" rel="noopener">
-      <img
-        src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif"
-        alt="Pay with PayPal"
-      >
+  <div class="pay-buttons-row">
+    <a
+      href="https://paypal.me/Texasflier"
+      target="_blank"
+      rel="noopener"
+      class="pay-btn"
+    >
+      <span class="pay-label">Pay with PayPal</span>
+      <span class="pay-logo pay-logo-paypal">PP</span>
+    </a>
+
+    <a
+      href="https://venmo.com/u/MustangBuildingsConsultingLLC"
+      target="_blank"
+      rel="noopener"
+      class="pay-btn"
+    >
+      <span class="pay-label">Pay with Venmo</span>
+      <span class="pay-logo pay-logo-venmo">V</span>
     </a>
   </div>
 
@@ -583,9 +642,6 @@ h3{margin:16px 0 8px}
     </p>
   </div>
 </section>
-
-
-
 
 <!-- DISCLAIMER -->
 <section class="card">
@@ -718,9 +774,6 @@ h3{margin:16px 0 8px}
 
 </div> <!-- END WRAP -->
 
-<!-- ====================== -->
-<!-- JAVASCRIPT SECTION     -->
-<!-- ====================== -->
 <!-- ====================== -->
 <!-- JAVASCRIPT SECTION     -->
 <!-- ====================== -->
