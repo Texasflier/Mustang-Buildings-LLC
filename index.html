@@ -339,6 +339,7 @@ h3{margin:16px 0 8px}
   flex-direction:column;
   align-items:center;
   justify-content:center;
+  text-align:center;
   padding:10px 16px;
   border-radius:12px;
   border:1px solid var(--border);
@@ -372,6 +373,12 @@ h3{margin:16px 0 8px}
 .pay-logo-venmo{
   background:#3d95ce;
   color:#ffffff;
+}
+.pay-logo-img{
+  display:block;
+  height:32px;
+  width:auto;
+  object-fit:contain;
 }
 @media(max-width:520px){
   .pay-buttons-row{
@@ -438,7 +445,7 @@ h3{margin:16px 0 8px}
   </nav>
 </header>
 
-<!-- HERO (unchanged) -->
+<!-- HERO -->
 <section class="hero">
   <h2>Protect your project <span class="pill">Advisory-Only</span><span class="pill">100% homeowner advocate</span></h2>
   <p>
@@ -460,7 +467,7 @@ h3{margin:16px 0 8px}
   <p class="fine" style="margin-top:8px;">Please review the consulting agreement before scheduling your consultation.</p>
 </section>
 
-<!-- CAUTION (unchanged) -->
+<!-- CAUTION -->
 <section class="callout">
   ⚠️ &nbsp; <strong>Call me before you sign a construction contract — once you sign, your options are limited.</strong> &nbsp; ⚠️
 </section>
@@ -598,7 +605,11 @@ h3{margin:16px 0 8px}
       class="pay-btn"
     >
       <span class="pay-label">Pay with PayPal</span>
-      <span class="pay-logo pay-logo-paypal">PP</span>
+      <img
+        class="pay-logo-img"
+        src="https://www.paypalobjects.com/webstatic/icon/pp258.png"
+        alt="Pay with PayPal"
+      >
     </a>
 
     <a
@@ -608,7 +619,11 @@ h3{margin:16px 0 8px}
       class="pay-btn"
     >
       <span class="pay-label">Pay with Venmo</span>
-      <span class="pay-logo pay-logo-venmo">V</span>
+      <img
+        class="pay-logo-img"
+        src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Venmo_Logo.png"
+        alt="Pay with Venmo"
+      >
     </a>
   </div>
 
