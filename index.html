@@ -40,9 +40,6 @@ header{text-align:center;margin:4px 0 10px}
   margin:18px auto 18px;
 }
 
-  animation: roofDropIn 1s ease-out;
-}
-
 .sub{font-weight:600;margin-top:4px;}
 .tag{
   font-weight:600;
@@ -390,27 +387,6 @@ h3{margin:16px 0 8px}
     align-items:stretch;
   }
 }
-
-/* Roof truss animation */
-@keyframes roofDropIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-140px) scale(0.60);
-  }
-  55% {
-    opacity: 1;
-    transform: translateY(18px) scale(1.15);
-  }
-  75% {
-    transform: translateY(-10px) scale(0.93);
-  }
-  88% {
-    transform: translateY(4px) scale(1.03);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
 </style>
 
 </head>
@@ -418,15 +394,13 @@ h3{margin:16px 0 8px}
 <body>
 <div class="wrap">
 
-<!-- HEADER (unchanged) -->
+<!-- HEADER -->
 <header id="top">
   <img
     class="logo"
     src="mustang-logo.png"
     alt="Mustang Buildings &amp; Consulting LLC logo"
   >
-
-  </svg>
 
   <h1>Mustang Buildings &amp; Consulting LLC</h1>
 
