@@ -389,7 +389,7 @@ h3{margin:16px 0 8px}
   }
 }
 
-/* SIMPLE TWO-LINE BLUE TRUSS HERO MARK */
+/* SIMPLE ROOFLINE TRUSS (polyline with sharp peak) */
 .hero-truss-wrapper{
   display:flex;
   justify-content:center;
@@ -440,33 +440,26 @@ h3{margin:16px 0 8px}
 <!-- HEADER -->
 <header id="top">
 
-  <!-- SIMPLE TWO-LINE BLUE TRUSS (no bottom chord) -->
+  <!-- SIMPLE ROOF TRUSS (single polyline, sharp peak) -->
   <div class="hero-truss-wrapper">
     <svg
       class="hero-truss"
-      viewBox="0 0 300 120"
+      viewBox="0 0 300 100"
       role="img"
       aria-labelledby="trussTitle trussDesc"
     >
-      <title id="trussTitle">Mustang Buildings &amp; Consulting Truss Mark</title>
+      <title id="trussTitle">Mustang Buildings &amp; Consulting Roofline</title>
       <desc id="trussDesc">
-        Simple two-line blue roof truss used as a branding mark for Mustang Buildings &amp; Consulting LLC.
+        Simple blue roofline used as a branding mark for Mustang Buildings &amp; Consulting LLC.
       </desc>
 
-      <!-- Left roof line -->
-      <line
-        x1="20" y1="80"
-        x2="150" y2="25"
+      <!-- One polyline with a sharp mitered peak -->
+      <polyline
+        points="20,75 150,20 280,75"
+        fill="none"
         stroke="#1f6fbf"
         stroke-width="6"
-        stroke-linecap="butt"
-      />
-      <!-- Right roof line -->
-      <line
-        x1="150" y1="25"
-        x2="280" y2="80"
-        stroke="#1f6fbf"
-        stroke-width="6"
+        stroke-linejoin="miter"
         stroke-linecap="butt"
       />
     </svg>
