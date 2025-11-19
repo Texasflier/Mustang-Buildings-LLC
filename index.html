@@ -16,19 +16,14 @@
 <meta property="og:title" content="Construction Consulting for Homeowners — Mustang Buildings & Consulting LLC (DFW)">
 <meta property="og:description" content="Independent advisory-only construction consulting for homeowners. Get bid reviews, red-flag checks, and project planning support before you sign a contract.">
 <meta property="og:url" content="https://mustangbuildingsllc.com/">
-<!-- If you create a header/brand image later, update this: -->
-<!-- <meta property="og:image" content="https://mustangbuildingsllc.com/og-image.jpg"> -->
+<meta property="og:image" content="/og-image.png">
 <meta property="og:site_name" content="Mustang Buildings & Consulting LLC">
-<meta property="og:image" content="https://mustangbuildingsllc.com/og-image.png">
-
-
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Construction Consulting for Homeowners — Mustang Buildings & Consulting LLC (DFW)">
 <meta name="twitter:description" content="Homeowner-focused construction consulting — bid review, risk checks, and planning support before you sign.">
-<meta name="twitter:image" content="https://mustangbuildingsllc.com/og-image.png">
-<meta property="og:image" content="https://mustangbuildingsllc.com/og-image.png">
+<meta name="twitter:image" content="/og-image.png">
 
 <style>
 :root{
@@ -49,14 +44,14 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; /* slightly smaller */
+  font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
 }
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{
   max-width:var(--max);
   margin:auto;
-  padding:18px; /* tighter */
+  padding:18px;
 }
 
 /* Header */
@@ -69,7 +64,7 @@ header{text-align:center;margin:4px 0 6px}
   margin:10px auto 8px;
 }
 .hero-truss{
-  width:min(750px,90vw);  /* about the 750 size you liked */
+  width:min(750px,90vw);
   max-width:100%;
   display:block;
   opacity:0;
@@ -119,13 +114,13 @@ nav.site-nav{
   flex-wrap:wrap;
   justify-content:center;
   gap:8px;
-  font-size:13px; /* slightly smaller */
+  font-size:13px;
 }
 nav.site-nav a{
   padding:4px 10px;
   border-radius:999px;
   color:#374151;
-  font-weight:700; /* BOLD TABS */
+  font-weight:700;
 }
 nav.site-nav a:hover{
   background:#e5efff;
@@ -137,7 +132,7 @@ nav.site-nav a:hover{
   background:var(--accent-2);
   border:1px solid var(--border);
   border-radius:20px;
-  padding:18px;   /* was 20 */
+  padding:18px;
   box-shadow:var(--shadow);
   margin:12px 0 14px;
 }
@@ -159,7 +154,7 @@ nav.site-nav a:hover{
   background:#fff;
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:16px;  /* was 18 */
+  padding:16px;
   box-shadow:var(--shadow);
 }
 @media(min-width:840px){
@@ -204,7 +199,7 @@ nav.site-nav a:hover{
 /* Buttons */
 .btn{
   display:inline-flex;align-items:center;gap:10px;
-  padding:10px 14px; /* slightly smaller */
+  padding:10px 14px;
   border-radius:10px;
   border:1px solid var(--border);
   background:#ffffff;
@@ -276,7 +271,7 @@ nav.site-nav a:hover{
   padding:14px 16px;
   box-shadow:var(--shadow);
   margin:10px 0;
-  text-align:center; /* center the text inside the yellow ribbon */
+  text-align:center;
 }
 
 /* Schedule button */
@@ -303,7 +298,7 @@ nav.site-nav a:hover{
 .muted{color:var(--muted)}
 .fine{font-size:13px;color:#6b7280}
 h1{
-  font-size:clamp(26px,3vw,36px); /* slightly smaller range */
+  font-size:clamp(26px,3vw,36px);
   margin:0;
 }
 h2{margin:0 0 8px;font-size:21px}
@@ -497,38 +492,34 @@ h3{margin:12px 0 6px}
 <!-- HEADER -->
 <header id="top">
   <div class="hero-truss-wrapper">
- <svg class="hero-truss" viewBox="0 0 600 200" width="750" role="img" aria-label="Mustang Buildings & Consulting roofline">
-  <defs>
-    <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#2e8ec9" />
-      <stop offset="1" stop-color="#53b6ff" />
-    </linearGradient>
-  </defs>
+    <svg class="hero-truss" viewBox="0 0 600 200" width="750" role="img" aria-label="Mustang Buildings & Consulting roofline">
+      <defs>
+        <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#2e8ec9" />
+          <stop offset="1" stop-color="#53b6ff" />
+        </linearGradient>
+      </defs>
 
-  <!-- OUTER TAPERED ROOF CHORD (10% more taper added) -->
-  <polygon
-    points="40,160 300,40 560,160 540,160 300,65 60,160"
-    fill="url(#roofGrad)"
-  />
+      <!-- OUTER TAPERED ROOF CHORD -->
+      <polygon
+        points="40,160 300,40 560,160 540,160 300,65 60,160"
+        fill="url(#roofGrad)"
+      />
 
-  <!-- INNER LIGHT AREA (lowered to keep all webs inside) -->
-  <polygon
-    points="80,160 300,75 520,160"
-    fill="#f5f9ff"
-  />
+      <!-- INNER LIGHT AREA -->
+      <polygon
+        points="80,160 300,75 520,160"
+        fill="#f5f9ff"
+      />
 
-  <!-- WEB MEMBERS -->
-  <line x1="300" y1="75" x2="300" y2="145" stroke="#9cc4e8" stroke-width="2" />
-
-  <line x1="100" y1="145" x2="500" y2="145" stroke="#d0e3f5" stroke-width="2" />
-
-  <line x1="300" y1="145" x2="200" y2="145" stroke="#9cc4e8" stroke-width="2" />
-  <line x1="300" y1="145" x2="400" y2="145" stroke="#9cc4e8" stroke-width="2" />
-
-  <line x1="200" y1="145" x2="300" y2="108" stroke="#c2d8f0" stroke-width="2" />
-  <line x1="400" y1="145" x2="300" y2="108" stroke="#c2d8f0" stroke-width="2" />
-</svg>
-
+      <!-- WEB MEMBERS -->
+      <line x1="300" y1="75" x2="300" y2="145" stroke="#9cc4e8" stroke-width="2" />
+      <line x1="100" y1="145" x2="500" y2="145" stroke="#d0e3f5" stroke-width="2" />
+      <line x1="300" y1="145" x2="200" y2="145" stroke="#9cc4e8" stroke-width="2" />
+      <line x1="300" y1="145" x2="400" y2="145" stroke="#9cc4e8" stroke-width="2" />
+      <line x1="200" y1="145" x2="300" y2="108" stroke="#c2d8f0" stroke-width="2" />
+      <line x1="400" y1="145" x2="300" y2="108" stroke="#c2d8f0" stroke-width="2" />
+    </svg>
   </div>
 
   <h1>Mustang Buildings &amp; Consulting LLC</h1>
@@ -694,7 +685,7 @@ h3{margin:12px 0 6px}
   </div>
 </section>
 
-<!-- PAY ONLINE (standalone card) -->
+<!-- PAY ONLINE -->
 <section class="card card-pay" id="pay-online">
   <h2>Pay Online</h2>
   <p class="muted">
@@ -739,7 +730,6 @@ h3{margin:12px 0 6px}
     </button>
   </div>
 
-  <!-- Hidden details; toggled by the button above -->
   <div id="pay-details" style="display:none; margin-top:4px;">
     <p class="fine">
       Typical amounts:
@@ -769,7 +759,7 @@ h3{margin:12px 0 6px}
   </p>
 </section>
 
-<!-- FAQ & CONTACT SECTION -->
+<!-- FAQ & CONTACT -->
 <div class="grid">
   <section class="card span6">
     <h2>FAQ</h2>
@@ -790,7 +780,7 @@ h3{margin:12px 0 6px}
   </section>
 </div>
 
-<!-- FORMS SECTION -->
+<!-- FORMS -->
 <section id="forms-section" class="card" style="display:none;">
   <h2>Forms</h2>
   <p class="muted">Use these quick forms to share project details or leave a testimonial.</p>
@@ -892,13 +882,11 @@ h3{margin:12px 0 6px}
 
 </div> <!-- END WRAP -->
 
-<!-- ====================== -->
-<!-- JAVASCRIPT SECTION     -->
-<!-- ====================== -->
+<!-- JAVASCRIPT -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Services toggle (blue "View Services & Pricing Details" button)
+  // Services toggle
   var servicesToggle = document.getElementById('services-toggle');
   var servicesSection = document.getElementById('services-section');
 
@@ -912,7 +900,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Nav -> Services (top navigation link)
+  // Nav -> Services
   var navServices = document.querySelector('a.nav-services');
   if (navServices && servicesSection) {
     navServices.addEventListener('click', function(e) {
@@ -924,7 +912,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Forms toggle (yellow Forms button in hero)
+  // Forms toggle (hero button)
   var formsBtn = document.getElementById('forms-btn');
   var formsSection = document.getElementById('forms-section');
 
@@ -939,7 +927,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Form tabs (Intake vs Testimonial)
+  // Form tabs
   var formButtons = document.querySelectorAll('.form-toggle-btn');
   var formPanels = document.querySelectorAll('.form-panel');
 
@@ -956,7 +944,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Thank-you page logic
+  // Thank-you hash (future use)
   if (window.location.hash === "#thanks") {
     var consultCard = document.getElementById("consult-card");
     var thanks = document.getElementById("thanks");
@@ -967,7 +955,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Pay Online: toggle "Typical amounts" box
+  // Pay Online toggle
   var togglePayDetails = document.getElementById("toggle-pay-details");
   var payDetails = document.getElementById("pay-details");
 
