@@ -389,18 +389,18 @@ h3{margin:16px 0 8px}
   }
 }
 
-/* SIMPLE BLUE TRUSS HERO MARK */
+/* SIMPLE TWO-LINE BLUE TRUSS HERO MARK */
 .hero-truss-wrapper{
   display:flex;
   justify-content:center;
   margin:18px auto 12px;
 }
 .hero-truss{
-  width:min(1000px,95vw);
+  width:min(950px,95vw);
   max-width:100%;
   display:block;
   opacity:0;
-  transform:translateY(12px) scale(0.98);
+  transform:translateY(8px) scale(0.98);
   animation:
     trussIntro 1.2s ease-out forwards,
     trussBreathe 4s ease-in-out 1.2s 2;
@@ -440,7 +440,7 @@ h3{margin:16px 0 8px}
 <!-- HEADER -->
 <header id="top">
 
-  <!-- SIMPLE BLUE TRUSS (no grid, no supports) -->
+  <!-- SIMPLE TWO-LINE BLUE TRUSS (no bottom chord) -->
   <div class="hero-truss-wrapper">
     <svg
       class="hero-truss"
@@ -450,24 +450,24 @@ h3{margin:16px 0 8px}
     >
       <title id="trussTitle">Mustang Buildings &amp; Consulting Truss Mark</title>
       <desc id="trussDesc">
-        Simple blue roof truss used as a branding mark for Mustang Buildings &amp; Consulting LLC.
+        Simple two-line blue roof truss used as a branding mark for Mustang Buildings &amp; Consulting LLC.
       </desc>
 
-      <!-- Roof shape -->
-      <polygon
-        points="20,80 150,15 280,80"
-        fill="none"
-        stroke="#1f6fbf"
-        stroke-width="7"
-        stroke-linejoin="round"
-      />
-      <!-- Bottom chord -->
+      <!-- Left roof line -->
       <line
-        x1="25" y1="80"
-        x2="275" y2="80"
+        x1="20" y1="80"
+        x2="150" y2="25"
         stroke="#1f6fbf"
-        stroke-width="7"
-        stroke-linecap="round"
+        stroke-width="6"
+        stroke-linecap="butt"
+      />
+      <!-- Right roof line -->
+      <line
+        x1="150" y1="25"
+        x2="280" y2="80"
+        stroke="#1f6fbf"
+        stroke-width="6"
+        stroke-linecap="butt"
       />
     </svg>
   </div>
