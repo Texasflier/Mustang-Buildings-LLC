@@ -14,7 +14,7 @@
   --text:#0b1220;
   --accent:#2e7bd9;
   --accent-2:#eaf3ff;
-  --border:#e6ecf3;
+  --border:#edf1f7;
   --warn:#e5b400;
   --max:980px;
   --radius:14px;
@@ -32,11 +32,11 @@ a:hover{text-decoration:underline}
 .wrap{
   max-width:var(--max);
   margin:auto;
-  padding:22px; /* tighter */
+  padding:18px; /* tighter */
 }
 
 /* Header */
-header{text-align:center;margin:4px 0 10px}
+header{text-align:center;margin:4px 0 6px}
 
 /* animated roofline */
 .hero-truss-wrapper{
@@ -113,9 +113,9 @@ nav.site-nav a:hover{
   background:var(--accent-2);
   border:1px solid var(--border);
   border-radius:20px;
-  padding:20px;   /* was 24 */
+  padding:18px;   /* was 20 */
   box-shadow:var(--shadow);
-  margin:14px 0 16px;
+  margin:12px 0 14px;
 }
 .badges{
   display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;justify-content:center;
@@ -129,13 +129,13 @@ nav.site-nav a:hover{
 }
 
 /* Grid & cards */
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
 .card{
   grid-column:span 12;
   background:#fff;
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:18px;  /* was 20 */
+  padding:16px;  /* was 18 */
   box-shadow:var(--shadow);
 }
 @media(min-width:840px){
@@ -155,10 +155,10 @@ nav.site-nav a:hover{
   background:#ffffff;
   border:1px solid var(--border);
   border-radius:14px;
-  padding:16px;
+  padding:14px;
   display:flex;
   flex-direction:column;
-  gap:6px;
+  gap:4px;
   box-shadow:var(--shadow);
 }
 .price-card.highlight{
@@ -226,7 +226,7 @@ nav.site-nav a:hover{
   background:#ffffff;
   border:1px solid var(--border);
   border-radius:14px;
-  padding:14px;
+  padding:12px;
   box-shadow:var(--shadow);
   text-align:center;
 }
@@ -282,8 +282,8 @@ h1{
   font-size:clamp(26px,3vw,36px); /* slightly smaller range */
   margin:0;
 }
-h2{margin:0 0 10px;font-size:21px}
-h3{margin:14px 0 8px}
+h2{margin:0 0 8px;font-size:21px}
+h3{margin:12px 0 6px}
 
 /* Forms toggle */
 .form-toggle-bar{
@@ -311,6 +311,26 @@ h3{margin:14px 0 8px}
 }
 .form-panel.active{
   display:block;
+}
+
+/* Form fields */
+.form-field{
+  width:100%;
+  padding:11px 12px;
+  margin-bottom:8px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  font:inherit;
+}
+.form-field:focus{
+  outline:2px solid #bfdbfe;
+  outline-offset:1px;
+  border-color:#93c5fd;
+}
+.form-hint{
+  font-size:12px;
+  color:#6b7280;
+  margin:-4px 0 8px;
 }
 
 /* Thank-you animation */
@@ -389,11 +409,11 @@ h3{margin:14px 0 8px}
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:10px 16px;
+  padding:9px 14px;
   border-radius:12px;
   border:1px solid var(--border);
   background:#ffffff;
-  box-shadow:var(--shadow);
+  box-shadow:0 4px 14px rgba(15,30,60,.08);
   min-width:170px;
   text-decoration:none;
   font-weight:700;
@@ -435,6 +455,13 @@ h3{margin:14px 0 8px}
     flex-direction:column;
     align-items:stretch;
   }
+}
+
+/* Subtle variant for Pay Online card */
+.card.card-pay{
+  background:#fcfdff;
+  border-color:#e3e9f5;
+  box-shadow:0 4px 16px rgba(15,30,60,.05);
 }
 </style>
 
@@ -644,7 +671,7 @@ h3{margin:14px 0 8px}
 </section>
 
 <!-- PAY ONLINE (standalone card) -->
-<section class="card" id="pay-online">
+<section class="card card-pay" id="pay-online">
   <h2>Pay Online</h2>
   <p class="muted">
     You can pay securely after we confirm the service and amount together.
@@ -751,25 +778,26 @@ h3{margin:14px 0 8px}
 
   <div id="intake-form-panel" class="form-panel active">
     <h3>📝 New Client Intake</h3>
+    <p class="form-hint">This form goes directly to Jeff. Share what you know now — it doesn’t have to be perfect.</p>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
       <input type="hidden" name="_subject" value="New Client Intake Form">
       <input type="hidden" name="Form Type" value="New Client Intake">
 
-      <input type="text" name="name" placeholder="Your name" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="email" name="email" placeholder="Email" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="tel" name="phone" placeholder="Phone" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="text" name="project_address" placeholder="Project address" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="name" placeholder="Your name" required class="form-field">
+      <input type="email" name="email" placeholder="Email" required class="form-field">
+      <input type="tel" name="phone" placeholder="Phone" class="form-field">
+      <input type="text" name="project_address" placeholder="Project address" class="form-field">
 
-      <select name="project_type" required style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <select name="project_type" required class="form-field">
         <option value="">Project type</option>
         <option>Remodel</option>
         <option>New Construction</option>
         <option>Not Sure Yet</option>
       </select>
 
-      <input type="text" name="budget" placeholder="Approx. budget" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="text" name="timeline" placeholder="Timeline" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <textarea name="project_details" rows="4" placeholder="Tell me about your project…" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+      <input type="text" name="budget" placeholder="Approx. budget" class="form-field">
+      <input type="text" name="timeline" placeholder="Timeline" class="form-field">
+      <textarea name="project_details" rows="4" placeholder="Tell me about your project…" class="form-field"></textarea>
 
       <button type="submit" class="btn" style="width:100%;justify-content:center;">📨 Send Intake Form</button>
     </form>
@@ -777,21 +805,22 @@ h3{margin:14px 0 8px}
 
   <div id="testimonial-form-panel" class="form-panel">
     <h3>⭐ Testimonial / Review</h3>
+    <p class="form-hint">Optional, but very appreciated. Your feedback helps other homeowners feel confident reaching out.</p>
     <form action="https://formsubmit.co/mustangbuildings@outlook.com" method="POST">
       <input type="hidden" name="_subject" value="Testimonial / Review Form">
       <input type="hidden" name="Form Type" value="Testimonial / Review">
 
-      <input type="text" name="name" placeholder="Your name (as shown)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
-      <input type="email" name="email" placeholder="Email (not public)" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <input type="text" name="name" placeholder="Your name (as shown)" class="form-field">
+      <input type="email" name="email" placeholder="Email (not public)" class="form-field">
 
-      <select name="rating" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;">
+      <select name="rating" class="form-field">
         <option value="">Rating (optional)</option>
         <option>⭐️⭐️⭐️⭐️⭐️</option>
         <option>⭐️⭐️⭐️⭐️</option>
         <option>⭐️⭐️⭐️</option>
       </select>
 
-      <textarea name="testimonial" rows="4" placeholder="Your testimonial…" style="padding:12px;margin-bottom:8px;width:100%;border-radius:10px;border:1px solid #e6ecf3;"></textarea>
+      <textarea name="testimonial" rows="4" placeholder="Your testimonial…" class="form-field"></textarea>
 
       <label style="font-size:13px;display:flex;align-items:center;gap:6px;margin-bottom:8px;">
         <input type="checkbox" name="permission_to_use" value="Yes">
