@@ -25,19 +25,59 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; /* slightly smaller */
 }
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.wrap{max-width:var(--max);margin:auto;padding:28px}
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding:22px; /* tighter */
+}
 
 /* Header */
 header{text-align:center;margin:4px 0 10px}
-.logo{
-  width:260px;
-  max-width:80vw;
+
+/* animated roofline */
+.hero-truss-wrapper{
+  display:flex;
+  justify-content:center;
+  margin:10px auto 8px;
+}
+.hero-truss{
+  width:min(750px,90vw);  /* about the 750 size you liked */
+  max-width:100%;
   display:block;
-  margin:18px auto 18px;
+  opacity:0;
+  transform:translateY(10px) scale(0.97);
+  animation:
+    trussIntro 1.1s ease-out forwards,
+    trussBreathe 4.2s ease-in-out 1.1s 2;
+}
+@keyframes trussIntro{
+  0%{
+    opacity:0;
+    transform:translateY(22px) scale(0.94);
+  }
+  60%{
+    opacity:1;
+    transform:translateY(0) scale(1.04);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+@keyframes trussBreathe{
+  0%{
+    transform:translateY(0) scale(1);
+  }
+  50%{
+    transform:translateY(-4px) scale(1.05);
+  }
+  100%{
+    transform:translateY(0) scale(1);
+  }
 }
 
 .sub{font-weight:600;margin-top:4px;}
@@ -50,12 +90,12 @@ header{text-align:center;margin:4px 0 10px}
 
 /* Top navigation */
 nav.site-nav{
-  margin-top:10px;
+  margin-top:8px;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:10px;
-  font-size:14px;
+  gap:8px;
+  font-size:13px; /* slightly smaller */
 }
 nav.site-nav a{
   padding:4px 10px;
@@ -73,29 +113,29 @@ nav.site-nav a:hover{
   background:var(--accent-2);
   border:1px solid var(--border);
   border-radius:20px;
-  padding:24px;
+  padding:20px;   /* was 24 */
   box-shadow:var(--shadow);
-  margin:16px 0 18px;
+  margin:14px 0 16px;
 }
 .badges{
-  display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;justify-content:center;
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;justify-content:center;
 }
 .badge{
   display:inline-flex;align-items:center;gap:8px;
-  padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264;
+  padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264;
 }
 .pill{
   display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:#fff;border:1px solid var(--border);color:#274264;margin-left:8px;
 }
 
 /* Grid & cards */
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
 .card{
   grid-column:span 12;
   background:#fff;
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:20px;
+  padding:18px;  /* was 20 */
   box-shadow:var(--shadow);
 }
 @media(min-width:840px){
@@ -105,8 +145,8 @@ nav.site-nav a:hover{
 /* Pricing layout */
 .pricing{
   display:grid;
-  gap:16px;
-  margin-top:8px;
+  gap:14px;
+  margin-top:6px;
 }
 @media(min-width:840px){
   .pricing{grid-template-columns:repeat(2,1fr);}
@@ -115,10 +155,10 @@ nav.site-nav a:hover{
   background:#ffffff;
   border:1px solid var(--border);
   border-radius:14px;
-  padding:18px;
+  padding:16px;
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap:6px;
   box-shadow:var(--shadow);
 }
 .price-card.highlight{
@@ -129,10 +169,10 @@ nav.site-nav a:hover{
   display:flex;
   align-items:baseline;
   justify-content:space-between;
-  gap:12px;
+  gap:10px;
 }
 .price-amt{
-  font-size:24px;
+  font-size:23px;
   font-weight:800;
   color:#0f2547;
 }
@@ -140,8 +180,13 @@ nav.site-nav a:hover{
 /* Buttons */
 .btn{
   display:inline-flex;align-items:center;gap:10px;
-  padding:12px 16px;border-radius:10px;border:1px solid var(--border);
-  background:#ffffff;color:#0f2547;font-weight:700;box-shadow:var(--shadow);
+  padding:10px 14px; /* slightly smaller */
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#ffffff;
+  color:#0f2547;
+  font-weight:700;
+  box-shadow:var(--shadow);
   cursor:pointer;
 }
 .btn:hover{filter:brightness(1.03)}
@@ -181,20 +226,20 @@ nav.site-nav a:hover{
   background:#ffffff;
   border:1px solid var(--border);
   border-radius:14px;
-  padding:16px;
+  padding:14px;
   box-shadow:var(--shadow);
   text-align:center;
 }
 .big-service-btn{
   background:#1d7fe2;
   color:#ffffff;
-  font-size:20px;
-  padding:16px 26px;
+  font-size:18px;
+  padding:14px 22px;
   border-radius:12px;
   margin:6px auto 0;
   display:block;
   text-align:center;
-  width:280px;
+  width:260px;
 }
 .big-service-btn:hover{filter:brightness(1.1)}
 
@@ -206,7 +251,7 @@ nav.site-nav a:hover{
   border-radius:10px;
   padding:14px 16px;
   box-shadow:var(--shadow);
-  margin: 10px 0;
+  margin:10px 0;
   text-align:center; /* center the text inside the yellow ribbon */
 }
 
@@ -218,14 +263,14 @@ nav.site-nav a:hover{
 .schedule-btn{
   background:#1d7fe2;
   color:#ffffff;
-  font-size:18px;
-  padding:14px 22px;
+  font-size:17px;
+  padding:12px 20px;
   border-radius:12px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   width:100%;
-  max-width:320px;
+  max-width:300px;
   border:1px solid #1d7fe2;
 }
 .schedule-btn:hover{filter:brightness(1.08);text-decoration:none}
@@ -233,9 +278,12 @@ nav.site-nav a:hover{
 /* Text helpers */
 .muted{color:var(--muted)}
 .fine{font-size:13px;color:#6b7280}
-h1{font-size:clamp(28px,3.4vw,40px);margin:0}
-h2{margin:0 0 12px;font-size:22px}
-h3{margin:16px 0 8px}
+h1{
+  font-size:clamp(26px,3vw,36px); /* slightly smaller range */
+  margin:0;
+}
+h2{margin:0 0 10px;font-size:21px}
+h3{margin:14px 0 8px}
 
 /* Forms toggle */
 .form-toggle-bar{
@@ -388,48 +436,6 @@ h3{margin:16px 0 8px}
     align-items:stretch;
   }
 }
-
-/* SIMPLE ROOFLINE TRUSS (polyline with sharp peak) */
-.hero-truss-wrapper{
-  display:flex;
-  justify-content:center;
-  margin:18px auto 12px;
-}
-.hero-truss{
-  width:min(950px,95vw);
-  max-width:100%;
-  display:block;
-  opacity:0;
-  transform:translateY(8px) scale(0.98);
-  animation:
-    trussIntro 1.2s ease-out forwards,
-    trussBreathe 4s ease-in-out 1.2s 2;
-}
-@keyframes trussIntro{
-  0%{
-    opacity:0;
-    transform:translateY(20px) scale(0.95);
-  }
-  60%{
-    opacity:1;
-    transform:translateY(0) scale(1.02);
-  }
-  100%{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
-}
-@keyframes trussBreathe{
-  0%{
-    transform:translateY(0) scale(1);
-  }
-  50%{
-    transform:translateY(-3px) scale(1.03);
-  }
-  100%{
-    transform:translateY(0) scale(1);
-  }
-}
 </style>
 
 </head>
@@ -439,22 +445,24 @@ h3{margin:16px 0 8px}
 
 <!-- HEADER -->
 <header id="top">
-  <svg class="logo" viewBox="0 0 600 220" role="img" aria-label="Mustang Buildings & Consulting LLC logo">
-    <defs>
-      <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0" stop-color="#2e8ec9"/>
-        <stop offset="1" stop-color="#53b6ff"/>
-      </linearGradient>
-    </defs>
-
-    <polygon points="300,25 75,120 110,120 300,45 490,120 525,120" fill="url(#roofGrad)"/>
-
-    <!-- One-line business name -->
-    <text x="50%" y="185" text-anchor="middle" font-size="40" font-weight="700">
-      Mustang Buildings &amp; Consulting LLC
-    </text>
-  </svg>
-
+  <div class="hero-truss-wrapper">
+    <svg class="hero-truss" viewBox="0 0 800 200" role="img" aria-label="Mustang Buildings & Consulting roofline">
+      <defs>
+        <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#2e8ec9"/>
+          <stop offset="1" stop-color="#53b6ff"/>
+        </linearGradient>
+      </defs>
+      <!-- simple 2-line roof outline with sharp peak -->
+      <polyline
+        points="90,150 400,60 710,150"
+        fill="none"
+        stroke="url(#roofGrad)"
+        stroke-width="12"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </div>
 
   <h1>Mustang Buildings &amp; Consulting LLC</h1>
@@ -907,3 +915,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
+
