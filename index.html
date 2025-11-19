@@ -207,6 +207,7 @@ nav.site-nav a:hover{
   padding:14px 16px;
   box-shadow:var(--shadow);
   margin: 10px 0;
+  text-align:center; /* center the text inside the yellow ribbon */
 }
 
 /* Schedule button */
@@ -388,14 +389,14 @@ h3{margin:16px 0 8px}
   }
 }
 
-/* BLUE TRUSS + CEILING GRID HERO MARK */
+/* SIMPLE BLUE TRUSS HERO MARK */
 .hero-truss-wrapper{
   display:flex;
   justify-content:center;
   margin:18px auto 12px;
 }
 .hero-truss{
-  width:min(750px,90vw);
+  width:min(1000px,95vw);
   max-width:100%;
   display:block;
   opacity:0;
@@ -439,7 +440,7 @@ h3{margin:16px 0 8px}
 <!-- HEADER -->
 <header id="top">
 
-  <!-- BLUE TRUSS WITH CEILING GRID -->
+  <!-- SIMPLE BLUE TRUSS (no grid, no supports) -->
   <div class="hero-truss-wrapper">
     <svg
       class="hero-truss"
@@ -449,35 +450,15 @@ h3{margin:16px 0 8px}
     >
       <title id="trussTitle">Mustang Buildings &amp; Consulting Truss Mark</title>
       <desc id="trussDesc">
-        Stylized blue roof truss with a light ceiling grid pattern behind it.
+        Simple blue roof truss used as a branding mark for Mustang Buildings &amp; Consulting LLC.
       </desc>
 
-      <!-- LIGHT CEILING GRID (thin, subtle) -->
-      <!-- Vertical grid lines -->
-      <g stroke="#1f6fbf" stroke-width="0.6" opacity="0.25">
-        <line x1="40"  y1="70" x2="40"  y2="110" />
-        <line x1="80"  y1="70" x2="80"  y2="110" />
-        <line x1="120" y1="70" x2="120" y2="110" />
-        <line x1="160" y1="70" x2="160" y2="110" />
-        <line x1="200" y1="70" x2="200" y2="110" />
-        <line x1="240" y1="70" x2="240" y2="110" />
-      </g>
-
-      <!-- Horizontal grid lines -->
-      <g stroke="#1f6fbf" stroke-width="0.6" opacity="0.25">
-        <line x1="30" y1="80" x2="270" y2="80" />
-        <line x1="30" y1="90" x2="270" y2="90" />
-        <line x1="30" y1="100" x2="270" y2="100" />
-        <line x1="30" y1="110" x2="270" y2="110" />
-      </g>
-
-      <!-- MAIN TRUSS (bold) -->
-      <!-- Roof -->
+      <!-- Roof shape -->
       <polygon
         points="20,80 150,15 280,80"
         fill="none"
         stroke="#1f6fbf"
-        stroke-width="6"
+        stroke-width="7"
         stroke-linejoin="round"
       />
       <!-- Bottom chord -->
@@ -485,22 +466,9 @@ h3{margin:16px 0 8px}
         x1="25" y1="80"
         x2="275" y2="80"
         stroke="#1f6fbf"
-        stroke-width="6"
+        stroke-width="7"
         stroke-linecap="round"
       />
-      <!-- Vertical supports -->
-      <g stroke="#1f6fbf" stroke-width="5">
-        <line x1="70"  y1="80" x2="70"  y2="50" />
-        <line x1="150" y1="80" x2="150" y2="35" />
-        <line x1="230" y1="80" x2="230" y2="50" />
-      </g>
-      <!-- Diagonals -->
-      <g stroke="#1f6fbf" stroke-width="4">
-        <line x1="25"  y1="80" x2="70"  y2="50" />
-        <line x1="70"  y1="50" x2="150" y2="35" />
-        <line x1="150" y1="35" x2="230" y2="50" />
-        <line x1="230" y1="50" x2="275" y2="80" />
-      </g>
     </svg>
   </div>
 
