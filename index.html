@@ -446,46 +446,32 @@ h3{margin:14px 0 8px}
 <!-- HEADER -->
 <header id="top">
   <div class="hero-truss-wrapper">
-    <svg class="hero-truss" viewBox="0 0 600 200" role="img" aria-label="Mustang Buildings & Consulting roofline">
-      <defs>
-        <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#2e8ec9"/>
-          <stop offset="1" stop-color="#53b6ff"/>
-        </linearGradient>
-      </defs>
+   <svg class="hero-truss" viewBox="0 0 600 200" role="img" aria-label="Mustang Buildings & Consulting roofline"> <defs> <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0"> <stop offset="0" stop-color="#2e8ec9" /> <stop offset="1" stop-color="#53b6ff" /> </linearGradient> </defs> <!-- Outer tapered roof chord (band) -->
 
-      <!-- Outer roof band -->
-      <polygon
-        points="40,145 300,40 560,145 530,145 300,60 70,145"
-        fill="url(#roofGrad)"
-      />
-      <!-- Inner white triangle to create band effect -->
-      <polygon
-        points="70,145 300,60 530,145"
-        fill="#f5f9ff"
-      />
+<polygon points="40,150 300,45 560,150 540,150 300,70 60,150" fill="url(#roofGrad)" />
 
-      <!-- Truss web lines -->
-      <!-- center vertical -->
-      <line x1="300" y1="60" x2="300" y2="135"
-            stroke="#9cc4e8" stroke-width="2"/>
+<!-- Inner light area, kept lower so web never pokes out the top -->
 
-      <!-- bottom chord -->
-      <line x1="90" y1="135" x2="510" y2="135"
-            stroke="#d0e3f5" stroke-width="2"/>
+<polygon points="80,150 300,72 520,150" fill="#f5f9ff" />
 
-      <!-- diagonals from center to near-eaves -->
-      <line x1="300" y1="135" x2="180" y2="135"
-            stroke="#9cc4e8" stroke-width="2"/>
-      <line x1="300" y1="135" x2="420" y2="135"
-            stroke="#9cc4e8" stroke-width="2"/>
+<!-- Web members – all end below the top chord --> <!-- Center vertical -->
 
-      <!-- inner diagonals up from bottom chord to center post -->
-      <line x1="180" y1="135" x2="300" y2="95"
-            stroke="#c2d8f0" stroke-width="2"/>
-      <line x1="420" y1="135" x2="300" y2="95"
-            stroke="#c2d8f0" stroke-width="2"/>
-    </svg>
+<line x1="300" y1="72" x2="300" y2="138" stroke="#9cc4e8" stroke-width="2" />
+
+<!-- Bottom chord -->
+
+<line x1="100" y1="138" x2="500" y2="138" stroke="#d0e3f5" stroke-width="2" />
+
+<!-- Short horizontals from center along bottom -->
+
+<line x1="300" y1="138" x2="200" y2="138" stroke="#9cc4e8" stroke-width="2" />
+<line x1="300" y1="138" x2="400" y2="138" stroke="#9cc4e8" stroke-width="2" />
+
+<!-- Diagonals up toward the center post -->
+
+<line x1="200" y1="138" x2="300" y2="100" stroke="#c2d8f0" stroke-width="2" />
+<line x1="400" y1="138" x2="300" y2="100" stroke="#c2d8f0" stroke-width="2" />
+</svg> 
   </div>
 
   <h1>Mustang Buildings &amp; Consulting LLC</h1>
