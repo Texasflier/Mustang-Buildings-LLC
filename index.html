@@ -446,30 +446,45 @@ h3{margin:14px 0 8px}
 <!-- HEADER -->
 <header id="top">
   <div class="hero-truss-wrapper">
-    <svg class="hero-truss" viewBox="0 0 800 160" role="img" aria-label="Mustang Buildings & Consulting roofline">
+    <svg class="hero-truss" viewBox="0 0 600 200" role="img" aria-label="Mustang Buildings & Consulting roofline">
       <defs>
         <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stop-color="#2e8ec9"/>
           <stop offset="1" stop-color="#53b6ff"/>
         </linearGradient>
       </defs>
-      <!-- EXACTLY two roof lines with a sharp peak -->
-      <path
-        d="M120 130 L400 40"
-        fill="none"
-        stroke="url(#roofGrad)"
-        stroke-width="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+
+      <!-- Outer roof band -->
+      <polygon
+        points="40,145 300,40 560,145 530,145 300,60 70,145"
+        fill="url(#roofGrad)"
       />
-      <path
-        d="M400 40 L680 130"
-        fill="none"
-        stroke="url(#roofGrad)"
-        stroke-width="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+      <!-- Inner white triangle to create band effect -->
+      <polygon
+        points="70,145 300,60 530,145"
+        fill="#f5f9ff"
       />
+
+      <!-- Truss web lines -->
+      <!-- center vertical -->
+      <line x1="300" y1="60" x2="300" y2="135"
+            stroke="#9cc4e8" stroke-width="2"/>
+
+      <!-- bottom chord -->
+      <line x1="90" y1="135" x2="510" y2="135"
+            stroke="#d0e3f5" stroke-width="2"/>
+
+      <!-- diagonals from center to near-eaves -->
+      <line x1="300" y1="135" x2="180" y2="135"
+            stroke="#9cc4e8" stroke-width="2"/>
+      <line x1="300" y1="135" x2="420" y2="135"
+            stroke="#9cc4e8" stroke-width="2"/>
+
+      <!-- inner diagonals up from bottom chord to center post -->
+      <line x1="180" y1="135" x2="300" y2="95"
+            stroke="#c2d8f0" stroke-width="2"/>
+      <line x1="420" y1="135" x2="300" y2="95"
+            stroke="#c2d8f0" stroke-width="2"/>
     </svg>
   </div>
 
