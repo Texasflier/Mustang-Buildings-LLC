@@ -491,6 +491,33 @@ h3{margin:12px 0 6px}
   border-color:#e3e9f5;
   box-shadow:0 4px 16px rgba(15,30,60,.05);
 }
+
+/* Zelle box inside Pay Online */
+.zelle-box{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px 14px;
+  margin:8px 0 10px;
+  background:#ffffff;
+  text-align:center;
+}
+.zelle-email{
+  font-weight:700;
+  font-size:15px;
+  margin:4px 0 8px;
+  word-break:break-all;
+}
+.zelle-copy-btn{
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#f3f4ff;
+  font-weight:600;
+  cursor:pointer;
+}
+.zelle-copy-btn:active{
+  transform:scale(0.97);
+}
 </style>
 
 </head>
@@ -726,6 +753,19 @@ h3{margin:12px 0 6px}
       <span class="pay-label">Pay with Venmo</span>
       <span class="pay-logo pay-logo-venmo">V</span>
     </a>
+  </div>
+
+  <!-- ZELLE OPTION -->
+  <div class="zelle-box">
+    <h3>Pay with Zelle</h3>
+    <p class="muted" style="margin:4px 0 2px;">Send payment to:</p>
+    <p class="zelle-email">mustangbuildings@outlook.com</p>
+    <button type="button" class="zelle-copy-btn" onclick="copyZelleEmail()">
+      Copy Zelle email
+    </button>
+    <p class="fine" style="margin-top:8px;">
+      Please include your name and project/address in the memo so Jeff can match your payment to your consultation.
+    </p>
   </div>
 
   <div style="text-align:center;margin-bottom:6px;">
@@ -976,6 +1016,20 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+// Zelle copy helper
+function copyZelleEmail() {
+  var email = "mustangbuildings@outlook.com";
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(function () {
+      alert("Zelle email copied: " + email);
+    }).catch(function () {
+      alert("Zelle email: " + email);
+    });
+  } else {
+    alert("Zelle email: " + email);
+  }
+}
 </script>
 
 </body>
