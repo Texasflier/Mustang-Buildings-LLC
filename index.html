@@ -469,11 +469,10 @@ h3{margin:12px 0 6px}
   background:#3d95ce;
   color:#ffffff;
 }
- .pay-logo-zelle{
+.pay-logo-zelle{
   background:#6c2ab9;
   color:#ffffff;
 }
- 
 .pay-logo-img{
   display:block;
   height:26px;
@@ -497,7 +496,7 @@ h3{margin:12px 0 6px}
   box-shadow:0 4px 16px rgba(15,30,60,.05);
 }
 
-/* Zelle box inside Pay Online */
+/* (Old Zelle box styles can stay; they don't hurt anything) */
 .zelle-box{
   border:1px solid var(--border);
   border-radius:12px;
@@ -734,7 +733,7 @@ h3{margin:12px 0 6px}
     Use one of the options below — on the payment screen, enter the amount we discussed.
   </p>
 
-    <div class="pay-buttons-row">
+  <div class="pay-buttons-row">
     <a
       href="https://paypal.me/Texasflier"
       target="_blank"
@@ -769,9 +768,6 @@ h3{margin:12px 0 6px}
       <span class="pay-logo pay-logo-zelle">Z</span>
     </a>
   </div>
-
-
- 
 
   <div style="text-align:center;margin-bottom:6px;">
     <button
@@ -1021,14 +1017,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
-  if (togglePayDetails && payDetails) {
-    togglePayDetails.addEventListener("click", function () {
-      var hidden = payDetails.style.display === "none" || payDetails.style.display === "";
-      payDetails.style.display = hidden ? "block" : "none";
-    });
-  }
-
-});
 
 // When the Zelle button is clicked, copy the email and show a message
 function handleZelleClick() {
@@ -1046,20 +1034,6 @@ function copyZelleEmail() {
     });
   } else {
     alert("Use this Zelle email: " + email);
-  }
-}
-
-// Zelle copy helper
-function copyZelleEmail() {
-  var email = "mustangbuildings@outlook.com";
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(email).then(function () {
-      alert("Zelle email copied: " + email);
-    }).catch(function () {
-      alert("Zelle email: " + email);
-    });
-  } else {
-    alert("Zelle email: " + email);
   }
 }
 </script>
