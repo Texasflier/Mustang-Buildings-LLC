@@ -469,6 +469,11 @@ h3{margin:12px 0 6px}
   background:#3d95ce;
   color:#ffffff;
 }
+ .pay-logo-zelle{
+  background:#6c2ab9;
+  color:#ffffff;
+}
+ 
 .pay-logo-img{
   display:block;
   height:26px;
@@ -729,7 +734,7 @@ h3{margin:12px 0 6px}
     Use one of the options below — on the payment screen, enter the amount we discussed.
   </p>
 
-  <div class="pay-buttons-row">
+    <div class="pay-buttons-row">
     <a
       href="https://paypal.me/Texasflier"
       target="_blank"
@@ -753,20 +758,20 @@ h3{margin:12px 0 6px}
       <span class="pay-label">Pay with Venmo</span>
       <span class="pay-logo pay-logo-venmo">V</span>
     </a>
+
+    <!-- ZELLE BUTTON -->
+    <a
+      href="javascript:void(0)"
+      class="pay-btn"
+      onclick="handleZelleClick()"
+    >
+      <span class="pay-label">Pay with Zelle</span>
+      <span class="pay-logo pay-logo-zelle">Z</span>
+    </a>
   </div>
 
-  <!-- ZELLE OPTION -->
-  <div class="zelle-box">
-    <h3>Pay with Zelle</h3>
-    <p class="muted" style="margin:4px 0 2px;">Send payment to:</p>
-    <p class="zelle-email">mustangbuildings@outlook.com</p>
-    <button type="button" class="zelle-copy-btn" onclick="copyZelleEmail()">
-      Copy Zelle email
-    </button>
-    <p class="fine" style="margin-top:8px;">
-      Please include your name and project/address in the memo so Jeff can match your payment to your consultation.
-    </p>
-  </div>
+
+ 
 
   <div style="text-align:center;margin-bottom:6px;">
     <button
@@ -1016,6 +1021,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+  if (togglePayDetails && payDetails) {
+    togglePayDetails.addEventListener("click", function () {
+      var hidden = payDetails.style.display === "none" || payDetails.style.display === "";
+      payDetails.style.display = hidden ? "block" : "none";
+    });
+  }
+
+});
+
+// When the Zelle button is clicked, copy the email and show a message
+function handleZelleClick() {
+  copyZelleEmail();
+}
+
+// Zelle copy helper
+function copyZelleEmail() {
+  var email = "mustangbuildings@outlook.com";
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(function () {
+      alert("Zelle email copied: " + email + "\n\nOpen your banking app or Zelle and send to this email.");
+    }).catch(function () {
+      alert("Use this Zelle email: " + email);
+    });
+  } else {
+    alert("Use this Zelle email: " + email);
+  }
+}
 
 // Zelle copy helper
 function copyZelleEmail() {
