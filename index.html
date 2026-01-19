@@ -236,20 +236,24 @@ nav.site-nav a:hover{
 }
 .btn:hover{filter:brightness(1.03)}
 
-/* Sticky CTA */
+/* Sticky CTA (FIXED to open Calendly + iPhone tap-safe) */
 .sticky-cta{
   position:fixed;
   right:16px;
   bottom:16px;
-  z-index:50;
+  z-index:9999;
+  pointer-events:auto;
 }
 .sticky-cta a{
+  display:inline-block;
   background:#1d7fe2;
   color:#ffffff;
   padding:10px 16px;
   border-radius:999px;
   font-size:14px;
   box-shadow:var(--shadow);
+  text-decoration:none;
+  pointer-events:auto;
 }
 .sticky-cta a:hover{
   filter:brightness(1.08);
@@ -849,9 +853,9 @@ h3{margin:12px 0 6px}
   © Mustang Buildings &amp; Consulting LLC — Advisory-only services.
 </footer>
 
-<!-- Sticky CTA -->
+<!-- Sticky CTA (FIXED: now opens Calendly directly) -->
 <div class="sticky-cta">
-  <a href="#schedule">📅 Schedule Consultation</a>
+  <a href="https://calendly.com/mustangbuildingsllc/30min" target="_blank" rel="noopener">📅 Schedule</a>
 </div>
 
 </div> <!-- END WRAP -->
