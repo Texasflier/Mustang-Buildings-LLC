@@ -347,3 +347,50 @@ Thank you,
   </script>
 </body>
 </html>
+<footer style="margin-top:20px;font-size:12px;color:#aaa;text-align:center;">
+© 2026 Mustang Buildings & Consulting LLC — Advisory-only consulting.
+</footer>
+
+</div>
+
+<script>
+const DRIVE_FILE_ID = "1pf4WIABBErgp1FxPbDXFVRTd3JK7LLsb";
+
+const PDF_PREVIEW_URL = "https://drive.google.com/file/d/" + DRIVE_FILE_ID + "/preview";
+const PDF_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=" + DRIVE_FILE_ID;
+const PDF_OPEN_URL = "https://drive.google.com/file/d/" + DRIVE_FILE_ID + "/view";
+
+document.getElementById("pdfFrame").src = PDF_PREVIEW_URL;
+document.getElementById("openBtn").onclick = ()=> window.open(PDF_OPEN_URL);
+document.getElementById("downloadBtn").onclick = ()=> window.open(PDF_DOWNLOAD_URL);
+
+const sendBtn = document.getElementById("sendBtn");
+const agree = document.getElementById("agree");
+const statusBad = document.getElementById("statusBad");
+
+const emailBody = `Hello Mustang Buildings & Consulting LLC,
+
+I reviewed the agreement and would like to get started.
+
+FULL NAME:
+PHONE:
+EMAIL:
+PROJECT LOCATION:
+PROJECT TYPE:
+PROJECT DETAILS:
+
+Thank you,
+`;
+
+sendBtn.onclick = ()=>{
+  statusBad.style.display="none";
+  if(!agree.checked){
+    statusBad.style.display="block";
+    return;
+  }
+  window.location.href = "mailto:mustangbuildings@outlook.com?subject=New Client Intake&body=" + encodeURIComponent(emailBody);
+};
+</script>
+
+</body>
+</html>
