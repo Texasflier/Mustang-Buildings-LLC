@@ -105,20 +105,26 @@
       background:#ffffff;color:#0f2547;font-weight:800;cursor:pointer;
       box-shadow:0 6px 18px rgba(15,30,60,.10);
       text-decoration:none;
+      width:min(520px,100%);
     }
     .btn:hover{filter:brightness(1.03);text-decoration:none}
     .btn-primary{
       background:#1d7fe2;border-color:#1d7fe2;color:#ffffff;
-      width:min(520px,100%);
       font-size:16px;
       padding:14px 18px;
       border-radius:14px;
     }
     .btn-primary:hover{filter:brightness(1.08)}
     .btn-secondary{
-      width:min(520px,100%);
       background:#ffffff;
     }
+
+    .inline-note{
+      text-align:center;
+      font-weight:750;
+      margin:0;
+    }
+    .inline-note a{font-weight:900}
 
     .card{
       background:#fff;border:1px solid var(--border);
@@ -136,6 +142,15 @@
       background:#fff7c2;border:1px solid #f2d45a;border-radius:12px;
       padding:12px 14px;margin:14px 0;text-align:center;font-weight:850;
     }
+
+    /* Fees toggle */
+    .fees-toggle-row{
+      display:flex;
+      justify-content:center;
+      margin-top:4px;
+    }
+    .fees-box{display:none}
+    .fees-box.open{display:block}
 
     /* sticky CTA */
     .sticky-cta{position:fixed;right:16px;bottom:16px;z-index:2147483647}
@@ -200,11 +215,12 @@
       </div>
 
       <div class="primary-cta">
-        <a class="btn btn-primary" href="https://calendly.com/mustangbuildingsllc/30min?utm_source=facebook&utm_medium=paid&utm_campaign=mustang" target="_blank" rel="noopener">
+        <!-- Single source of truth for the Calendly URL used throughout the page -->
+        <a class="btn btn-primary" id="topScheduleBtn" href="https://calendly.com/mustangbuildingsllc/30min?utm_source=facebook&utm_medium=paid&utm_campaign=mustang" target="_blank" rel="noopener">
           📅 Schedule Consultation
         </a>
 
-        <p style="text-align:center;font-weight:700;margin:0;">
+        <p class="inline-note">
           Call or Text: <a href="tel:+19072323244">907-232-3244</a>
         </p>
 
@@ -212,24 +228,31 @@
           You’ll pick a time and receive a confirmation email. Phone or Zoom. No pressure.
         </div>
 
+        <!-- Fees button (toggle) -->
+        <div class="fees-toggle-row">
+          <button type="button" class="btn btn-primary" id="feesToggleBtn" aria-expanded="false" aria-controls="feesBox">
+            Fees
+          </button>
+        </div>
+
+        <div class="fees-box card" id="feesBox" aria-hidden="true">
+          <h3>Typical Consulting Fees</h3>
+          <ul class="muted">
+            <li><strong>$99</strong> — 30-Minute Quick Review / Second Opinion</li>
+            <li><strong>$450</strong> — Second-Opinion Call / Homeowner Advisor (Basic, first month)</li>
+            <li><strong>$600</strong> — Bid + Contractor Review or Project Planning &amp; Scope Session</li>
+            <li><strong>$750</strong> — Homeowner Advisor (Premium, first month)</li>
+            <li><strong>$1,900</strong> — 60-Day Protection Plan</li>
+          </ul>
+          <p class="fine">
+            Questions before paying? Call <a href="tel:+19072323244">907-232-3244</a> or email
+            <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>.
+          </p>
+        </div>
+
         <a class="btn btn-secondary" href="mailto:mustangbuildings@outlook.com">✉️ Email Jeff</a>
         <a class="btn btn-secondary" href="tel:+19072323244">📞 907-232-3244</a>
       </div>
-    </section>
-
-    <section class="card">
-      <h3>Typical Consulting Fees</h3>
-      <ul class="muted">
-        <li><strong>$99</strong> — 30-Minute Quick Review / Second Opinion</li>
-        <li><strong>$450</strong> — Homeowner Advisor (Basic, first month)</li>
-        <li><strong>$600</strong> — Bid + Contractor Review or Project Planning &amp; Scope Session</li>
-        <li><strong>$750</strong> — Homeowner Advisor (Premium, first month)</li>
-        <li><strong>$1,900</strong> — 60-Day Protection Plan</li>
-      </ul>
-      <p class="fine">
-        Questions before paying? Call <a href="tel:+19072323244">907-232-3244</a> or email
-        <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>.
-      </p>
     </section>
 
     <div class="caution">
@@ -273,9 +296,11 @@
       <p class="muted" style="margin-top:6px;">
         If you’re reviewing bids, planning a remodel, or about to hire a contractor — this is the moment when a smart review can prevent expensive surprises.
       </p>
-      <a class="btn btn-primary" href="https://calendly.com/mustangbuildingsllc/30min?utm_source=facebook&utm_medium=paid&utm_campaign=mustang" target="_blank" rel="noopener">
+
+      <a class="btn btn-primary" id="midScheduleBtn" href="https://calendly.com/mustangbuildingsllc/30min?utm_source=facebook&utm_medium=paid&utm_campaign=mustang" target="_blank" rel="noopener">
         📅 Schedule Consultation
       </a>
+
       <p class="fine" style="margin-top:10px;">
         Service area focus: DFW Metro (remote advisory available by phone/Zoom).
       </p>
@@ -309,14 +334,40 @@
 
   <script>
     (function(){
+      // Keep one canonical calendly URL (used by sticky button; anchors already have hrefs)
+      var CALENDLY_URL = 'https://calendly.com/mustangbuildingsllc/30min?utm_source=facebook&utm_medium=paid&utm_campaign=mustang';
+
+      // Ensure the two main buttons always use the canonical URL (prevents drift)
+      var topBtn = document.getElementById('topScheduleBtn');
+      var midBtn = document.getElementById('midScheduleBtn');
+      if (topBtn) topBtn.setAttribute('href', CALENDLY_URL);
+      if (midBtn) midBtn.setAttribute('href', CALENDLY_URL);
+
+      // Sticky CTA opens Calendly
       var stickyBtn = document.getElementById('stickyScheduleBtn');
       if (stickyBtn) {
         stickyBtn.addEventListener('click', function () {
-          window.open(
-            'https://calendly.com/mustangbuildingsllc/30min?utm_source=facebook&utm_medium=paid&utm_campaign=mustang',
-            '_blank',
-            'noopener'
-          );
+          window.open(CALENDLY_URL, '_blank', 'noopener');
+        });
+      }
+
+      // Fees toggle
+      var toggleBtn = document.getElementById('feesToggleBtn');
+      var feesBox = document.getElementById('feesBox');
+      if (toggleBtn && feesBox) {
+        toggleBtn.addEventListener('click', function () {
+          var isOpen = feesBox.classList.contains('open');
+          if (isOpen) {
+            feesBox.classList.remove('open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            feesBox.setAttribute('aria-hidden', 'true');
+          } else {
+            feesBox.classList.add('open');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            feesBox.setAttribute('aria-hidden', 'false');
+            // Optional: scroll fees into view on open (subtle)
+            feesBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
         });
       }
     })();
