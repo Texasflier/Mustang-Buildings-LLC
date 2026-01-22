@@ -143,12 +143,21 @@
       padding:12px 14px;margin:14px 0;text-align:center;font-weight:850;
     }
 
-    /* Fees toggle */
-    .fees-toggle-row{
+    /* Fees toggle + Agreement button row */
+    .action-row{
       display:flex;
       justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
       margin-top:4px;
     }
+    .action-row .btn{
+      width:auto;
+      min-width:160px;
+      max-width:520px;
+    }
+
+    /* Fees box hidden until open */
     .fees-box{display:none}
     .fees-box.open{display:block}
 
@@ -215,7 +224,6 @@
       </div>
 
       <div class="primary-cta">
-        <!-- Single source of truth for the Calendly URL used throughout the page -->
         <a class="btn btn-primary" id="topScheduleBtn" href="https://calendly.com/mustangbuildingsllc/30min?utm_source=facebook&utm_medium=paid&utm_campaign=mustang" target="_blank" rel="noopener">
           📅 Schedule Consultation
         </a>
@@ -228,13 +236,18 @@
           You’ll pick a time and receive a confirmation email. Phone or Zoom. No pressure.
         </div>
 
-        <!-- Fees button (toggle) -->
-        <div class="fees-toggle-row">
+        <!-- Fees + Agreement buttons on the same line -->
+        <div class="action-row">
           <button type="button" class="btn btn-primary" id="feesToggleBtn" aria-expanded="false" aria-controls="feesBox">
             Fees
           </button>
+
+          <a class="btn btn-primary" href="agreement.html" target="_blank" rel="noopener">
+            View Agreement
+          </a>
         </div>
 
+        <!-- Fees hidden until Fees button is clicked -->
         <div class="fees-box card" id="feesBox" aria-hidden="true">
           <h3>Typical Consulting Fees</h3>
           <ul class="muted">
@@ -334,10 +347,10 @@
 
   <script>
     (function(){
-      // Keep one canonical calendly URL (used by sticky button; anchors already have hrefs)
+      // One canonical Calendly URL used everywhere to prevent mismatches
       var CALENDLY_URL = 'https://calendly.com/mustangbuildingsllc/30min?utm_source=facebook&utm_medium=paid&utm_campaign=mustang';
 
-      // Ensure the two main buttons always use the canonical URL (prevents drift)
+      // Ensure main buttons always use the canonical URL
       var topBtn = document.getElementById('topScheduleBtn');
       var midBtn = document.getElementById('midScheduleBtn');
       if (topBtn) topBtn.setAttribute('href', CALENDLY_URL);
@@ -351,7 +364,7 @@
         });
       }
 
-      // Fees toggle
+      // Fees toggle (show/hide)
       var toggleBtn = document.getElementById('feesToggleBtn');
       var feesBox = document.getElementById('feesBox');
       if (toggleBtn && feesBox) {
@@ -365,7 +378,6 @@
             feesBox.classList.add('open');
             toggleBtn.setAttribute('aria-expanded', 'true');
             feesBox.setAttribute('aria-hidden', 'false');
-            // Optional: scroll fees into view on open (subtle)
             feesBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
         });
