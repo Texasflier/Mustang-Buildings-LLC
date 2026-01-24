@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6VTDJ24PM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X6VTDJ24PM');
+  </script>
+
   <meta charset="UTF-8">
   <title>Construction Contract Review – Advisory-Only Consulting in DFW</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description" content="Independent, advisory-only construction consulting for DFW homeowners. Get a second set of expert eyes on your construction contract before you sign.">
 
-  <!-- Google Analytics 4 (replace with your own ID if needed) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-
   <style>
     :root {
-      --bg: #0f172a;
+      --bg: #020617;
       --bg-alt: #020617;
       --card: #020617;
       --text: #e5e7eb;
@@ -600,6 +600,38 @@
     (function () {
       const y = document.getElementById('year');
       if (y) y.textContent = new Date().getFullYear().toString();
+    })();
+
+    // Optional: smooth scroll to "How this works" when button is clicked
+    (function () {
+      const howItWorksBtn = document.querySelector('.btn-ghost');
+      const stepsCard = document.getElementById('steps-title')?.closest('.card');
+
+      if (howItWorksBtn && stepsCard) {
+        howItWorksBtn.addEventListener('click', function () {
+          stepsCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    })();
+
+    // Optional: Example of fees accordion behavior (if you later add multiple fee tiers)
+    (function () {
+      const feeToggleBtn = document.getElementById('fee-toggle');
+      const feesBox = document.getElementById('fees-box');
+
+      if (feeToggleBtn && feesBox) {
+        feeToggleBtn.addEventListener('click', function () {
+          const expanded = feeToggleBtn.getAttribute('aria-expanded') === 'true';
+          if (expanded) {
+            feeToggleBtn.setAttribute('aria-expanded', 'false');
+            feesBox.setAttribute('aria-hidden', 'true');
+          } else {
+            feeToggleBtn.setAttribute('aria-expanded', 'true');
+            feesBox.setAttribute('aria-hidden', 'false');
+            feesBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+      }
     })();
   </script>
 </body>
