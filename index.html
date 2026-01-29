@@ -1,181 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6VTDJ24PM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-X6VTDJ24PM');
-  </script>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Construction Consulting for Homeowners — Mustang Buildings &amp; Consulting LLC (DFW)</title>
-  <meta name="description" content="Independent advisory-only construction consulting for DFW homeowners. Get clarity before you sign: bids, contracts, scope, timelines, and red flags.">
-  <link rel="canonical" href="https://mustangbuildingsllc.com/">
-
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Construction Consulting for Homeowners — Mustang Buildings &amp; Consulting LLC (DFW)">
-  <meta property="og:description" content="Independent advisory-only construction consulting for homeowners. Get clarity before you sign a contract.">
-  <meta property="og:url" content="https://mustangbuildingsllc.com/">
-  <meta property="og:image" content="/og-image.png">
-  <meta property="og:site_name" content="Mustang Buildings & Consulting LLC">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Construction Consulting for Homeowners — Mustang Buildings &amp; Consulting LLC (DFW)">
-  <meta name="twitter:description" content="Homeowner-focused construction consulting — clarity before you sign.">
-  <meta name="twitter:image" content="/og-image.png">
+  <title>Client Agreement — Mustang Buildings & Consulting LLC</title>
+  <meta name="robots" content="noindex" />
 
   <style>
     :root{
-      --bg:#f7f7f7;
-      --panel:#ffffff;
-      --muted:#5b6472;
-      --text:#0b1220;
-      --accent:#2e7bd9;
-      --accent-2:#eaf3ff;
-      --border:#edf1f7;
-      --max:980px;
+      --bg:#0b1220;
+      --panel:rgba(17,27,46,.72);
+      --text:#eaf1ff;
+      --muted:rgba(234,241,255,.72);
+      --accent:#1d7fe2;
+      --border:rgba(255,255,255,.12);
       --radius:16px;
-      --shadow:0 8px 26px rgba(15,30,60,.08);
+      --max:980px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      background:var(--bg);
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(29,127,226,.18), transparent 55%),
+                  radial-gradient(900px 600px at 85% 15%, rgba(84,197,255,.10), transparent 50%),
+                  var(--bg);
       color:var(--text);
       font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
     }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:auto;padding:18px}
-    header{text-align:center;margin:6px 0 12px}
-    .tag{font-weight:650;color:var(--muted);line-height:1.35;margin-top:6px}
-
-    .hero-truss-wrapper{display:flex;justify-content:center;margin:10px auto 8px}
-    .hero-truss{
-      width:min(720px,92vw);
-      max-width:100%;
-      display:block;
-      opacity:0;
-      transform:translateY(10px) scale(0.97);
-      animation:trussIntro 1.0s ease-out forwards;
-    }
-    @keyframes trussIntro{
-      0%{opacity:0;transform:translateY(18px) scale(0.94);}
-      100%{opacity:1;transform:translateY(0) scale(1);}
-    }
-
-    .hero{
-      background:var(--accent-2);
-      border:1px solid var(--border);
-      border-radius:22px;
-      padding:18px;
-      box-shadow:var(--shadow);
-      margin:12px 0 14px;
-    }
-    h1{font-size:clamp(26px,3vw,36px);margin:0}
-    h2{margin:0 0 8px;font-size:clamp(20px,2.2vw,26px);line-height:1.25}
-    h3{margin:0 0 6px;font-size:16px}
-    .muted{color:var(--muted)}
-    .fine{font-size:13px;color:#6b7280}
-
-    .primary-cta{
-      margin-top:14px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      align-items:center;
-    }
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:12px;border:1px solid var(--border);
-      background:#ffffff;color:#0f2547;font-weight:800;
-      box-shadow:0 6px 18px rgba(15,30,60,.10);
-      text-decoration:none;
-      width:min(520px,100%);
-    }
-    .btn-primary{
-      background:#1d7fe2;border-color:#1d7fe2;color:#ffffff;
-      font-size:16px;
-      padding:14px 18px;
-      border-radius:14px;
-    }
-
     .card{
-      background:#fff;border:1px solid var(--border);
+      background:var(--panel);
+      border:1px solid var(--border);
       border-radius:var(--radius);
       padding:16px;
-      box-shadow:var(--shadow);
-      margin:14px 0;
     }
-
-    .sticky-cta{position:fixed;right:16px;bottom:16px;z-index:2147483647}
-    .sticky-cta button{
-      all:unset;
-      display:inline-flex;align-items:center;
-      background:#1d7fe2;color:#ffffff;
-      padding:10px 16px;border-radius:999px;
-      font-size:14px;font-weight:900;
-      box-shadow:0 10px 28px rgba(15,30,60,.18);
-      cursor:pointer;
+    h1{margin:0 0 6px;font-size:18px}
+    p{margin:6px 0;color:var(--muted)}
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 14px;border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      text-decoration:none;font-weight:800;color:var(--text);
+      min-width: 180px;
     }
-
-    footer{margin:22px 0 10px;text-align:center}
-    .footer-links{display:flex;gap:10px;justify-content:center;margin-top:8px}
-    .footer-links a{font-weight:750}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .viewer{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background: rgba(0,0,0,.25);
+      height: 70vh;
+      min-height: 520px;
+    }
+    iframe{width:100%;height:100%;border:0}
+    .fine{font-size:12px;color:rgba(234,241,255,.60);margin-top:10px}
   </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
+    <div class="card">
+      <h1>Client Agreement</h1>
+      <p>Please read the agreement below. If it doesn’t display on your device, use the buttons to open or download it.</p>
 
-<header>
-  <div class="hero-truss-wrapper">
-    <!-- roof SVG unchanged -->
+      <div class="btnrow">
+        <a class="btn primary" href="consulting-agreement-mustang-2026.pdf" target="_blank" rel="noopener">Open in New Tab</a>
+        <a class="btn" href="consulting-agreement-mustang-2026.pdf" download>Download PDF</a>
+        <a class="btn" href="index.html">Back to Website</a>
+      </div>
+
+      <div class="viewer">
+        <iframe
+          src="consulting-agreement-mustang-2026.pdf#view=FitH"
+          title="Consulting Agreement PDF">
+        </iframe>
+      </div>
+
+      <div class="fine">
+        To proceed: book your $99 review, then text 907-232-3244 or email mustangbuildings@outlook.com with any questions.
+      </div>
+    </div>
   </div>
-  <h1>Mustang Buildings &amp; Consulting LLC</h1>
-  <div class="tag">Construction Consulting — DFW Metro Area<br>More Than 40 Years of Industry Experience</div>
-</header>
-
-<section class="hero" id="top">
-  <h2>Before You Sign a Construction Contract</h2>
-  <p class="muted">Reviewed by a former General Contractor — <strong>$99 flat</strong>.</p>
-  <p class="fine">Homeowners only · One-time review · No builder affiliation</p>
-
-  <div class="primary-cta">
-    <a class="btn btn-primary" id="topScheduleBtn" href="https://calendly.com/mustangbuildingsllc/30min" target="_blank" rel="noopener">
-      ✅ Get the $99 Pre-Contract Review
-    </a>
-  </div>
-</section>
-
-<footer class="fine">
-  © Mustang Buildings &amp; Consulting LLC — Advisory-only services.
-  <div class="footer-links">
-    <a href="#top">Back to Top</a>
-    <!-- ✅ ONLY CHANGE -->
-    <a href="agreement.html">View Agreement</a>
-  </div>
-</footer>
-
-<div class="sticky-cta">
-  <button type="button" id="stickyScheduleBtn">✅ Get the $99 Review</button>
-</div>
-
-</div>
-
-<script>
-(function(){
-  var CALENDLY_URL = 'https://calendly.com/mustangbuildingsllc/30min';
-  document.getElementById('stickyScheduleBtn')
-    .addEventListener('click', () => window.open(CALENDLY_URL,'_blank','noopener'));
-})();
-</script>
 </body>
 </html>
