@@ -162,7 +162,12 @@
     .fees-box.open{display:block}
 
     /* sticky CTA */
-    .sticky-cta{position:fixed;right:16px;bottom:16px;z-index:2147483647}
+    .sticky-cta{
+      position:fixed;
+      right:16px;
+      bottom:80px; /* moved up so it no longer covers View Agreement */
+      z-index:2147483647;
+    }
     .sticky-cta button{
       all:unset;
       display:inline-flex;align-items:center;gap:10px;
@@ -304,13 +309,11 @@
 
     <footer class="fine">
       © Mustang Buildings &amp; Consulting LLC — Advisory-only services.
-      <div class="footer-links">    
-               <a href="#top">Back to Top</a>
+      <div class="footer-links">
+        <a href="#top">Back to Top</a>
         <a href="agreement.html" target="_blank" rel="noopener">
-  View Agreement
-</a>
-
-
+          View Agreement
+        </a>
       </div>
     </footer>
 
