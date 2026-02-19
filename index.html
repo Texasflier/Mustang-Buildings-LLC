@@ -220,6 +220,10 @@
           Call or Text: <a href="tel:+19072323244">907-232-3244</a>
         </p>
 
+        <!-- ADDED: FEES BUTTON (BLUE) -->
+        <button class="btn btn-primary" id="feesToggleBtn" type="button">Fees</button>
+        <!-- /ADDED -->
+
         <div class="fine" style="text-align:center;max-width:640px;">
           Pick a time and you’ll get a confirmation email. Phone or Zoom. No pressure.
         </div>
@@ -263,6 +267,25 @@
         <li>Homeowners use this service for remodels, additions, and new custom homes in the DFW area.</li>
       </ul>
     </section>
+
+    <!-- ADDED: FEES SECTION (HIDDEN UNTIL BUTTON CLICK) -->
+    <section class="card fees-box" id="feesBox">
+      <h3>Typical Consulting Fees</h3>
+      <ul class="muted">
+        <li><strong>$99</strong> — 30-Minute Quick Review / Second Opinion</li>
+        <li><strong>$450</strong> — Second-Opinion Call / Homeowner Advisor (Basic, first month)</li>
+        <li><strong>$600</strong> — Bid + Contractor Review or Project Planning &amp; Scope Session</li>
+        <li><strong>$750</strong> — Homeowner Advisor (Premium, first month)</li>
+        <li><strong>$1,900</strong> — 60-Day Protection Plan</li>
+      </ul>
+      <p class="fine" style="margin-top:10px;">
+        Questions before paying? Call <a href="tel:+19072323244">907-232-3244</a> or email <a href="mailto:mustangbuildings@outlook.com">mustangbuildings@outlook.com</a>.
+      </p>
+      <p class="fine" style="margin-top:8px;">
+        Payment accepted via Zelle, Venmo, or PayPal. Details provided after we confirm scope by phone or email.
+      </p>
+    </section>
+    <!-- /ADDED -->
 
     <section class="card" id="schedule">
       <h3>Ready to protect your build?</h3>
@@ -316,6 +339,19 @@
       var midBtn = document.getElementById('midScheduleBtn');
       if (topBtn) topBtn.setAttribute('href', CALENDLY_URL);
       if (midBtn) midBtn.setAttribute('href', CALENDLY_URL);
+
+      // ADDED: Fees toggle handler
+      var feesBtn = document.getElementById('feesToggleBtn');
+      var feesBox = document.getElementById('feesBox');
+      if (feesBtn && feesBox){
+        feesBtn.addEventListener('click', function(){
+          feesBox.classList.toggle('open');
+          if (feesBox.classList.contains('open')) {
+            feesBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+      // /ADDED
 
       // Sticky CTA listener REMOVED
     })();
